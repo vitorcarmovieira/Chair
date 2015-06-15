@@ -9,8 +9,8 @@
 import UIKit
 
 class GuiaTableViewController: UITableViewController {
-
-    var guiaItems: NSMutableArray = NSMutableArray()
+    
+    var guiaItems = [AnyObject]()
     
     override func viewDidLoad() {
         super.viewDidLoad()

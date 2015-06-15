@@ -20,6 +20,7 @@
 		4E9130391B2F6AB10023C73C /* Local.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9130381B2F6AB10023C73C /* Local.swift */; };
 		4E91303B1B2F6AB10023C73C /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E91303A1B2F6AB10023C73C /* Usuario.swift */; };
 		4E91303D1B2F6AB10023C73C /* Exercicio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E91303C1B2F6AB10023C73C /* Exercicio.swift */; };
+		4E9130401B2F7E340023C73C /* Esporte.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E91303F1B2F7E340023C73C /* Esporte.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		4E9130381B2F6AB10023C73C /* Local.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Local.swift; sourceTree = "<group>"; };
 		4E91303A1B2F6AB10023C73C /* Usuario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
 		4E91303C1B2F6AB10023C73C /* Exercicio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercicio.swift; sourceTree = "<group>"; };
+		4E91303F1B2F7E340023C73C /* Esporte.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Esporte.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				4E9130331B2F686A0023C73C /* Model.xcdatamodeld */,
+				4E91303F1B2F7E340023C73C /* Esporte.swift */,
 				4E91303C1B2F6AB10023C73C /* Exercicio.swift */,
 				4E91303A1B2F6AB10023C73C /* Usuario.swift */,
 				4E9130381B2F6AB10023C73C /* Local.swift */,
@@ -244,6 +247,7 @@
 			files = (
 				4E91303B1B2F6AB10023C73C /* Usuario.swift in Sources */,
 				4E9130351B2F686A0023C73C /* Model.xcdatamodeld in Sources */,
+				4E9130401B2F7E340023C73C /* Esporte.swift in Sources */,
 				4E91302C1B2F56E80023C73C /* GuiaViewController.swift in Sources */,
 				4E9130391B2F6AB10023C73C /* Local.swift in Sources */,
 				4E91303D1B2F6AB10023C73C /* Exercicio.swift in Sources */,
