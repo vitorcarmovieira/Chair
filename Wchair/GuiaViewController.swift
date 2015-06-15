@@ -19,7 +19,6 @@ class GuiaViewController: UIViewController {
         
         
     }
-
     
     @IBAction func esportes(sender: AnyObject) {
         
