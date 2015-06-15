@@ -1,7 +1,37 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14D136" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="Entity" syncable="YES"/>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14D136" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Equipamento" representedClassName="Equipamento" syncable="YES">
+        <attribute name="foto" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="loja" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="site" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Exercicio" representedClassName="Exercicio" syncable="YES">
+        <attribute name="animacao" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="detalhes" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="idEquipamento" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="imageGuia" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tempo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="vezesPraticadas" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+    </entity>
+    <entity name="Local" representedClassName="Local" syncable="YES">
+        <attribute name="cor" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="info" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="latitude" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Usuario" representedClassName="Usuario" syncable="YES">
+        <attribute name="avatar" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="senha" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <elements>
-        <element name="Entity" positionX="-63" positionY="-18" width="128" height="45"/>
+        <element name="Usuario" positionX="-45" positionY="0" width="128" height="105"/>
+        <element name="Exercicio" positionX="-18" positionY="54" width="128" height="150"/>
+        <element name="Local" positionX="9" positionY="117" width="128" height="120"/>
+        <element name="Equipamento" positionX="27" positionY="144" width="128" height="105"/>
     </elements>
 </model>
