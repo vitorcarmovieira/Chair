@@ -11,11 +11,13 @@ import UIKit
 class PerfilViewController: UIViewController {
 
      @IBOutlet weak var LbName: UILabel!
+     @IBOutlet weak var IVPhoto: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        LbName.text = "teste";
+        
     }
 
     override func didReceiveMemoryWarning() {
