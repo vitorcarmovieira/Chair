@@ -62,10 +62,10 @@
             </objects>
             <point key="canvasLocation" x="-0.5" y="-852.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Guia View Controller-->
         <scene sceneID="Jag-Ng-7EC">
             <objects>
-                <viewController id="3uh-GU-CA9" sceneMemberID="viewController">
+                <viewController id="3uh-GU-CA9" customClass="GuiaViewController" customModule="Wchair" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6Pc-sq-jwW"/>
                         <viewControllerLayoutGuide type="bottom" id="qaS-Ec-Hwc"/>
@@ -80,6 +80,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="exercicios:" destination="3uh-GU-CA9" eventType="touchUpInside" id="r2d-tz-f07"/>
                                     <segue destination="tXf-t0-v6E" kind="show" id="0V6-Fi-542"/>
                                 </connections>
                             </button>
@@ -89,6 +90,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="esportes:" destination="3uh-GU-CA9" eventType="touchUpInside" id="g6S-pq-KSJ"/>
                                     <segue destination="tXf-t0-v6E" kind="show" id="0wh-oV-mLE"/>
                                 </connections>
                             </button>
@@ -98,6 +100,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="beneficios:" destination="3uh-GU-CA9" eventType="touchUpInside" id="jgL-RU-rm3"/>
                                     <segue destination="tXf-t0-v6E" kind="show" id="5lx-6t-Y0l"/>
                                 </connections>
                             </button>
@@ -107,6 +110,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="associacoes:" destination="3uh-GU-CA9" eventType="touchUpInside" id="oTU-9E-tf7"/>
                                     <segue destination="tXf-t0-v6E" kind="show" id="rAD-ny-VQh"/>
                                 </connections>
                             </button>
@@ -119,16 +123,16 @@
             </objects>
             <point key="canvasLocation" x="742.5" y="-1076.5"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Guia Table View Controller-->
         <scene sceneID="wXY-Cg-9DE">
             <objects>
-                <tableViewController id="tXf-t0-v6E" sceneMemberID="viewController">
+                <tableViewController id="tXf-t0-v6E" customClass="GuiaTableViewController" customModule="Wchair" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="89" sectionHeaderHeight="22" sectionFooterHeight="22" id="DOS-QT-lxE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="80" id="QIY-hb-glQ">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="80" id="QIY-hb-glQ" customClass="GuiaTableViewCell" customModule="Wchair" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QIY-hb-glQ" id="bQv-Og-aDQ">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -144,6 +148,10 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="imagem" destination="AYh-nx-ZQ3" id="0Qe-RG-EtF"/>
+                                    <outlet property="name" destination="3qp-nN-mZI" id="qkt-yh-TuY"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
