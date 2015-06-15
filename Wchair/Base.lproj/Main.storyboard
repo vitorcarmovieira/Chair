@@ -8,7 +8,7 @@
         <!--First-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="Wchair" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9pv-A4-QxB" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
@@ -45,11 +45,11 @@
             </objects>
             <point key="canvasLocation" x="759.5" y="-0.5"/>
         </scene>
-        <!--Item-->
+        <!--Guia-->
         <scene sceneID="nhb-ur-Hiw">
             <objects>
                 <navigationController id="12F-Dh-UI2" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="Ux7-WM-48g"/>
+                    <tabBarItem key="tabBarItem" title="Guia" id="Ux7-WM-48g"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="RII-8U-KcO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -63,10 +63,10 @@
             </objects>
             <point key="canvasLocation" x="-0.5" y="-852.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Guia View Controller-->
         <scene sceneID="Jag-Ng-7EC">
             <objects>
-                <viewController id="3uh-GU-CA9" sceneMemberID="viewController">
+                <viewController id="3uh-GU-CA9" customClass="GuiaViewController" customModule="Wchair" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6Pc-sq-jwW"/>
                         <viewControllerLayoutGuide type="bottom" id="qaS-Ec-Hwc"/>
@@ -81,6 +81,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="exercicios:" destination="3uh-GU-CA9" eventType="touchUpInside" id="r2d-tz-f07"/>
                                     <segue destination="tXf-t0-v6E" kind="show" id="0V6-Fi-542"/>
                                 </connections>
                             </button>
@@ -90,6 +91,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="esportes:" destination="3uh-GU-CA9" eventType="touchUpInside" id="g6S-pq-KSJ"/>
                                     <segue destination="tXf-t0-v6E" kind="show" id="0wh-oV-mLE"/>
                                 </connections>
                             </button>
@@ -99,6 +101,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="beneficios:" destination="3uh-GU-CA9" eventType="touchUpInside" id="jgL-RU-rm3"/>
                                     <segue destination="tXf-t0-v6E" kind="show" id="5lx-6t-Y0l"/>
                                 </connections>
                             </button>
@@ -108,6 +111,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="associacoes:" destination="3uh-GU-CA9" eventType="touchUpInside" id="oTU-9E-tf7"/>
                                     <segue destination="tXf-t0-v6E" kind="show" id="rAD-ny-VQh"/>
                                 </connections>
                             </button>
@@ -120,20 +124,35 @@
             </objects>
             <point key="canvasLocation" x="742.5" y="-1076.5"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Guia Table View Controller-->
         <scene sceneID="wXY-Cg-9DE">
             <objects>
-                <tableViewController id="tXf-t0-v6E" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="DOS-QT-lxE">
+                <tableViewController id="tXf-t0-v6E" customClass="GuiaTableViewController" customModule="Wchair" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="89" sectionHeaderHeight="22" sectionFooterHeight="22" id="DOS-QT-lxE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="QIY-hb-glQ">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="80" id="QIY-hb-glQ" customClass="GuiaTableViewCell" customModule="Wchair" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QIY-hb-glQ" id="bQv-Og-aDQ">
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AYh-nx-ZQ3">
+                                            <rect key="frame" x="8" y="5" width="70" height="70"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nome do esporte/Exercicio/etc" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3qp-nN-mZI">
+                                            <rect key="frame" x="86" y="29" width="239" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="imagem" destination="AYh-nx-ZQ3" id="0Qe-RG-EtF"/>
+                                    <outlet property="name" destination="3qp-nN-mZI" id="qkt-yh-TuY"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -149,7 +168,7 @@
         <!--Second-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="Wchair" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="8rJ-Kc-sve" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L7p-HK-0SC"/>
                         <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>

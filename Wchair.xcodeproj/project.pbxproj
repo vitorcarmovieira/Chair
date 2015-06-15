@@ -13,6 +13,10 @@
 		4E91300F1B2F4B710023C73C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E91300E1B2F4B710023C73C /* Images.xcassets */; };
 		4E9130121B2F4B710023C73C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E9130101B2F4B710023C73C /* LaunchScreen.xib */; };
 		4E91301E1B2F4B710023C73C /* WchairTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E91301D1B2F4B710023C73C /* WchairTests.swift */; };
+		4E9130281B2F55B00023C73C /* GuiaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9130271B2F55B00023C73C /* GuiaTableViewController.swift */; };
+		4E91302A1B2F55FB0023C73C /* GuiaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9130291B2F55FB0023C73C /* GuiaTableViewCell.swift */; };
+		4E91302C1B2F56E80023C73C /* GuiaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E91302B1B2F56E80023C73C /* GuiaViewController.swift */; };
+		4E9130321B2F5C300023C73C /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4E9130301B2F5C300023C73C /* Model.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +40,10 @@
 		4E9130171B2F4B710023C73C /* WchairTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WchairTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E91301C1B2F4B710023C73C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E91301D1B2F4B710023C73C /* WchairTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WchairTests.swift; sourceTree = "<group>"; };
+		4E9130271B2F55B00023C73C /* GuiaTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuiaTableViewController.swift; sourceTree = "<group>"; };
+		4E9130291B2F55FB0023C73C /* GuiaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuiaTableViewCell.swift; sourceTree = "<group>"; };
+		4E91302B1B2F56E80023C73C /* GuiaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuiaViewController.swift; sourceTree = "<group>"; };
+		4E9130311B2F5C300023C73C /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,9 +85,12 @@
 		4E9130021B2F4B710023C73C /* Wchair */ = {
 			isa = PBXGroup;
 			children = (
+				4E9130291B2F55FB0023C73C /* GuiaTableViewCell.swift */,
+				4E9130271B2F55B00023C73C /* GuiaTableViewController.swift */,
 				4E9130051B2F4B710023C73C /* AppDelegate.swift */,
 				4BB35F161B2F56EA0025AC36 /* PerfilViewController.swift */,
 				4E91300B1B2F4B710023C73C /* Main.storyboard */,
+				4E91302B1B2F56E80023C73C /* GuiaViewController.swift */,
 				4E91300E1B2F4B710023C73C /* Images.xcassets */,
 				4E9130101B2F4B710023C73C /* LaunchScreen.xib */,
 				4E9130031B2F4B710023C73C /* Supporting Files */,
@@ -91,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				4E9130041B2F4B710023C73C /* Info.plist */,
+				4E9130301B2F5C300023C73C /* Model.xcdatamodeld */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -424,6 +436,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4E9130301B2F5C300023C73C /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4E9130311B2F5C300023C73C /* Model.xcdatamodel */,
+			);
+			currentVersion = 4E9130311B2F5C300023C73C /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 4E912FF81B2F4B710023C73C /* Project object */;
 }
