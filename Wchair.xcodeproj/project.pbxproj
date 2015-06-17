@@ -21,6 +21,7 @@
 		4E91303B1B2F6AB10023C73C /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E91303A1B2F6AB10023C73C /* Usuario.swift */; };
 		4E91303D1B2F6AB10023C73C /* Exercicio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E91303C1B2F6AB10023C73C /* Exercicio.swift */; };
 		4E9130401B2F7E340023C73C /* Esporte.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E91303F1B2F7E340023C73C /* Esporte.swift */; };
+		4E9130421B31FA1D0023C73C /* ExercicioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9130411B31FA1D0023C73C /* ExercicioViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		4E91303A1B2F6AB10023C73C /* Usuario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
 		4E91303C1B2F6AB10023C73C /* Exercicio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercicio.swift; sourceTree = "<group>"; };
 		4E91303F1B2F7E340023C73C /* Esporte.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Esporte.swift; sourceTree = "<group>"; };
+		4E9130411B31FA1D0023C73C /* ExercicioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExercicioViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				4E9130051B2F4B710023C73C /* AppDelegate.swift */,
 				4E91300B1B2F4B710023C73C /* Main.storyboard */,
 				4E91302B1B2F56E80023C73C /* GuiaViewController.swift */,
+				4E9130411B31FA1D0023C73C /* ExercicioViewController.swift */,
 				4E91300E1B2F4B710023C73C /* Images.xcassets */,
 				4E9130101B2F4B710023C73C /* LaunchScreen.xib */,
 				4E91303E1B2F6AB80023C73C /* Model */,
@@ -255,6 +258,7 @@
 				4E91302A1B2F55FB0023C73C /* GuiaTableViewCell.swift in Sources */,
 				4E9130371B2F6AB00023C73C /* Equipamento.swift in Sources */,
 				4E9130281B2F55B00023C73C /* GuiaTableViewController.swift in Sources */,
+				4E9130421B31FA1D0023C73C /* ExercicioViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
