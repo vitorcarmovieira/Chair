@@ -58,7 +58,15 @@ class GuiaViewController: UIViewController {
             if let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest, error: nil) as? [Exercicio] {
                 view.guiaItems = fetchResults
             }
-        }
+        } else if segue.identifier == "esportes"{
+            
+            
+                } else if segue.identifier == "beneficios"{
+            
+                        } else {
+            
+                            }
+        
     }
 
 }
