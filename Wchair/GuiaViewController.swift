@@ -16,27 +16,6 @@ class GuiaViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
-    @IBAction func exercicios(sender: AnyObject) {
-        
-        
-    }
-    
-    @IBAction func esportes(sender: AnyObject) {
-        
-        
-    }
-    @IBAction func beneficios(sender: AnyObject) {
-        
-        
-    }
-    @IBAction func associacoes(sender: AnyObject) {
-        
-        
-    }
-    
-    func fetchPics() {
         
     }
     
@@ -99,6 +78,13 @@ class GuiaViewController: UIViewController {
             }
         default:
             println("segue não identificada")
+        }
+    }
+    
+    func save() {
+        var error : NSError?
+        if(managedObjectContext!.save(&error) ) {
+            println(error?.localizedDescription)
         }
     }
 
