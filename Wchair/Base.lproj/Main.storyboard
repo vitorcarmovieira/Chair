@@ -41,7 +41,7 @@
                                 </state>
                                 <connections>
                                     <action selector="exercicios:" destination="3uh-GU-CA9" eventType="touchUpInside" id="r2d-tz-f07"/>
-                                    <segue destination="tXf-t0-v6E" kind="show" identifier="exercicios" id="0V6-Fi-542"/>
+                                    <segue destination="tXf-t0-v6E" kind="show" identifier="tipo1" id="0V6-Fi-542"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bdl-MP-uU7">
@@ -51,7 +51,7 @@
                                 </state>
                                 <connections>
                                     <action selector="esportes:" destination="3uh-GU-CA9" eventType="touchUpInside" id="g6S-pq-KSJ"/>
-                                    <segue destination="tXf-t0-v6E" kind="show" identifier="esportes" id="0wh-oV-mLE"/>
+                                    <segue destination="tXf-t0-v6E" kind="show" identifier="tipo2" id="0wh-oV-mLE"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yrt-fT-8mc">
@@ -61,7 +61,7 @@
                                 </state>
                                 <connections>
                                     <action selector="beneficios:" destination="3uh-GU-CA9" eventType="touchUpInside" id="jgL-RU-rm3"/>
-                                    <segue destination="tXf-t0-v6E" kind="show" identifier="beneficios" id="5lx-6t-Y0l"/>
+                                    <segue destination="tXf-t0-v6E" kind="show" identifier="tipo3" id="5lx-6t-Y0l"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="np0-Fr-Lwi">
@@ -71,7 +71,7 @@
                                 </state>
                                 <connections>
                                     <action selector="associacoes:" destination="3uh-GU-CA9" eventType="touchUpInside" id="oTU-9E-tf7"/>
-                                    <segue destination="tXf-t0-v6E" kind="show" identifier="associacoes" id="rAD-ny-VQh"/>
+                                    <segue destination="tXf-t0-v6E" kind="show" identifier="tipo4" id="rAD-ny-VQh"/>
                                 </connections>
                             </button>
                         </subviews>
