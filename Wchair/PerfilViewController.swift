@@ -12,6 +12,8 @@ class PerfilViewController: UIViewController {
 
      @IBOutlet weak var LbName: UILabel!
      @IBOutlet weak var IVPhoto: UIImageView!
+     @IBOutlet weak var LbPratica: UILabel!
+     @IBOutlet weak var MaxLim: UILabel!
     
 //    iv = UIImageView(frame: CGRectMake(0, 0, self.view.bounds.width * 0.19 , self.view.bounds.height * 0.1))
 //    profilepic.layer.borderWidth = 1
