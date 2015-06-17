@@ -13,10 +13,26 @@ class PerfilViewController: UIViewController {
      @IBOutlet weak var LbName: UILabel!
      @IBOutlet weak var IVPhoto: UIImageView!
     
+//    iv = UIImageView(frame: CGRectMake(0, 0, self.view.bounds.width * 0.19 , self.view.bounds.height * 0.1))
+//    profilepic.layer.borderWidth = 1
+//    profilepic.layer.masksToBounds = false
+//    profilepic.layer.borderColor = UIColor.blackColor().CGColor
+//    profilepic.layer.cornerRadius = profilepic.frame.height/2
+//    profilepic.clipsToBounds = true
+//    slider.addSubview(profilepic)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        LbName.text = "teste";
+        LbName.text = "Rocontrex";
+        
+        IVPhoto.image = UIImage(named: "teste");
+        //IVPhoto = UIImageView(frame: CGRectMake(0, 0, self.view.bounds.width * 0.19 , self.view.bounds.height * 0.1))
+        IVPhoto.layer.borderWidth = 7.0
+        IVPhoto.layer.masksToBounds = false
+        IVPhoto.layer.borderColor = UIColor(red: 0.42, green: 0.66, blue: 0.31, alpha: 1.0).CGColor
+        IVPhoto.layer.cornerRadius = IVPhoto.frame.size.width/2
+        IVPhoto.clipsToBounds = true
         
     }
 
@@ -27,6 +43,11 @@ class PerfilViewController: UIViewController {
     
 
 
+    @IBAction func CameraPerfil(sender: AnyObject) {
+        
+        
+        
+    }
     
 
     /*

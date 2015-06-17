@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4BB35F171B2F56EA0025AC36 /* PerfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB35F161B2F56EA0025AC36 /* PerfilViewController.swift */; };
+		4BB35F1B1B31C9730025AC36 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BB35F1A1B31C9730025AC36 /* CoreGraphics.framework */; };
 		4E9130061B2F4B710023C73C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9130051B2F4B710023C73C /* AppDelegate.swift */; };
 		4E91300D1B2F4B710023C73C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E91300B1B2F4B710023C73C /* Main.storyboard */; };
 		4E91300F1B2F4B710023C73C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E91300E1B2F4B710023C73C /* Images.xcassets */; };
@@ -15,8 +16,6 @@
 		4E91301E1B2F4B710023C73C /* WchairTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E91301D1B2F4B710023C73C /* WchairTests.swift */; };
 		4E9130281B2F55B00023C73C /* GuiaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9130271B2F55B00023C73C /* GuiaTableViewController.swift */; };
 		4E91302A1B2F55FB0023C73C /* GuiaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9130291B2F55FB0023C73C /* GuiaTableViewCell.swift */; };
-		4E91302C1B2F56E80023C73C /* GuiaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E91302B1B2F56E80023C73C /* GuiaViewController.swift */; };
-		4E9130351B2F686A0023C73C /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4E9130331B2F686A0023C73C /* Model.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		4BB35F161B2F56EA0025AC36 /* PerfilViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerfilViewController.swift; sourceTree = "<group>"; };
+		4BB35F1A1B31C9730025AC36 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		4E9130001B2F4B710023C73C /* Wchair.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wchair.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E9130041B2F4B710023C73C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E9130051B2F4B710023C73C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BB35F1B1B31C9730025AC36 /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +68,7 @@
 		4E912FF71B2F4B710023C73C = {
 			isa = PBXGroup;
 			children = (
+				4BB35F1A1B31C9730025AC36 /* CoreGraphics.framework */,
 				4E9130021B2F4B710023C73C /* Wchair */,
 				4E91301A1B2F4B710023C73C /* WchairTests */,
 				4E9130011B2F4B710023C73C /* Products */,
@@ -227,6 +229,8 @@
 			files = (
 				4BB35F171B2F56EA0025AC36 /* PerfilViewController.swift in Sources */,
 				4E9130061B2F4B710023C73C /* AppDelegate.swift in Sources */,
+				4E91302A1B2F55FB0023C73C /* GuiaTableViewCell.swift in Sources */,
+				4E9130281B2F55B00023C73C /* GuiaTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
