@@ -71,28 +71,28 @@ class GuiaViewController: UIViewController {
             
         case "tipo1":
             var view = segue.destinationViewController as! GuiaTableViewController
-            let fetchRequest = NSFetchRequest(entityName: "Exercicios")
+            let fetchRequest = NSFetchRequest(entityName: "Exercicio")
             if let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest, error: nil) as? [Exercicio] {
                 
                 view.guiaItems = fetchResults
             }
         case "tipo2":
             var view = segue.destinationViewController as! GuiaTableViewController
-            let fetchRequest = NSFetchRequest(entityName: "Exercicios")
+            let fetchRequest = NSFetchRequest(entityName: "Exercicio")
             if let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest, error: nil) as? [Exercicio] {
                 
                 view.guiaItems = fetchResults
             }
         case "tipo3":
             var view = segue.destinationViewController as! GuiaTableViewController
-            let fetchRequest = NSFetchRequest(entityName: "Exercicios")
+            let fetchRequest = NSFetchRequest(entityName: "Exercicio")
             if let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest, error: nil) as? [Exercicio] {
                 
                 view.guiaItems = fetchResults
             }
         case "tipo4":
             var view = segue.destinationViewController as! GuiaTableViewController
-            let fetchRequest = NSFetchRequest(entityName: "Exercicios")
+            let fetchRequest = NSFetchRequest(entityName: "Exercicio")
             if let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest, error: nil) as? [Exercicio] {
                 
                 view.guiaItems = fetchResults
