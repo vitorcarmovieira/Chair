@@ -32,6 +32,7 @@ class Exercicio: NSManagedObject {
             exercicio.tempo = tempo
             exercicio.vezesPraticadas = vezesPraticadas
             
+            
             return exercicio
     }
 
