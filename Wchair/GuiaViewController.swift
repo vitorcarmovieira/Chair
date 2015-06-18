@@ -16,7 +16,11 @@ class GuiaViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        if let moc = self.managedObjectContext{
+            
+            
+        }
+        self.save()
     }
     
     override func didReceiveMemoryWarning() {

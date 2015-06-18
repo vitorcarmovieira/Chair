@@ -125,7 +125,7 @@
         <!--Esportes-->
         <scene sceneID="tHi-dh-ex2">
             <objects>
-                <navigationController id="shY-Ph-9YW" sceneMemberID="viewController">
+                <navigationController id="shY-Ph-9YW" customClass="NavViewController" customModule="Wchair" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Esportes" id="lnH-WO-Ysw"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="1zV-T5-Vaa">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -259,6 +259,6 @@
         <image name="second" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="rAD-ny-VQh"/>
+        <segue reference="M1q-yE-IYX"/>
     </inferredMetricsTieBreakers>
 </document>
