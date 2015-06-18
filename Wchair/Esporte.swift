@@ -16,5 +16,30 @@ class Esporte: NSManagedObject {
     @NSManaged var classificacao: String
     @NSManaged var modoDisputa: String
     @NSManaged var foto: NSData
+    
+    class func createInManagedObjectContext(moc: NSManagedObjectContext, modalidade:String, descricao:String, classificacao: String, modoDisputa: String, foto: NSData) ->Esporte{
+        
+        
+        let esporte = NSEntityDescription.insertNewObjectForEntityForName("Esporte", inManagedObjectContext: moc) as! Esporte
+        
+        
+        
+        esporte.modalidade=modalidade
+        
+        esporte.descricao=descricao
+        
+        esporte.classificacao=classificacao
+        
+        esporte.modoDisputa=modoDisputa
+        
+        esporte.foto=foto
+        
+        
+        
+        
+        
+        return esporte
+    }
+
 
 }
