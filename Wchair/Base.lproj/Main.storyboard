@@ -50,7 +50,7 @@
         <scene sceneID="nhb-ur-Hiw">
             <objects>
                 <navigationController id="12F-Dh-UI2" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Guia" id="Ux7-WM-48g"/>
+                    <tabBarItem key="tabBarItem" title="Exercicios" id="Ux7-WM-48g"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="RII-8U-KcO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -78,42 +78,38 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cWf-gJ-KDh">
                                 <rect key="frame" x="39" y="213" width="135" height="135"/>
-                                <state key="normal" title="Exercicios">
+                                <state key="normal" title="Tipo1">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="exercicios:" destination="3uh-GU-CA9" eventType="touchUpInside" id="r2d-tz-f07"/>
-                                    <segue destination="tXf-t0-v6E" kind="show" id="0V6-Fi-542"/>
+                                    <segue destination="tXf-t0-v6E" kind="show" identifier="tipo1" id="0V6-Fi-542"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bdl-MP-uU7">
                                 <rect key="frame" x="213" y="213" width="135" height="135"/>
-                                <state key="normal" title="Esportes">
+                                <state key="normal" title="Tipo2">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="esportes:" destination="3uh-GU-CA9" eventType="touchUpInside" id="g6S-pq-KSJ"/>
-                                    <segue destination="tXf-t0-v6E" kind="show" id="0wh-oV-mLE"/>
+                                    <segue destination="tXf-t0-v6E" kind="show" identifier="tipo2" id="0wh-oV-mLE"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yrt-fT-8mc">
                                 <rect key="frame" x="39" y="373" width="135" height="135"/>
-                                <state key="normal" title="Beneficios">
+                                <state key="normal" title="Tipo3">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="beneficios:" destination="3uh-GU-CA9" eventType="touchUpInside" id="jgL-RU-rm3"/>
-                                    <segue destination="tXf-t0-v6E" kind="show" id="5lx-6t-Y0l"/>
+                                    <segue destination="tXf-t0-v6E" kind="show" identifier="tipo3" id="5lx-6t-Y0l"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="np0-Fr-Lwi">
                                 <rect key="frame" x="213" y="373" width="135" height="135"/>
-                                <state key="normal" title="Associações">
+                                <state key="normal" title="Tipo4">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="associacoes:" destination="3uh-GU-CA9" eventType="touchUpInside" id="oTU-9E-tf7"/>
-                                    <segue destination="tXf-t0-v6E" kind="show" id="rAD-ny-VQh"/>
+                                    <segue destination="tXf-t0-v6E" kind="show" identifier="tipo4" id="rAD-ny-VQh"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -128,7 +124,7 @@
         <!--Guia Table View Controller-->
         <scene sceneID="wXY-Cg-9DE">
             <objects>
-                <tableViewController id="tXf-t0-v6E" customClass="GuiaTableViewController" customModule="Wchair" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="tableView" id="tXf-t0-v6E" customClass="GuiaTableViewController" customModule="Wchair" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="89" sectionHeaderHeight="22" sectionFooterHeight="22" id="DOS-QT-lxE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -142,8 +138,8 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AYh-nx-ZQ3">
                                             <rect key="frame" x="8" y="5" width="70" height="70"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nome do esporte/Exercicio/etc" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3qp-nN-mZI">
-                                            <rect key="frame" x="86" y="29" width="239" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nome do exercicio" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3qp-nN-mZI">
+                                            <rect key="frame" x="86" y="29" width="145" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -153,6 +149,7 @@
                                 <connections>
                                     <outlet property="imagem" destination="AYh-nx-ZQ3" id="0Qe-RG-EtF"/>
                                     <outlet property="name" destination="3qp-nN-mZI" id="qkt-yh-TuY"/>
+                                    <segue destination="xhO-B5-KCG" kind="show" id="AMS-BB-wbB"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -161,10 +158,62 @@
                             <outlet property="delegate" destination="tXf-t0-v6E" id="Ssj-gW-IL9"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="2fN-GB-4eg"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gs9-Uw-kIq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1359.5" y="-1076.5"/>
+        </scene>
+        <!--Esportes-->
+        <scene sceneID="tHi-dh-ex2">
+            <objects>
+                <navigationController id="shY-Ph-9YW" customClass="NavViewController" customModule="Wchair" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Esportes" id="lnH-WO-Ysw"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1zV-T5-Vaa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="tXf-t0-v6E" kind="relationship" relationship="rootViewController" id="M1q-yE-IYX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wXn-5t-D9d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="673.5" y="-0.5"/>
+        </scene>
+        <!--Exercicio View Controller-->
+        <scene sceneID="Hfc-rh-nfx">
+            <objects>
+                <viewController id="xhO-B5-KCG" customClass="ExercicioViewController" customModule="Wchair" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Mok-hp-b12"/>
+                        <viewControllerLayoutGuide type="bottom" id="BrD-bE-eif"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="92T-vF-hbW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ec1-71-FnG">
+                                <rect key="frame" x="16" y="418" width="343" height="200"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wnA-J0-B4W">
+                                <rect key="frame" x="0.0" y="64" width="375" height="353"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="exercicioDescription" destination="ec1-71-FnG" id="vYm-lW-oZC"/>
+                        <outlet property="imageScroll" destination="wnA-J0-B4W" id="yUh-Fb-CfS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ghw-56-vqo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1941.5" y="-1076.5"/>
         </scene>
         <!--Second-->
         <scene sceneID="wg7-f3-ORb">
@@ -439,10 +488,10 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                         <segue destination="12F-Dh-UI2" kind="relationship" relationship="viewControllers" id="YN6-Yb-r05"/>
                         <segue destination="ep4-b1-n4r" kind="relationship" relationship="viewControllers" id="qid-WR-VA8"/>
+                        <segue destination="shY-Ph-9YW" kind="relationship" relationship="viewControllers" id="aUl-1o-Wie"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -456,6 +505,6 @@
         <image name="second" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="rAD-ny-VQh"/>
+        <segue reference="0V6-Fi-542"/>
     </inferredMetricsTieBreakers>
 </document>

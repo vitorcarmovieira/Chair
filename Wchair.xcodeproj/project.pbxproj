@@ -53,6 +53,13 @@
 		4E9130291B2F55FB0023C73C /* GuiaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuiaTableViewCell.swift; sourceTree = "<group>"; };
 		4E91302B1B2F56E80023C73C /* GuiaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuiaViewController.swift; sourceTree = "<group>"; };
 		4E9130341B2F686A0023C73C /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		4E9130361B2F6AB00023C73C /* Equipamento.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Equipamento.swift; sourceTree = "<group>"; };
+		4E9130381B2F6AB10023C73C /* Local.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Local.swift; sourceTree = "<group>"; };
+		4E91303A1B2F6AB10023C73C /* Usuario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
+		4E91303C1B2F6AB10023C73C /* Exercicio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercicio.swift; sourceTree = "<group>"; };
+		4E91303F1B2F7E340023C73C /* Esporte.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Esporte.swift; sourceTree = "<group>"; };
+		4E9130411B31FA1D0023C73C /* ExercicioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExercicioViewController.swift; sourceTree = "<group>"; };
+		4E9130431B3356B70023C73C /* NavViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,9 +116,12 @@
 				4BB35F1E1B31FDEF0025AC36 /* GraphicView.swift */,
 				4BB35F241B33518B0025AC36 /* Facebook-Header.h */,
 				4E91300B1B2F4B710023C73C /* Main.storyboard */,
+				4E9130431B3356B70023C73C /* NavViewController.swift */,
 				4E91302B1B2F56E80023C73C /* GuiaViewController.swift */,
+				4E9130411B31FA1D0023C73C /* ExercicioViewController.swift */,
 				4E91300E1B2F4B710023C73C /* Images.xcassets */,
 				4E9130101B2F4B710023C73C /* LaunchScreen.xib */,
+				4E91303E1B2F6AB80023C73C /* Model */,
 				4E9130031B2F4B710023C73C /* Supporting Files */,
 			);
 			path = Wchair;
@@ -121,7 +131,6 @@
 			isa = PBXGroup;
 			children = (
 				4E9130041B2F4B710023C73C /* Info.plist */,
-				4E9130331B2F686A0023C73C /* Model.xcdatamodeld */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -141,6 +150,19 @@
 				4E91301C1B2F4B710023C73C /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4E91303E1B2F6AB80023C73C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4E9130331B2F686A0023C73C /* Model.xcdatamodeld */,
+				4E91303F1B2F7E340023C73C /* Esporte.swift */,
+				4E91303C1B2F6AB10023C73C /* Exercicio.swift */,
+				4E91303A1B2F6AB10023C73C /* Usuario.swift */,
+				4E9130381B2F6AB10023C73C /* Local.swift */,
+				4E9130361B2F6AB00023C73C /* Equipamento.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,6 +271,8 @@
 				4E91302A1B2F55FB0023C73C /* GuiaTableViewCell.swift in Sources */,
 				4BB35F1F1B31FDEF0025AC36 /* GraphicView.swift in Sources */,
 				4E9130281B2F55B00023C73C /* GuiaTableViewController.swift in Sources */,
+				4E9130441B3356B70023C73C /* NavViewController.swift in Sources */,
+				4E9130421B31FA1D0023C73C /* ExercicioViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
