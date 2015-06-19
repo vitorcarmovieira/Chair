@@ -30,11 +30,15 @@ class ExercicioViewController: UIViewController {
             exercicioImage.image = UIImage(data: exercicio.imageGuia)
             exercicioDescription.text = exercicio.detalhes
             
+            self.title = exercicio.nome
+            
         case 2://Exercicio tipo2
             
             let exercicio = self.item as! Exercicio
             exercicioImage.image = UIImage(data: exercicio.imageGuia)
             exercicioDescription.text = exercicio.detalhes
+            
+            self.title = exercicio.nome
             
         case 3://Exercicio tipo3
             
@@ -42,17 +46,23 @@ class ExercicioViewController: UIViewController {
             exercicioImage.image = UIImage(data: exercicio.imageGuia)
             exercicioDescription.text = exercicio.detalhes
             
+            self.title = exercicio.nome
+            
         case 4://Exercicio tipo4
             
             let exercicio = self.item as! Exercicio
             exercicioImage.image = UIImage(data: exercicio.imageGuia)
             exercicioDescription.text = exercicio.detalhes
             
+            self.title = exercicio.nome
+            
         case 5://ESPORTES
             
             let esporte = self.item as! Esporte
             exercicioImage.image = UIImage(data: esporte.foto)
             exercicioDescription.text = esporte.descricao
+            
+            self.title = esporte.modalidade
             
         default:
             println("exercicios 0")
