@@ -6,20 +6,29 @@
 //  Copyright (c) 2015 Bepid. All rights reserved.
 //
 
+import CoreData
 import UIKit
 
 class GuiaTableViewController: UITableViewController {
+    
+    let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     
     var guiaItems = [AnyObject]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+//        if guiaItems.count == 0{
+//            
+//            let fetchRequest = NSFetchRequest(entityName: "Esporte")
+//            if let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest, error: nil) as? [Esporte] {
+//                println("\(fetchResults[0].modalidade)")
+//                self.guiaItems = fetchResults
+//            }
+//        }
+        let currentTag = NSUserDefaults.standardUserDefaults()
+        let tag = currentTag.valueForKey("tag") as! Int
+        println("\(tag)")
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,13 +47,14 @@ class GuiaTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
+        println("\(guiaItems.count)")
         return guiaItems.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! GuiaTableViewCell
 
-        // Configure the cell...
+        cell.name.text = "\(indexPath.row)"
 
         return cell
     }

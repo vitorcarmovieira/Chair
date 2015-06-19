@@ -24,7 +24,7 @@ class Esporte: NSManagedObject {
         
         
         
-        esporte.modalidade=modalidade
+        esporte.modalidade = modalidade
         
         esporte.descricao=descricao
         
