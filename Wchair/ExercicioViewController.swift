@@ -14,27 +14,46 @@ class ExercicioViewController: UIViewController {
     @IBOutlet weak var exercicioImage: UIImageView!
     
     var item: AnyObject?
+    var tag: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let currentTag = NSUserDefaults.standardUserDefaults()
-        let tag = currentTag.valueForKey("tag") as! Int
+//        let currentTag = NSUserDefaults.standardUserDefaults()
+//        let tag = currentTag.valueForKey("tag") as! Int
         
-        switch (tag){
+        switch (self.tag!){
             
-        case 1:
-            println("exercicios 1")
-        case 2:
-            println("exercicios 2")
-        case 3:
-            println("exercicios 3")
-        case 4:
-            println("exercicios 4")
+        case 1://Exercicio tipo1
+            
+            let exercicio = self.item as! Exercicio
+            exercicioImage.image = UIImage(data: exercicio.imageGuia)
+            exercicioDescription.text = exercicio.detalhes
+            
+        case 2://Exercicio tipo2
+            
+            let exercicio = self.item as! Exercicio
+            exercicioImage.image = UIImage(data: exercicio.imageGuia)
+            exercicioDescription.text = exercicio.detalhes
+            
+        case 3://Exercicio tipo3
+            
+            let exercicio = self.item as! Exercicio
+            exercicioImage.image = UIImage(data: exercicio.imageGuia)
+            exercicioDescription.text = exercicio.detalhes
+            
+        case 4://Exercicio tipo4
+            
+            let exercicio = self.item as! Exercicio
+            exercicioImage.image = UIImage(data: exercicio.imageGuia)
+            exercicioDescription.text = exercicio.detalhes
+            
         case 5://ESPORTES
+            
             let esporte = self.item as! Esporte
             exercicioImage.image = UIImage(data: esporte.foto)
             exercicioDescription.text = esporte.descricao
+            
         default:
             println("exercicios 0")
         }

@@ -96,8 +96,7 @@ class GuiaViewController: UIViewController {
             if let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest, error: nil) as? [Exercicio] {
                 
                 view.guiaItems = fetchResults
-                let tag = NSUserDefaults.standardUserDefaults()
-                tag.setObject(1, forKey: "tag")
+                view.tag = 1
             }
         case "tipo2":
             var view = segue.destinationViewController as! GuiaTableViewController
@@ -105,8 +104,7 @@ class GuiaViewController: UIViewController {
             if let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest, error: nil) as? [Exercicio] {
                 
                 view.guiaItems = fetchResults
-                let tag = NSUserDefaults.standardUserDefaults()
-                tag.setObject(2, forKey: "tag")
+                view.tag = 2
             }
         case "tipo3":
             var view = segue.destinationViewController as! GuiaTableViewController
@@ -114,8 +112,7 @@ class GuiaViewController: UIViewController {
             if let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest, error: nil) as? [Exercicio] {
                 
                 view.guiaItems = fetchResults
-                let tag = NSUserDefaults.standardUserDefaults()
-                tag.setObject(3, forKey: "tag")
+                view.tag = 3
             }
         case "tipo4":
             var view = segue.destinationViewController as! GuiaTableViewController
@@ -123,8 +120,7 @@ class GuiaViewController: UIViewController {
             if let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest, error: nil) as? [Exercicio] {
                 
                 view.guiaItems = fetchResults
-                let tag = NSUserDefaults.standardUserDefaults()
-                tag.setObject(4, forKey: "tag")
+                view.tag = 4
             }
         default:
             println("segue não identificada")

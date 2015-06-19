@@ -56,18 +56,36 @@ class GuiaTableViewController: UITableViewController {
 
         switch (self.tag!){
             
-        case 1:
-            println("exercicios 1")
-        case 2:
-            println("exercicios 2")
-        case 3:
-            println("exercicios 3")
-        case 4:
-            println("exercicios 4")
+        case 1://Exercicio tipo1
+            
+            let item = self.guiaItems[indexPath.row] as! Exercicio
+            cell.name.text = item.nome
+            cell.imagem.image = UIImage(data: item.imageGuia)
+            
+        case 2://Exercicio tipo2
+            
+            let item = self.guiaItems[indexPath.row] as! Exercicio
+            cell.name.text = item.nome
+            cell.imagem.image = UIImage(data: item.imageGuia)
+            
+        case 3://Exercicio tipo3
+            
+            let item = self.guiaItems[indexPath.row] as! Exercicio
+            cell.name.text = item.nome
+            cell.imagem.image = UIImage(data: item.imageGuia)
+            
+        case 4://Exercicio tipo4
+            
+            let item = self.guiaItems[indexPath.row] as! Exercicio
+            cell.name.text = item.nome
+            cell.imagem.image = UIImage(data: item.imageGuia)
+            
         case 5://ESPORTES
+            
             let item = self.guiaItems[indexPath.row] as! Esporte
             cell.name.text = item.modalidade
             cell.imagem.image = UIImage(data: item.foto)
+            
         default:
             println("exercicios 0")
         }
@@ -117,18 +135,41 @@ class GuiaTableViewController: UITableViewController {
         
         switch (self.tag!){
             
-        case 1:
-            println("exercicios 1")
-        case 2:
-            println("exercicios 2")
-        case 3:
-            println("exercicios 3")
-        case 4:
-            println("exercicios 4")
-        case 5://ESPORTES
+        case 1://Exercicio tipo1
+            
             var view = segue.destinationViewController as! ExercicioViewController
             let index: NSIndexPath = self.tableView.indexPathForSelectedRow()!
             view.item = self.guiaItems[index.row]
+            view.tag = self.tag
+            
+        case 2://Exercicio tipo2
+            
+            var view = segue.destinationViewController as! ExercicioViewController
+            let index: NSIndexPath = self.tableView.indexPathForSelectedRow()!
+            view.item = self.guiaItems[index.row]
+            view.tag = self.tag
+            
+        case 3://Exercicio tipo3
+            
+            var view = segue.destinationViewController as! ExercicioViewController
+            let index: NSIndexPath = self.tableView.indexPathForSelectedRow()!
+            view.item = self.guiaItems[index.row]
+            view.tag = self.tag
+            
+        case 4://Exercicio tipo4
+            
+            var view = segue.destinationViewController as! ExercicioViewController
+            let index: NSIndexPath = self.tableView.indexPathForSelectedRow()!
+            view.item = self.guiaItems[index.row]
+            view.tag = self.tag
+            
+        case 5://ESPORTES
+            
+            var view = segue.destinationViewController as! ExercicioViewController
+            let index: NSIndexPath = self.tableView.indexPathForSelectedRow()!
+            view.item = self.guiaItems[index.row]
+            view.tag = self.tag
+            
         default:
             println("exercicios 0")
         }
