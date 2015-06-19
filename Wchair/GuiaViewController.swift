@@ -15,7 +15,26 @@ class GuiaViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //imagens dos exercicios
+        var imageAbracoBola = UIImagePNGRepresentation(UIImage (named: "AbracoBola"));
+        var imageApoioBola = UIImagePNGRepresentation(UIImage (named: "ApoioBola"));
+        var imageCrucifixoPolia = UIImagePNGRepresentation(UIImage (named: "CrucifixoPolia"));
+        var imageDesenvolvimentoHalteres = UIImagePNGRepresentation(UIImage (named: "DesenvolvimentoHalteres"));
+        var imageElasticoTensao = UIImagePNGRepresentation(UIImage (named: "ElasticoTensao"));
+        var imageElevacaoHalteres = UIImagePNGRepresentation(UIImage (named: "ElevacaoHalteres"));
+        var imageElevacaoLateral = UIImagePNGRepresentation(UIImage (named: "ElevacaoLateral"));
+        var imageExtensaoQuadril = UIImagePNGRepresentation(UIImage (named: "ExtensaoQuadril"));
+        var imagePulleyCorda = UIImagePNGRepresentation(UIImage (named: "PulleyCorda"));
+        var imagePulleyTriceps = UIImagePNGRepresentation(UIImage (named: "PulleyTriceps"));
+        var imagePuxadorAltoAtrasNuca = UIImagePNGRepresentation(UIImage (named: "PuxadorAltoAtrasNuca"));
+        var imagePuxadorFechado = UIImagePNGRepresentation(UIImage (named: "PuxadorFechado"));
+        var imagePuxadorHorizontal = UIImagePNGRepresentation(UIImage (named: "PuxadorHorizontal"));
+        var imagePuxadorVertical = UIImagePNGRepresentation(UIImage (named: "PuxadorVertical"));
+        var imageRoscaIndividual = UIImagePNGRepresentation(UIImage (named: "RoscaIndividual"));
+        var imageRoscaMartelo = UIImagePNGRepresentation(UIImage (named: "RoscaMartelo"));
+        var imageRoscaSimultanea = UIImagePNGRepresentation(UIImage (named: "RoscaSimultanea"));
+
+        //imagens dos esportes
         var imageBasquete = UIImagePNGRepresentation(UIImage (named: "Basquete3"));
         var imageTenisMesa = UIImagePNGRepresentation(UIImage (named: "Tenis_de_mesa"));
         var imageBocha = UIImagePNGRepresentation(UIImage (named: "Bocha"));
@@ -29,10 +48,9 @@ class GuiaViewController: UIViewController {
         var imageNatacao = UIImagePNGRepresentation(UIImage (named: "Natacao"));
         
         if let moc = self.managedObjectContext{
-            //            Exercicio.createInManagedObjectContext(moc, animacao: NSData(), detalhes: "Exercício para o Peitoral", idEquipamento: "1", imageGuia: NSData(), nome: "Puxador Alto Atrás da Nuca", tempo: "30min", vezesPraticadas: 45);
-            //
-            //
-            //            Exercicio.createInManagedObjectContext(moc, animacao: NSData(), detalhes: "Exercício para as Costas", idEquipamento: "1", imageGuia: NSData(), nome: "Crucifixo na Polia", tempo: "30min", vezesPraticadas: 45);
+                        Exercicio.createInManagedObjectContext(moc, animacao: NSData(), detalhes: "Exercício para os Braços", idEquipamento: "Bola", imageGuia: imageAbracoBola, nome: "Abraço com Bola", tempo: "5min", vezesPraticadas: 3);
+            
+                        Exercicio.createInManagedObjectContext(moc, animacao: NSData(), detalhes: "Exercício para as Costas", idEquipamento: "Bola", imageGuia: imageApoioBola, nome: "Apoio com Bola", tempo: "5min", vezesPraticadas: 45);
             //
             //            Exercicio.createInManagedObjectContext(moc, animacao: NSData(), detalhes: "Exercício para as Costas", idEquipamento: "1", imageGuia: NSData(), nome: "Puxador Fechado", tempo: "30min", vezesPraticadas: 45);
             //
@@ -50,8 +68,7 @@ class GuiaViewController: UIViewController {
             //            Exercicio.createInManagedObjectContext(moc, animacao: NSData(), detalhes: "Exercício para os Tríceps", idEquipamento: "1", imageGuia: NSData(), nome: "Pulley Tríceps", tempo: "30min", vezesPraticadas: 45);
             //
             //            Exercicio.createInManagedObjectContext(moc, animacao: NSData(), detalhes: "Exercício para os Tríceps", idEquipamento: "1", imageGuia: NSData(), nome: "Pulley Corda", tempo: "30min", vezesPraticadas: 45);
-            
-//            Esporte.createInManagedObjectContext(<#moc: NSManagedObjectContext#>, modalidade: <#String#>, descricao: <#String#>, classificacao: <#String#>, modoDisputa: <#String#>, foto: <#NSData#>);
+
             
             Esporte.createInManagedObjectContext(moc, modalidade: "BASQUETE", descricao: "A modalidade é praticada por atletas de ambos os sexos que tenham alguma deficiência físico-motora, sob as regras adaptadas da Federação Internacional de Basquete em Cadeira de Rodas (IWBF). As cadeiras são adaptadas e padronizadas, conforme previsto na regra. No Brasil, a modalidade é administrada pela Confederação Brasileira de Basquetebol em Cadeira de Rodas (CBBC).", classificacao: "Na classificação funcional, os atletas são avaliados conforme o comprometimento físico-motor em uma escala de 1 a 4,5. Quanto maior a deficiência, menor a classe. A soma desses números na equipe de cinco pessoas não pode ultrapassar 14.", modoDisputa: "O jogador deve quicar, arremessar ou passar a bola a cada dois toques dados na cadeira. As dimensões da quadra e a altura da cesta seguem o padrão do basquete olímpico. São disputados quatro quartos de 10 minutos cada.", foto:imageBasquete );
             
