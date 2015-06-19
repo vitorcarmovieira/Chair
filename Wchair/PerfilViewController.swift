@@ -14,14 +14,20 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate {
      @IBOutlet weak var IVPhoto: UIImageView!
      @IBOutlet weak var LbPratica: UILabel!
      @IBOutlet weak var MaxLim: UILabel!
-
+     @IBOutlet weak var FBButom: FBSDKLoginButton!
      @IBAction func FBDatasBT(sender: AnyObject) {
+        
+        var FirstName: String!
+        var LastName: String!
+        
         }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         LbName.text = "Rocontrex";
+        
+ /**------------------------------------------------------------------------------**/
         
         IVPhoto.image = UIImage(named: "teste");
         //IVPhoto = UIImageView(frame: CGRectMake(0, 0, self.view.bounds.width * 0.19 , self.view.bounds.height * 0.1))
@@ -30,6 +36,15 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate {
         IVPhoto.layer.borderColor = UIColor(red: 0.42, green: 0.66, blue: 0.31, alpha: 1.0).CGColor
         IVPhoto.layer.cornerRadius = IVPhoto.frame.size.width/2
         IVPhoto.clipsToBounds = true
+        
+ /**------------------------------------------------------------------------------**/
+        
+        FBButom.layer.borderWidth = 0.0
+        FBButom.layer.masksToBounds = false
+        FBButom.layer.cornerRadius = FBButom.frame.size.width/2
+        FBButom.clipsToBounds = true
+        
+ /**------------------------------------------------------------------------------**/
         
         if (FBSDKAccessToken.currentAccessToken() != nil)
         {
@@ -49,6 +64,8 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+
     
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
         println("User Logged In")
@@ -94,6 +111,8 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate {
             }
         })
     }
+    
+    
 
     /*
     // MARK: - Navigation
