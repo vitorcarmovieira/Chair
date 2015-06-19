@@ -10,13 +10,10 @@ import UIKit
 import CoreData
 
 class NavViewController: UINavigationController {
-
-    let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,14 +25,14 @@ class NavViewController: UINavigationController {
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
-        var view = segue.destinationViewController as! GuiaTableViewController
-        let fetchRequest = NSFetchRequest(entityName: "Esporte")
-        if let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest, error: nil) as? [Esporte] {
-            
-            view.guiaItems = fetchResults
-        }
-    }
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        
+//        var view = segue.destinationViewController as! GuiaTableViewController
+//        let fetchRequest = NSFetchRequest(entityName: "Esporte")
+//        if let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest, error: nil) as? [Esporte] {
+//            
+//            view.guiaItems = fetchResults
+//        }
+//    }
 
 }

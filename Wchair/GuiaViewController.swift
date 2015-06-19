@@ -107,23 +107,6 @@ class GuiaViewController: UIViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-//        if segue.identifier == "exercicio"{
-//            
-//            var view = segue.destinationViewController as! GuiaTableViewController
-//            
-//            let fetchRequest = NSFetchRequest(entityName: "Exercicios")
-//            if let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest, error: nil) as? [Exercicio] {
-//                view.guiaItems = fetchResults
-//            }
-//        } else if segue.identifier == "esportes"{
-//            
-//            
-//                } else if segue.identifier == "beneficios"{
-//            
-//                        } else {
-//            
-//                            }
-//        
         switch (segue.identifier)!{ //falta fazer um where para pegar os tipos de cada segue 😊
             
         case "tipo1":
@@ -132,6 +115,7 @@ class GuiaViewController: UIViewController {
             if let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest, error: nil) as? [Exercicio] {
                 
                 view.guiaItems = fetchResults
+                view.tag = 1
             }
         case "tipo2":
             var view = segue.destinationViewController as! GuiaTableViewController
@@ -139,6 +123,7 @@ class GuiaViewController: UIViewController {
             if let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest, error: nil) as? [Exercicio] {
                 
                 view.guiaItems = fetchResults
+                view.tag = 2
             }
         case "tipo3":
             var view = segue.destinationViewController as! GuiaTableViewController
@@ -146,6 +131,7 @@ class GuiaViewController: UIViewController {
             if let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest, error: nil) as? [Exercicio] {
                 
                 view.guiaItems = fetchResults
+                view.tag = 3
             }
         case "tipo4":
             var view = segue.destinationViewController as! GuiaTableViewController
@@ -153,6 +139,7 @@ class GuiaViewController: UIViewController {
             if let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest, error: nil) as? [Exercicio] {
                 
                 view.guiaItems = fetchResults
+                view.tag = 4
             }
         default:
             println("segue não identificada")

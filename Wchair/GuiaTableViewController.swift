@@ -6,20 +6,30 @@
 //  Copyright (c) 2015 Bepid. All rights reserved.
 //
 
+import CoreData
 import UIKit
 
 class GuiaTableViewController: UITableViewController {
     
+    let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+    
     var guiaItems = [AnyObject]()
+    var tag:Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        if guiaItems.count == 0{
+            
+            let fetchRequest = NSFetchRequest(entityName: "Esporte")
+            if let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest, error: nil) as? [Esporte] {
+                self.guiaItems = fetchResults
+            }
+            
+            let currentTag = NSUserDefaults.standardUserDefaults()
+            currentTag.setValue(5, forKey: "tag")
+            self.tag = 5
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,7 +54,41 @@ class GuiaTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! GuiaTableViewCell
 
-        // Configure the cell...
+        switch (self.tag!){
+            
+        case 1://Exercicio tipo1
+            
+            let item = self.guiaItems[indexPath.row] as! Exercicio
+            cell.name.text = item.nome
+            cell.imagem.image = UIImage(data: item.imageGuia)
+            
+        case 2://Exercicio tipo2
+            
+            let item = self.guiaItems[indexPath.row] as! Exercicio
+            cell.name.text = item.nome
+            cell.imagem.image = UIImage(data: item.imageGuia)
+            
+        case 3://Exercicio tipo3
+            
+            let item = self.guiaItems[indexPath.row] as! Exercicio
+            cell.name.text = item.nome
+            cell.imagem.image = UIImage(data: item.imageGuia)
+            
+        case 4://Exercicio tipo4
+            
+            let item = self.guiaItems[indexPath.row] as! Exercicio
+            cell.name.text = item.nome
+            cell.imagem.image = UIImage(data: item.imageGuia)
+            
+        case 5://ESPORTES
+            
+            let item = self.guiaItems[indexPath.row] as! Esporte
+            cell.name.text = item.modalidade
+            cell.imagem.image = UIImage(data: item.foto)
+            
+        default:
+            println("exercicios 0")
+        }
 
         return cell
     }
@@ -84,14 +128,51 @@ class GuiaTableViewController: UITableViewController {
     }
     */
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+        
+        switch (self.tag!){
+            
+        case 1://Exercicio tipo1
+            
+            var view = segue.destinationViewController as! ExercicioViewController
+            let index: NSIndexPath = self.tableView.indexPathForSelectedRow()!
+            view.item = self.guiaItems[index.row]
+            view.tag = self.tag
+            
+        case 2://Exercicio tipo2
+            
+            var view = segue.destinationViewController as! ExercicioViewController
+            let index: NSIndexPath = self.tableView.indexPathForSelectedRow()!
+            view.item = self.guiaItems[index.row]
+            view.tag = self.tag
+            
+        case 3://Exercicio tipo3
+            
+            var view = segue.destinationViewController as! ExercicioViewController
+            let index: NSIndexPath = self.tableView.indexPathForSelectedRow()!
+            view.item = self.guiaItems[index.row]
+            view.tag = self.tag
+            
+        case 4://Exercicio tipo4
+            
+            var view = segue.destinationViewController as! ExercicioViewController
+            let index: NSIndexPath = self.tableView.indexPathForSelectedRow()!
+            view.item = self.guiaItems[index.row]
+            view.tag = self.tag
+            
+        case 5://ESPORTES
+            
+            var view = segue.destinationViewController as! ExercicioViewController
+            let index: NSIndexPath = self.tableView.indexPathForSelectedRow()!
+            view.item = self.guiaItems[index.row]
+            view.tag = self.tag
+            
+        default:
+            println("exercicios 0")
+        }
     }
-    */
 
 }
