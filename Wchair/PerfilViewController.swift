@@ -59,6 +59,56 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate {
     }
     
     
+    /**-----------------------------FACEBOOK INFO-----------------------------**/
+    
+    func getFacebookDatas(){
+        
+        let url = NSURL(string: "https://graph.facebook.com/" + FBSDKAccessToken.currentAccessToken().userID + "/picture?type=large" )
+        
+        let urlRequest = NSURLRequest(URL: url!)
+        
+        NSURLConnection.sendAsynchronousRequest(urlRequest, queue: NSOperationQueue.mainQueue()) { (response:NSURLResponse!, data:NSData!, error:NSError!) -> Void in
+            
+            if error == nil{
+                
+                var image = data
+                
+                var graphReq: FBSDKGraphRequest =  FBSDKGraphRequest(graphPath: "me", parameters: nil)
+                
+                
+                graphReq.startWithCompletionHandler({
+                    
+                    
+                    
+                    (connection,result,error: NSError?) -> Void in
+                    
+                    
+                    
+                    if error != nil {
+                        
+                        NSLog("Erro GraphReq %@",error!.localizedDescription)
+                        
+                    }else{
+                        
+                        var _facebookId = result["id"] as! String
+                        
+                        var _name = result["name"] as! String
+                        
+                        //self.cadastrar(_email, password: nil, name: _name, facebookID: _facebookId, gender: _gender, photo: image)
+                        
+                    }
+                    
+                })
+                
+            }else{
+                
+                NSLog("Erro Image %@",error!.localizedDescription)
+                
+            }
+        }
+    }
+    
+  /**---------------------------------------------------------------------------**/
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
