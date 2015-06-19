@@ -10,6 +10,9 @@
 		4BB35F171B2F56EA0025AC36 /* PerfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB35F161B2F56EA0025AC36 /* PerfilViewController.swift */; };
 		4BB35F1B1B31C9730025AC36 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BB35F1A1B31C9730025AC36 /* CoreGraphics.framework */; };
 		4BB35F1F1B31FDEF0025AC36 /* GraphicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB35F1E1B31FDEF0025AC36 /* GraphicView.swift */; };
+		4BB35F231B3350D70025AC36 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BB35F221B3350D70025AC36 /* FBSDKCoreKit.framework */; };
+		4BB35F271B3354BB0025AC36 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BB35F251B3354BB0025AC36 /* Bolts.framework */; };
+		4BB35F281B3354BB0025AC36 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BB35F261B3354BB0025AC36 /* FBSDKLoginKit.framework */; };
 		4E9130061B2F4B710023C73C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9130051B2F4B710023C73C /* AppDelegate.swift */; };
 		4E91300D1B2F4B710023C73C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E91300B1B2F4B710023C73C /* Main.storyboard */; };
 		4E91300F1B2F4B710023C73C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E91300E1B2F4B710023C73C /* Images.xcassets */; };
@@ -33,6 +36,10 @@
 		4BB35F161B2F56EA0025AC36 /* PerfilViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerfilViewController.swift; sourceTree = "<group>"; };
 		4BB35F1A1B31C9730025AC36 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		4BB35F1E1B31FDEF0025AC36 /* GraphicView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphicView.swift; sourceTree = "<group>"; };
+		4BB35F221B3350D70025AC36 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		4BB35F241B33518B0025AC36 /* Facebook-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Facebook-Header.h"; sourceTree = "<group>"; };
+		4BB35F251B3354BB0025AC36 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = ../../FacebookSDK/Bolts.framework; sourceTree = "<group>"; };
+		4BB35F261B3354BB0025AC36 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		4E9130001B2F4B710023C73C /* Wchair.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wchair.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E9130041B2F4B710023C73C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E9130051B2F4B710023C73C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +60,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BB35F271B3354BB0025AC36 /* Bolts.framework in Frameworks */,
+				4BB35F281B3354BB0025AC36 /* FBSDKLoginKit.framework in Frameworks */,
+				4BB35F231B3350D70025AC36 /* FBSDKCoreKit.framework in Frameworks */,
 				4BB35F1B1B31C9730025AC36 /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -70,6 +80,9 @@
 		4E912FF71B2F4B710023C73C = {
 			isa = PBXGroup;
 			children = (
+				4BB35F251B3354BB0025AC36 /* Bolts.framework */,
+				4BB35F261B3354BB0025AC36 /* FBSDKLoginKit.framework */,
+				4BB35F221B3350D70025AC36 /* FBSDKCoreKit.framework */,
 				4BB35F1A1B31C9730025AC36 /* CoreGraphics.framework */,
 				4E9130021B2F4B710023C73C /* Wchair */,
 				4E91301A1B2F4B710023C73C /* WchairTests */,
@@ -94,6 +107,7 @@
 				4E9130051B2F4B710023C73C /* AppDelegate.swift */,
 				4BB35F161B2F56EA0025AC36 /* PerfilViewController.swift */,
 				4BB35F1E1B31FDEF0025AC36 /* GraphicView.swift */,
+				4BB35F241B33518B0025AC36 /* Facebook-Header.h */,
 				4E91300B1B2F4B710023C73C /* Main.storyboard */,
 				4E91302B1B2F56E80023C73C /* GuiaViewController.swift */,
 				4E91300E1B2F4B710023C73C /* Images.xcassets */,
@@ -363,9 +377,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/RodrigoC/Documents/FacebookSDK,
+				);
 				INFOPLIST_FILE = Wchair/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/RodrigoC/Documents/FacebookSDK/FBSDKLoginKit.framework,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Wchair/Facebook-Header.h";
 			};
 			name = Debug;
 		};
@@ -373,9 +396,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/RodrigoC/Documents/FacebookSDK,
+				);
 				INFOPLIST_FILE = Wchair/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/RodrigoC/Documents/FacebookSDK/FBSDKLoginKit.framework,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Wchair/Facebook-Header.h";
 			};
 			name = Release;
 		};

@@ -8,20 +8,15 @@
 
 import UIKit
 
-class PerfilViewController: UIViewController {
+class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate {
 
      @IBOutlet weak var LbName: UILabel!
      @IBOutlet weak var IVPhoto: UIImageView!
      @IBOutlet weak var LbPratica: UILabel!
      @IBOutlet weak var MaxLim: UILabel!
-    
-//    iv = UIImageView(frame: CGRectMake(0, 0, self.view.bounds.width * 0.19 , self.view.bounds.height * 0.1))
-//    profilepic.layer.borderWidth = 1
-//    profilepic.layer.masksToBounds = false
-//    profilepic.layer.borderColor = UIColor.blackColor().CGColor
-//    profilepic.layer.cornerRadius = profilepic.frame.height/2
-//    profilepic.clipsToBounds = true
-//    slider.addSubview(profilepic)
+
+     @IBAction func FBDatasBT(sender: AnyObject) {
+        }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,21 +31,69 @@ class PerfilViewController: UIViewController {
         IVPhoto.layer.cornerRadius = IVPhoto.frame.size.width/2
         IVPhoto.clipsToBounds = true
         
+        if (FBSDKAccessToken.currentAccessToken() != nil)
+        {
+            // User is already logged in, do work such as go to next view controller.
+        }
+        else
+        {
+            let loginView : FBSDKLoginButton = FBSDKLoginButton()
+            loginView.readPermissions = ["public_profile", "email", "user_friends"]
+        }
+        
     }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
-
-    @IBAction func CameraPerfil(sender: AnyObject) {
+    func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
+        println("User Logged In")
         
-        
-        
+        if ((error) != nil)
+        {
+            // Process error
+        }
+        else if result.isCancelled {
+            // Handle cancellations
+        }
+        else {
+            // If you ask for multiple permissions at once, you
+            // should check if specific permissions missing
+            if result.grantedPermissions.contains("email")
+            {
+                // Do work
+            }
+        }
     }
     
+    func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
+        println("User Logged Out")
+    }
+    
+    func returnUserData()
+    {
+        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: nil)
+        graphRequest.startWithCompletionHandler({ (connection, result, error) -> Void in
+            
+            if ((error) != nil)
+            {
+                // Process error
+                println("Error: \(error)")
+            }
+            else
+            {
+                println("fetched user: \(result)")
+                let userName : NSString = result.valueForKey("name") as! NSString
+                println("User Name is: \(userName)")
+                let userEmail : NSString = result.valueForKey("email") as! NSString
+                println("User Email is: \(userEmail)")
+            }
+        })
+    }
 
     /*
     // MARK: - Navigation
