@@ -14,21 +14,22 @@ class GuiaTableViewController: UITableViewController {
     let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     
     var guiaItems = [AnyObject]()
+    var tag:Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        if guiaItems.count == 0{
-//            
-//            let fetchRequest = NSFetchRequest(entityName: "Esporte")
-//            if let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest, error: nil) as? [Esporte] {
-//                println("\(fetchResults[0].modalidade)")
-//                self.guiaItems = fetchResults
-//            }
-//        }
-        let currentTag = NSUserDefaults.standardUserDefaults()
-        let tag = currentTag.valueForKey("tag") as! Int
-        println("\(tag)")
+        if guiaItems.count == 0{
+            
+            let fetchRequest = NSFetchRequest(entityName: "Esporte")
+            if let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest, error: nil) as? [Esporte] {
+                self.guiaItems = fetchResults
+            }
+            
+            let currentTag = NSUserDefaults.standardUserDefaults()
+            currentTag.setValue(5, forKey: "tag")
+            self.tag = 5
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,14 +48,29 @@ class GuiaTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        println("\(guiaItems.count)")
         return guiaItems.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! GuiaTableViewCell
 
-        cell.name.text = "\(indexPath.row)"
+        switch (self.tag!){
+            
+        case 1:
+            println("exercicios 1")
+        case 2:
+            println("exercicios 2")
+        case 3:
+            println("exercicios 3")
+        case 4:
+            println("exercicios 4")
+        case 5://ESPORTES
+            let item = self.guiaItems[indexPath.row] as! Esporte
+            cell.name.text = item.modalidade
+            cell.imagem.image = UIImage(data: item.foto)
+        default:
+            println("exercicios 0")
+        }
 
         return cell
     }
@@ -94,14 +110,28 @@ class GuiaTableViewController: UITableViewController {
     }
     */
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+        
+        switch (self.tag!){
+            
+        case 1:
+            println("exercicios 1")
+        case 2:
+            println("exercicios 2")
+        case 3:
+            println("exercicios 3")
+        case 4:
+            println("exercicios 4")
+        case 5://ESPORTES
+            var view = segue.destinationViewController as! ExercicioViewController
+            let index: NSIndexPath = self.tableView.indexPathForSelectedRow()!
+            view.item = self.guiaItems[index.row]
+        default:
+            println("exercicios 0")
+        }
     }
-    */
 
 }

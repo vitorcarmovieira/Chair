@@ -13,10 +13,31 @@ class ExercicioViewController: UIViewController {
     @IBOutlet weak var exercicioDescription: UITextView!
     @IBOutlet weak var exercicioImage: UIImageView!
     
+    var item: AnyObject?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        let currentTag = NSUserDefaults.standardUserDefaults()
+        let tag = currentTag.valueForKey("tag") as! Int
+        
+        switch (tag){
+            
+        case 1:
+            println("exercicios 1")
+        case 2:
+            println("exercicios 2")
+        case 3:
+            println("exercicios 3")
+        case 4:
+            println("exercicios 4")
+        case 5://ESPORTES
+            let esporte = self.item as! Esporte
+            exercicioImage.image = UIImage(data: esporte.foto)
+            exercicioDescription.text = esporte.descricao
+        default:
+            println("exercicios 0")
+        }
     }
 
     override func didReceiveMemoryWarning() {
