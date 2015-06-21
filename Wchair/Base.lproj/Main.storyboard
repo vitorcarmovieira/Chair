@@ -15,12 +15,55 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="3uh-GU-CA9" kind="relationship" relationship="rootViewController" id="IhA-7U-ldA"/>
+                        <segue destination="fXz-mS-6FI" kind="relationship" relationship="rootViewController" id="3Ux-da-ecQ"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fct-ql-cKk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-0.5" y="-852.5"/>
+        </scene>
+        <!--Tipo Exercicio Table View Controller-->
+        <scene sceneID="weU-1W-zwJ">
+            <objects>
+                <tableViewController id="fXz-mS-6FI" customClass="TipoExercicioTableViewController" customModule="Wchair" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" id="TK9-lg-cgD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="tipoExercicioCell" rowHeight="80" id="YCb-fM-P9L" customClass="TipoTableViewCell" customModule="Wchair" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YCb-fM-P9L" id="MEW-Rh-wr5">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CLj-la-TlL">
+                                            <rect key="frame" x="8" y="5" width="70" height="70"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nome do exercicio" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tpx-yU-5Uh">
+                                            <rect key="frame" x="86" y="29" width="145" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="imagem" destination="CLj-la-TlL" id="tq4-LF-5gV"/>
+                                    <outlet property="nome" destination="Tpx-yU-5Uh" id="bKD-bO-df8"/>
+                                    <segue destination="tXf-t0-v6E" kind="show" id="O0N-yZ-AV7"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="fXz-mS-6FI" id="yGH-Ry-klJ"/>
+                            <outlet property="delegate" destination="fXz-mS-6FI" id="09M-Qq-3bA"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="YIg-Kn-cBv"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kT9-0L-aEQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="691.5" y="-1076.5"/>
         </scene>
         <!--Guia View Controller-->
         <scene sceneID="Jag-Ng-7EC">
@@ -31,7 +74,7 @@
                         <viewControllerLayoutGuide type="bottom" id="qaS-Ec-Hwc"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="nZf-DQ-pDc">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cWf-gJ-KDh">
@@ -39,36 +82,24 @@
                                 <state key="normal" title="Tipo1">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="tXf-t0-v6E" kind="show" identifier="tipo1" id="0V6-Fi-542"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bdl-MP-uU7">
                                 <rect key="frame" x="213" y="213" width="135" height="135"/>
                                 <state key="normal" title="Tipo2">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="tXf-t0-v6E" kind="show" identifier="tipo2" id="0wh-oV-mLE"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yrt-fT-8mc">
                                 <rect key="frame" x="39" y="373" width="135" height="135"/>
                                 <state key="normal" title="Tipo3">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="tXf-t0-v6E" kind="show" identifier="tipo3" id="5lx-6t-Y0l"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="np0-Fr-Lwi">
                                 <rect key="frame" x="213" y="373" width="135" height="135"/>
                                 <state key="normal" title="Tipo4">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="tXf-t0-v6E" kind="show" identifier="tipo4" id="rAD-ny-VQh"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -77,7 +108,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YUu-QI-73q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="742.5" y="-1076.5"/>
+            <point key="canvasLocation" x="-50" y="-1881"/>
         </scene>
         <!--Guia Table View Controller-->
         <scene sceneID="wXY-Cg-9DE">
@@ -88,7 +119,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="80" id="QIY-hb-glQ" customClass="GuiaTableViewCell" customModule="Wchair" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="exercicioCell" rowHeight="80" id="QIY-hb-glQ" customClass="GuiaTableViewCell" customModule="Wchair" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QIY-hb-glQ" id="bQv-Og-aDQ">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -120,7 +151,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gs9-Uw-kIq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1359.5" y="-1076.5"/>
+            <point key="canvasLocation" x="1371.5" y="-1076.5"/>
         </scene>
         <!--Esportes-->
         <scene sceneID="tHi-dh-ex2">
@@ -259,6 +290,6 @@
         <image name="second" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="0V6-Fi-542"/>
+        <segue reference="O0N-yZ-AV7"/>
     </inferredMetricsTieBreakers>
 </document>

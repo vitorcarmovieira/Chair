@@ -52,7 +52,7 @@ class GuiaTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! GuiaTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("exercicioCell", forIndexPath: indexPath) as! GuiaTableViewCell
 
         switch (self.tag!){
             
