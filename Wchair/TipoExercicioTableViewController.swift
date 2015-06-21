@@ -89,7 +89,6 @@ class TipoExercicioTableViewController: UITableViewController {
         if let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest, error: nil) as? [Exercicio] {
             
             view.guiaItems = fetchResults
-            view.tag = 4
         }
         
 //        switch (segue.identifier)!{ //falta fazer um where para pegar os tipos de cada segue 😊

@@ -88,43 +88,43 @@ class GuiaViewController: UIViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        switch (segue.identifier)!{ //falta fazer um where para pegar os tipos de cada segue 😊
-            
-        case "tipo1":
-            var view = segue.destinationViewController as! GuiaTableViewController
-            let fetchRequest = NSFetchRequest(entityName: "Exercicio")
-            if let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest, error: nil) as? [Exercicio] {
-                
-                view.guiaItems = fetchResults
-                view.tag = 1
-            }
-        case "tipo2":
-            var view = segue.destinationViewController as! GuiaTableViewController
-            let fetchRequest = NSFetchRequest(entityName: "Exercicio")
-            if let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest, error: nil) as? [Exercicio] {
-                
-                view.guiaItems = fetchResults
-                view.tag = 2
-            }
-        case "tipo3":
-            var view = segue.destinationViewController as! GuiaTableViewController
-            let fetchRequest = NSFetchRequest(entityName: "Exercicio")
-            if let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest, error: nil) as? [Exercicio] {
-                
-                view.guiaItems = fetchResults
-                view.tag = 3
-            }
-        case "tipo4":
-            var view = segue.destinationViewController as! GuiaTableViewController
-            let fetchRequest = NSFetchRequest(entityName: "Exercicio")
-            if let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest, error: nil) as? [Exercicio] {
-                
-                view.guiaItems = fetchResults
-                view.tag = 4
-            }
-        default:
-            println("segue não identificada")
-        }
+//        switch (segue.identifier)!{ //falta fazer um where para pegar os tipos de cada segue 😊
+//            
+//        case "tipo1":
+//            var view = segue.destinationViewController as! GuiaTableViewController
+//            let fetchRequest = NSFetchRequest(entityName: "Exercicio")
+//            if let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest, error: nil) as? [Exercicio] {
+//                
+//                view.guiaItems = fetchResults
+//                view.tag = 1
+//            }
+//        case "tipo2":
+//            var view = segue.destinationViewController as! GuiaTableViewController
+//            let fetchRequest = NSFetchRequest(entityName: "Exercicio")
+//            if let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest, error: nil) as? [Exercicio] {
+//                
+//                view.guiaItems = fetchResults
+//                view.tag = 2
+//            }
+//        case "tipo3":
+//            var view = segue.destinationViewController as! GuiaTableViewController
+//            let fetchRequest = NSFetchRequest(entityName: "Exercicio")
+//            if let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest, error: nil) as? [Exercicio] {
+//                
+//                view.guiaItems = fetchResults
+//                view.tag = 3
+//            }
+//        case "tipo4":
+//            var view = segue.destinationViewController as! GuiaTableViewController
+//            let fetchRequest = NSFetchRequest(entityName: "Exercicio")
+//            if let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest, error: nil) as? [Exercicio] {
+//                
+//                view.guiaItems = fetchResults
+//                view.tag = 4
+//            }
+//        default:
+//            println("segue não identificada")
+//        }
     }
     
     func save() {

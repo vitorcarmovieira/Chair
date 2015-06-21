@@ -1,24 +1,27 @@
 //
-//  GuiaTableViewController.swift
+//  EsportesTableViewController.swift
 //  Wchair
 //
-//  Created by Vitor on 6/15/15.
+//  Created by Vitor on 6/21/15.
 //  Copyright (c) 2015 Bepid. All rights reserved.
 //
 
-import CoreData
 import UIKit
+import CoreData
 
-class GuiaTableViewController: UITableViewController {
-    
+class EsportesTableViewController: UITableViewController {
+
     let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     
-    var guiaItems = [AnyObject]()
-    var tag:Bool = false
+    var esportesItems = [Esporte]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        let fetchRequest = NSFetchRequest(entityName: "Esporte")
+        if let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest, error: nil) as? [Esporte] {
+            self.esportesItems = fetchResults
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,15 +34,15 @@ class GuiaTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return guiaItems.count
+        return self.esportesItems.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("exercicioCell", forIndexPath: indexPath) as! GuiaTableViewCell
-        
-        let item = self.guiaItems[indexPath.row] as! Exercicio
-        cell.name.text = item.nome
-        cell.imagem.image = UIImage(data: item.imageGuia)
+        let cell = tableView.dequeueReusableCellWithIdentifier("esporteCell", forIndexPath: indexPath) as! GuiaTableViewCell
+            
+        let item = self.esportesItems[indexPath.row] as Esporte
+        cell.name.text = item.modalidade
+        cell.imagem.image = UIImage(data: item.foto)
         
         return cell
     }
@@ -84,6 +87,9 @@ class GuiaTableViewController: UITableViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
+        var view = segue.destinationViewController as! EsportesViewController
+        let index: NSIndexPath = self.tableView.indexPathForSelectedRow()!
+        view.esporte = self.esportesItems[index.row] as Esporte
     }
 
 }

@@ -138,7 +138,6 @@
                                 <connections>
                                     <outlet property="imagem" destination="AYh-nx-ZQ3" id="0Qe-RG-EtF"/>
                                     <outlet property="name" destination="3qp-nN-mZI" id="qkt-yh-TuY"/>
-                                    <segue destination="xhO-B5-KCG" kind="show" id="AMS-BB-wbB"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -151,7 +150,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gs9-Uw-kIq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1371.5" y="-1076.5"/>
+            <point key="canvasLocation" x="1327.5" y="-1076.5"/>
         </scene>
         <!--Esportes-->
         <scene sceneID="tHi-dh-ex2">
@@ -163,17 +162,60 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="tXf-t0-v6E" kind="relationship" relationship="rootViewController" id="M1q-yE-IYX"/>
+                        <segue destination="G2r-Lc-oV5" kind="relationship" relationship="rootViewController" id="GtJ-Ey-6Fq"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wXn-5t-D9d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="673.5" y="-0.5"/>
         </scene>
-        <!--Exercicio View Controller-->
+        <!--Esportes Table View Controller-->
+        <scene sceneID="Wkm-7b-gd5">
+            <objects>
+                <tableViewController id="G2r-Lc-oV5" customClass="EsportesTableViewController" customModule="Wchair" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" id="tRD-BW-41E">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="esporteCell" rowHeight="80" id="9XX-ej-k4a" customClass="GuiaTableViewCell" customModule="Wchair" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9XX-ej-k4a" id="sWc-fo-hIq">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5j2-Nt-EgI">
+                                            <rect key="frame" x="8" y="5" width="70" height="70"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nome do exercicio" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mhZ-fB-kX7">
+                                            <rect key="frame" x="86" y="29" width="145" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="imagem" destination="5j2-Nt-EgI" id="3zV-B9-IYK"/>
+                                    <outlet property="name" destination="mhZ-fB-kX7" id="zYo-W9-heI"/>
+                                    <segue destination="xhO-B5-KCG" kind="show" id="VLz-l0-KSU"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="G2r-Lc-oV5" id="t9N-AV-VVa"/>
+                            <outlet property="delegate" destination="G2r-Lc-oV5" id="LYc-R3-yrE"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="YKE-bf-jyC"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wb1-7s-0A3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1291.5" y="-0.5"/>
+        </scene>
+        <!--Esportes View Controller-->
         <scene sceneID="Hfc-rh-nfx">
             <objects>
-                <viewController id="xhO-B5-KCG" customClass="ExercicioViewController" customModule="Wchair" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="xhO-B5-KCG" customClass="EsportesViewController" customModule="Wchair" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Mok-hp-b12"/>
                         <viewControllerLayoutGuide type="bottom" id="BrD-bE-eif"/>
@@ -182,10 +224,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ec1-71-FnG">
-                                <rect key="frame" x="16" y="418" width="343" height="200"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="ec1-71-FnG">
+                                <rect key="frame" x="16" y="355" width="343" height="263"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -196,13 +238,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="exercicioDescription" destination="ec1-71-FnG" id="vYm-lW-oZC"/>
-                        <outlet property="imageScroll" destination="wnA-J0-B4W" id="yUh-Fb-CfS"/>
+                        <outlet property="esporteDescription" destination="ec1-71-FnG" id="hCt-XT-DRA"/>
+                        <outlet property="imagemScroll" destination="wnA-J0-B4W" id="fyQ-Ul-uZf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ghw-56-vqo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1941.5" y="-1076.5"/>
+            <point key="canvasLocation" x="1895" y="0.0"/>
         </scene>
         <!--Second-->
         <scene sceneID="wg7-f3-ORb">
@@ -289,7 +331,4 @@
     <resources>
         <image name="second" width="30" height="30"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="O0N-yZ-AV7"/>
-    </inferredMetricsTieBreakers>
 </document>
