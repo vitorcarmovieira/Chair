@@ -20,7 +20,11 @@ class EsportesViewController: UIViewController {
 
         esporteDescription.text = esporte!.descricao
         
-        var colors:[UIColor] = [UIColor.redColor(), UIColor.blueColor(), UIColor.greenColor(), UIColor.yellowColor()]
+        let image1 = UIImage(named: "Rugby")
+        let image2 = UIImage(named: "Rugby2")
+        let image3 = UIImage(named: "Rugby3")
+        
+        var colors:[UIColor] = [UIColor(patternImage: image1!), UIColor(patternImage: image2!), UIColor(patternImage: image3!)]
         var frame: CGRect = CGRectMake(0, 0, 0, 0)
         
         for index in 0..<colors.count {
