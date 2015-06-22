@@ -59,6 +59,7 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate {
     }
     
     
+    
     /**-----------------------------FACEBOOK INFO-----------------------------**/
     
     func getFacebookDatas(){
@@ -94,10 +95,12 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate {
                         
                         var _name = result["name"] as! String
                         
-                        //self.cadastrar(_email, password: nil, name: _name, facebookID: _facebookId, gender: _gender, photo: image)
-                        
-                    }
+                        //Usuario.createInManagedObjectContext(<#moc: NSManagedObjectContext#>, avatar: <#NSData#>, email: <#String#>, nome: <#String#>, senha: <#String#>)
                     
+                        //self.cadastrar(name: _name, facebookID: _facebookId, photo: image)
+
+                    }
+        
                 })
                 
             }else{
