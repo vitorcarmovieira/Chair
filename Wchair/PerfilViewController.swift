@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import CoreData
 
 class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate {
 
+    var item: AnyObject?
      @IBOutlet weak var LbName: UILabel!
      @IBOutlet weak var IVPhoto: UIImageView!
      @IBOutlet weak var LbPratica: UILabel!
@@ -22,18 +24,57 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate {
         
         }
     
+    @IBOutlet weak var AllGraficos: UISegmentedControl!
+    
+    
+    
+    @IBAction func SegmentControl(sender: UISegmentedControl) {
+        
+        switch AllGraficos.selectedSegmentIndex{
+        case 0:
+            LbPratica.text = "Geral"
+            
+        case 1:
+            LbPratica.text = "Especifico 1"
+        case 2:
+            LbPratica.text = "Especifico 2"
+            
+        default: NSLog("Invalid Input")
+        }
+        
+        
+    }
+    
+    
+    let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        LbName.text = "Rocontrex";
+        
+        
+        
+        LbPratica.text = "Geral"
+        //let user = self.item as! Usuario
+        LbName.text = "UserName"
+//        IVPhoto.image = UIImage(data: user.avatar)
+        
+/**------------------------------------------------------------------------------**/
+        
+        
+        let fetchRequest = NSFetchRequest(entityName: "Usuario")
+        if let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest, error: nil) as? [Usuario] {
+            LbName.text = fetchResults[0].nome
+            IVPhoto.image = UIImage(data: fetchResults[0].avatar)
+        }
+        
         
  /**------------------------------------------------------------------------------**/
         
-        IVPhoto.image = UIImage(named: "teste");
+        //IVPhoto.image = UIImage(named: "teste");
         //IVPhoto = UIImageView(frame: CGRectMake(0, 0, self.view.bounds.width * 0.19 , self.view.bounds.height * 0.1))
         IVPhoto.layer.borderWidth = 7.0
         IVPhoto.layer.masksToBounds = false
-        IVPhoto.layer.borderColor = UIColor(red: 0.42, green: 0.66, blue: 0.31, alpha: 1.0).CGColor
+        IVPhoto.layer.borderColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0).CGColor
         IVPhoto.layer.cornerRadius = IVPhoto.frame.size.width/2
         IVPhoto.clipsToBounds = true
         
@@ -94,10 +135,14 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate {
                         var _facebookId = result["id"] as! String
                         
                         var _name = result["name"] as! String
-                        
-                        //Usuario.createInManagedObjectContext(<#moc: NSManagedObjectContext#>, avatar: <#NSData#>, email: <#String#>, nome: <#String#>, senha: <#String#>)
                     
+                        if let moc = self.managedObjectContext{
+                        Usuario.createInManagedObjectContext(moc, avatar: image, email: "N/A", nome: _name, senha: "N/A")
+                        
+                            self.save()
+                            
                         //self.cadastrar(name: _name, facebookID: _facebookId, photo: image)
+                        }
 
                     }
         
@@ -108,6 +153,13 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate {
                 NSLog("Erro Image %@",error!.localizedDescription)
                 
             }
+        }
+    }
+    
+    func save() {
+        var error : NSError?
+        if(managedObjectContext!.save(&error) ) {
+            println(error?.localizedDescription)
         }
     }
     
@@ -122,7 +174,7 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
         println("User Logged In")
-        
+        self.getFacebookDatas()
         if ((error) != nil)
         {
             // Process error
