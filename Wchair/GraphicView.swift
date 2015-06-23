@@ -16,11 +16,11 @@ import CoreGraphics
     
     
     
-  //  func graphPoints(dom: Int, seg:Int, ter: Int, qua: Int, qui: Int, sex: Int, sab: Int){
+   // func graphPoints(dom: Int, seg:Int, ter: Int, qua: Int, qui: Int, sex: Int, sab: Int){
         
-        var graphPoints:[Int] = [4,7,2,7,4,9,2]
+        var graphPoints:[Int] = [8,6,7,5,6,4,5]
         
-   // }
+    //}
     
   
     
