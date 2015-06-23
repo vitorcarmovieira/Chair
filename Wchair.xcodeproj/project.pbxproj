@@ -13,6 +13,8 @@
 		4BB35F231B3350D70025AC36 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BB35F221B3350D70025AC36 /* FBSDKCoreKit.framework */; };
 		4BB35F271B3354BB0025AC36 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BB35F251B3354BB0025AC36 /* Bolts.framework */; };
 		4BB35F281B3354BB0025AC36 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BB35F261B3354BB0025AC36 /* FBSDKLoginKit.framework */; };
+		4E6AF2E91B3737A800E671EA /* EsportesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6AF2E81B3737A800E671EA /* EsportesTableViewController.swift */; };
+		4E6AF2EB1B37390000E671EA /* EsportesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6AF2EA1B37390000E671EA /* EsportesViewController.swift */; };
 		4E9130061B2F4B710023C73C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9130051B2F4B710023C73C /* AppDelegate.swift */; };
 		4E91300D1B2F4B710023C73C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E91300B1B2F4B710023C73C /* Main.storyboard */; };
 		4E91300F1B2F4B710023C73C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E91300E1B2F4B710023C73C /* Images.xcassets */; };
@@ -50,6 +52,8 @@
 		4BB35F241B33518B0025AC36 /* Facebook-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Facebook-Header.h"; sourceTree = "<group>"; };
 		4BB35F251B3354BB0025AC36 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = ../../FacebookSDK/Bolts.framework; sourceTree = "<group>"; };
 		4BB35F261B3354BB0025AC36 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		4E6AF2E81B3737A800E671EA /* EsportesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EsportesTableViewController.swift; sourceTree = "<group>"; };
+		4E6AF2EA1B37390000E671EA /* EsportesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EsportesViewController.swift; sourceTree = "<group>"; };
 		4E9130001B2F4B710023C73C /* Wchair.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wchair.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E9130041B2F4B710023C73C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E9130051B2F4B710023C73C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -127,6 +131,7 @@
 				4BB35F241B33518B0025AC36 /* Facebook-Header.h */,
 				4E91300B1B2F4B710023C73C /* Main.storyboard */,
 				4E9130431B3356B70023C73C /* NavViewController.swift */,
+				4E9130491B36631F0023C73C /* TipoExercicioTableViewController.swift */,
 				4E91302B1B2F56E80023C73C /* GuiaViewController.swift */,
 				4E9130411B31FA1D0023C73C /* ExercicioViewController.swift */,
 				4E6AF2E81B3737A800E671EA /* EsportesTableViewController.swift */,
@@ -302,6 +307,8 @@
 				4E9130061B2F4B710023C73C /* AppDelegate.swift in Sources */,
 				4E91302A1B2F55FB0023C73C /* GuiaTableViewCell.swift in Sources */,
 				4BB35F1F1B31FDEF0025AC36 /* GraphicView.swift in Sources */,
+				4E6AF2EB1B37390000E671EA /* EsportesViewController.swift in Sources */,
+				4E9130371B2F6AB00023C73C /* Equipamento.swift in Sources */,
 				4E9130281B2F55B00023C73C /* GuiaTableViewController.swift in Sources */,
 				4E9130421B31FA1D0023C73C /* ExercicioViewController.swift in Sources */,
 			);
