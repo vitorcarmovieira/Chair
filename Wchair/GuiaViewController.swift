@@ -15,24 +15,42 @@ class GuiaViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        //imagens dos exercicios
+        var imageAbracoBola = UIImagePNGRepresentation(UIImage (named: "AbracoBola"));
+        var imageApoioBola = UIImagePNGRepresentation(UIImage (named: "ApoioBola"));
+        var imageCrucifixoPolia = UIImagePNGRepresentation(UIImage (named: "CrucifixoPolia"));
+        var imageDesenvolvimentoHalteres = UIImagePNGRepresentation(UIImage (named: "DesenvolvimentoHalteres"));
+        var imageElasticoTensao = UIImagePNGRepresentation(UIImage (named: "ElasticoTensao"));
+        var imageElevacaoHalteres = UIImagePNGRepresentation(UIImage (named: "ElevacaoHalteres"));
+        var imageElevacaoLateral = UIImagePNGRepresentation(UIImage (named: "ElevacaoLateral"));
+        var imageExtensaoQuadril = UIImagePNGRepresentation(UIImage (named: "ExtensaoQuadril"));
+        var imagePulleyCorda = UIImagePNGRepresentation(UIImage (named: "PulleyCorda"));
+        var imagePulleyTriceps = UIImagePNGRepresentation(UIImage (named: "PulleyTriceps"));
+        var imagePuxadorAltoAtrasNuca = UIImagePNGRepresentation(UIImage (named: "PuxadorAltoAtrasNuca"));
+        var imagePuxadorFechado = UIImagePNGRepresentation(UIImage (named: "PuxadorFechado"));
+        var imagePuxadorHorizontal = UIImagePNGRepresentation(UIImage (named: "PuxadorHorizontal"));
+        var imagePuxadorVertical = UIImagePNGRepresentation(UIImage (named: "PuxadorVertical"));
+        var imageRoscaIndividual = UIImagePNGRepresentation(UIImage (named: "RoscaIndividual"));
+        var imageRoscaMartelo = UIImagePNGRepresentation(UIImage (named: "RoscaMartelo"));
+        var imageRoscaSimultanea = UIImagePNGRepresentation(UIImage (named: "RoscaSimultanea"));
+
+        //imagens dos esportes
+        var imageBasquete = UIImagePNGRepresentation(UIImage (named: "Basquete3"));
+        var imageTenisMesa = UIImagePNGRepresentation(UIImage (named: "Tenis_de_mesa"));
+        var imageBocha = UIImagePNGRepresentation(UIImage (named: "Bocha"));
+        var imageRugby = UIImagePNGRepresentation(UIImage (named: "Rugby"));
+        var imageTenis = UIImagePNGRepresentation(UIImage (named: "Tenis"));
+        var imageTiroArco = UIImagePNGRepresentation(UIImage (named: "Tiro-Com-Arco"));
+        var imageTiroEsportivo = UIImagePNGRepresentation(UIImage (named: "Tiro-Esportivo"));
+        var imageHalterofilismo = UIImagePNGRepresentation(UIImage (named: "Halterofilismo"));
+        var imageAtletismo = UIImagePNGRepresentation(UIImage (named: "Atletismo"));
+        var imageEsgrima = UIImagePNGRepresentation(UIImage (named: "Esgrima"));
+        var imageNatacao = UIImagePNGRepresentation(UIImage (named: "Natacao"));
         
-//        var imageBasquete = UIImagePNGRepresentation(UIImage (named: "Basquete3"));
-//        var imageTenisMesa = UIImagePNGRepresentation(UIImage (named: "Tenis_de_mesa"));
-//        var imageBocha = UIImagePNGRepresentation(UIImage (named: "Bocha"));
-//        var imageRugby = UIImagePNGRepresentation(UIImage (named: "Rugby"));
-//        var imageTenis = UIImagePNGRepresentation(UIImage (named: "Tenis"));
-//        var imageTiroArco = UIImagePNGRepresentation(UIImage (named: "Tiro-Com-Arco"));
-//        var imageTiroEsportivo = UIImagePNGRepresentation(UIImage (named: "Tiro-Esportivo"));
-//        var imageHalterofilismo = UIImagePNGRepresentation(UIImage (named: "Halterofilismo"));
-//        var imageAtletismo = UIImagePNGRepresentation(UIImage (named: "Atletismo"));
-//        var imageEsgrima = UIImagePNGRepresentation(UIImage (named: "Esgrima"));
-//        var imageNatacao = UIImagePNGRepresentation(UIImage (named: "Natacao"));
-        
-//        if let moc = self.managedObjectContext{
-            //            Exercicio.createInManagedObjectContext(moc, animacao: NSData(), detalhes: "Exercício para o Peitoral", idEquipamento: "1", imageGuia: NSData(), nome: "Puxador Alto Atrás da Nuca", tempo: "30min", vezesPraticadas: 45);
-            //
-            //
-            //            Exercicio.createInManagedObjectContext(moc, animacao: NSData(), detalhes: "Exercício para as Costas", idEquipamento: "1", imageGuia: NSData(), nome: "Crucifixo na Polia", tempo: "30min", vezesPraticadas: 45);
+        if let moc = self.managedObjectContext{
+                        Exercicio.createInManagedObjectContext(moc, animacao: NSData(), detalhes: "Exercício para os Braços", idEquipamento: "Bola", imageGuia: imageAbracoBola, nome: "Abraço com Bola", tempo: "5min", vezesPraticadas: 3);
+            
+                        Exercicio.createInManagedObjectContext(moc, animacao: NSData(), detalhes: "Exercício para as Costas", idEquipamento: "Bola", imageGuia: imageApoioBola, nome: "Apoio com Bola", tempo: "5min", vezesPraticadas: 45);
             //
             //            Exercicio.createInManagedObjectContext(moc, animacao: NSData(), detalhes: "Exercício para as Costas", idEquipamento: "1", imageGuia: NSData(), nome: "Puxador Fechado", tempo: "30min", vezesPraticadas: 45);
             //
@@ -50,6 +68,7 @@ class GuiaViewController: UIViewController {
             //            Exercicio.createInManagedObjectContext(moc, animacao: NSData(), detalhes: "Exercício para os Tríceps", idEquipamento: "1", imageGuia: NSData(), nome: "Pulley Tríceps", tempo: "30min", vezesPraticadas: 45);
             //
             //            Exercicio.createInManagedObjectContext(moc, animacao: NSData(), detalhes: "Exercício para os Tríceps", idEquipamento: "1", imageGuia: NSData(), nome: "Pulley Corda", tempo: "30min", vezesPraticadas: 45);
+
             
 //            Esporte.createInManagedObjectContext(moc, modalidade: "BASQUETE", descricao: "A modalidade é praticada por atletas de ambos os sexos que tenham alguma deficiência físico-motora, sob as regras adaptadas da Federação Internacional de Basquete em Cadeira de Rodas (IWBF). As cadeiras são adaptadas e padronizadas, conforme previsto na regra. No Brasil, a modalidade é administrada pela Confederação Brasileira de Basquetebol em Cadeira de Rodas (CBBC).", classificacao: "Na classificação funcional, os atletas são avaliados conforme o comprometimento físico-motor em uma escala de 1 a 4,5. Quanto maior a deficiência, menor a classe. A soma desses números na equipe de cinco pessoas não pode ultrapassar 14.", modoDisputa: "O jogador deve quicar, arremessar ou passar a bola a cada dois toques dados na cadeira. As dimensões da quadra e a altura da cesta seguem o padrão do basquete olímpico. São disputados quatro quartos de 10 minutos cada.", foto:imageBasquete );
 //            
@@ -68,13 +87,13 @@ class GuiaViewController: UIViewController {
 //            Esporte.createInManagedObjectContext(moc, modalidade: "ESGRIMA", descricao: "Destinada a atletas com deficiência locomotora, a esgrima adaptada surgiu em 1953 e foi aplicada originalmente pelo médico alemão Ludwig Guttmann, o pai do movimento paralímpico. A modalidade, uma das mais tradicionais, é disputada desde a primeira edição dos Jogos Paralímpicos, em Roma-1960. A disputa segue as regras da Federação Internacional de Esgrima (FIE), mas é administrada pelo Comitê Executivo de Esgrima do Comitê Paralímpico Internacional (IPC).", classificacao: "Os atletas são avaliados a partir de testes de extensão da musculatura dorsal, da avaliação do equilíbrio lateral com membros superiores abduzidos com e sem a arma, da extensão da musculatura dorsal com as mãos atrás do pescoço, entre outros. Classe 1A - Atletas sem equilíbrio sentado, que têm limitações no braço armado, não possuem extensão eficiente do cotovelo em relação à gravidade e não possuem função residual da mão, fazendo com que seja necessário fixar a arma com uma atadura. É comparável à antiga ISMGF 1A, ou tetraplégicos com lesões espinhais no nível da C5/C6. Classe 1B - Atletas sem equilíbrio sentado e com limitações no braço armado. Há extensão funcional do cotovelo mas não há flexão dos dedos. A arma precisa ser fixada com uma bandagem. É comparável ao nível completo de tetraplegia no nível da C7/C8 ou lesão incompleta superior. Classe 2 - Atletas com total equilíbrio sentado e braço armado normal, com paraplegia do tipo T1/T9 ou tetraplegia incompleta com sequelas mínimas no braço armado e bom equilíbrio sentado. Classe 3 - Atletas com bom equilíbrio sentado, sem suporte de pernas e braço armado normal, como paraplégicos da T10 à L2. Atletas tanto com pequenos resquícios de amputação abaixo do joelho ou lesões incompletas abaixo da D10 ou deficiências comparáveis podem ser incluídos nesta classe, desde que as pernas ajudem na manutenção do equilíbrio sentado. Classe 4 - Atletas com um bom equilíbrio sentado e com suporte das extremidades superiores e braço armado normal, como lesões abaixo da C4 ou deficiências comparáveis. Limitações mínimas - Deficiência dos membros inferiores comparável a amputações abaixo do joelho.", modoDisputa: "Em competição, as pistas medem 4m de comprimento por 1,5m de largura, e as cadeiras de rodas ficam fixas ao chão. Se um dos esgrimistas mover a cadeira, o combate é interrompido. Há duelos de florete, espada e sabre. Para cada prova, há uma proteção específica para o competidor e para as cadeiras, além de regras para a pontuação ser validada.", foto: imageEsgrima);
 //            
 //            Esporte.createInManagedObjectContext(moc, modalidade: "NATAÇÃO", descricao: "A natação faz parte do programa oficial desde os primeiros Jogos Paralímpicos, em Roma-1960. Na modalidade, competem atletas com diversos tipos de deficiência (física e visual) nos quatro estilos: livre, costas, medley e peito. As provas são divididas na categoria masculino e feminino, seguindo as regras do IPC Swimming, órgão responsável pela natação no Comitê Paralímpico Internacional (IPC).", classificacao: "sem classificação ainda", modoDisputa: "As adaptações são feitas nas largadas, viradas e chegadas. Os nadadores cegos recebem um aviso do tapper, por meio de um bastão com ponta de espuma quando estão se aproximando das bordas. A largada também pode ser feita na água, no caso de atletas de classes mais baixas, que não conseguem sair do bloco. As baterias são separadas de acordo com o grau e o tipo de deficiência. No Brasil, a modalidade é administrada pelo Comitê Paralímpico Brasileiro (CPB).", foto: imageNatacao);
-//            
-//         
-//            
-//           
-//        }
-//        
-//        self.save();
+            
+         
+            
+           
+        }
+        
+        self.save();
         
     }
     
@@ -88,43 +107,43 @@ class GuiaViewController: UIViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        switch (segue.identifier)!{ //falta fazer um where para pegar os tipos de cada segue 😊
-            
-        case "tipo1":
-            var view = segue.destinationViewController as! GuiaTableViewController
-            let fetchRequest = NSFetchRequest(entityName: "Exercicio")
-            if let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest, error: nil) as? [Exercicio] {
-                
-                view.guiaItems = fetchResults
-                view.tag = 1
-            }
-        case "tipo2":
-            var view = segue.destinationViewController as! GuiaTableViewController
-            let fetchRequest = NSFetchRequest(entityName: "Exercicio")
-            if let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest, error: nil) as? [Exercicio] {
-                
-                view.guiaItems = fetchResults
-                view.tag = 2
-            }
-        case "tipo3":
-            var view = segue.destinationViewController as! GuiaTableViewController
-            let fetchRequest = NSFetchRequest(entityName: "Exercicio")
-            if let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest, error: nil) as? [Exercicio] {
-                
-                view.guiaItems = fetchResults
-                view.tag = 3
-            }
-        case "tipo4":
-            var view = segue.destinationViewController as! GuiaTableViewController
-            let fetchRequest = NSFetchRequest(entityName: "Exercicio")
-            if let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest, error: nil) as? [Exercicio] {
-                
-                view.guiaItems = fetchResults
-                view.tag = 4
-            }
-        default:
-            println("segue não identificada")
-        }
+//        switch (segue.identifier)!{ //falta fazer um where para pegar os tipos de cada segue 😊
+//            
+//        case "tipo1":
+//            var view = segue.destinationViewController as! GuiaTableViewController
+//            let fetchRequest = NSFetchRequest(entityName: "Exercicio")
+//            if let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest, error: nil) as? [Exercicio] {
+//                
+//                view.guiaItems = fetchResults
+//                view.tag = 1
+//            }
+//        case "tipo2":
+//            var view = segue.destinationViewController as! GuiaTableViewController
+//            let fetchRequest = NSFetchRequest(entityName: "Exercicio")
+//            if let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest, error: nil) as? [Exercicio] {
+//                
+//                view.guiaItems = fetchResults
+//                view.tag = 2
+//            }
+//        case "tipo3":
+//            var view = segue.destinationViewController as! GuiaTableViewController
+//            let fetchRequest = NSFetchRequest(entityName: "Exercicio")
+//            if let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest, error: nil) as? [Exercicio] {
+//                
+//                view.guiaItems = fetchResults
+//                view.tag = 3
+//            }
+//        case "tipo4":
+//            var view = segue.destinationViewController as! GuiaTableViewController
+//            let fetchRequest = NSFetchRequest(entityName: "Exercicio")
+//            if let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest, error: nil) as? [Exercicio] {
+//                
+//                view.guiaItems = fetchResults
+//                view.tag = 4
+//            }
+//        default:
+//            println("segue não identificada")
+//        }
     }
     
     func save() {
