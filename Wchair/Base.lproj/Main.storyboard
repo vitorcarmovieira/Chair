@@ -68,7 +68,7 @@
         <!--Guia View Controller-->
         <scene sceneID="Jag-Ng-7EC">
             <objects>
-                <viewController id="3uh-GU-CA9" customClass="GuiaViewController" customModule="Wchair" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="popup" id="3uh-GU-CA9" customClass="GuiaViewController" customModule="Wchair" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6Pc-sq-jwW"/>
                         <viewControllerLayoutGuide type="bottom" id="qaS-Ec-Hwc"/>

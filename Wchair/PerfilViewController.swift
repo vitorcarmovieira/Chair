@@ -63,11 +63,7 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate {
 /**------------------------------------------------------------------------------**/
     
         
-            let fetchRequest = NSFetchRequest(entityName: "Usuario")
-            if let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest, error: nil) as? [Usuario] {
-                LbName.text = fetchResults[0].nome
-                IVPhoto.image = UIImage(data: fetchResults[0].avatar)
-                }
+        
         
 
         
@@ -93,6 +89,11 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate {
         if (FBSDKAccessToken.currentAccessToken() != nil)
         {
             // User is already logged in, do work such as go to next view controller.
+            let fetchRequest = NSFetchRequest(entityName: "Usuario")
+            if let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest, error: nil) as? [Usuario] {
+                LbName.text = fetchResults[0].nome
+                IVPhoto.image = UIImage(data: fetchResults[0].avatar)
+            }
         }
         else
         {

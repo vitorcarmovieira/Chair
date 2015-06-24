@@ -39,6 +39,10 @@ class ExercicioViewController: UIViewController {
             
             timer.invalidate()
             timer = NSTimer()
+            
+            var popViewController : PopUpViewControllerSwift = PopUpViewControllerSwift(nibName: "PopUpViewController_iPhone6", bundle: nil)
+            popViewController.title = "This is a popup view"
+            popViewController.showInView(self.view, withImage: UIImage(named: "Hugby"), withMessage: "You just triggered a great popup window", animated: true)
         }
     }
     

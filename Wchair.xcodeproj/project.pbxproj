@@ -15,6 +15,10 @@
 		4BB35F1F1B31FDEF0025AC36 /* GraphicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB35F1E1B31FDEF0025AC36 /* GraphicView.swift */; };
 		4E6AF2E91B3737A800E671EA /* EsportesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6AF2E81B3737A800E671EA /* EsportesTableViewController.swift */; };
 		4E6AF2EB1B37390000E671EA /* EsportesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6AF2EA1B37390000E671EA /* EsportesViewController.swift */; };
+		4E6AF32C1B3B331F00E671EA /* PopUpViewControllerSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6AF3291B3B331F00E671EA /* PopUpViewControllerSwift.swift */; };
+		4E6AF32E1B3B33DC00E671EA /* PopUpViewController_iPhone6.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E6AF32D1B3B33DC00E671EA /* PopUpViewController_iPhone6.xib */; };
+		4E6AF3311B3B4B4200E671EA /* GCRetractableSectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E6AF3301B3B4B4200E671EA /* GCRetractableSectionController.m */; };
+		4E6AF3361B3B4E6800E671EA /* GCSimpleSectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E6AF3351B3B4E6800E671EA /* GCSimpleSectionController.m */; };
 		4E9130061B2F4B710023C73C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9130051B2F4B710023C73C /* AppDelegate.swift */; };
 		4E91300D1B2F4B710023C73C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E91300B1B2F4B710023C73C /* Main.storyboard */; };
 		4E91300F1B2F4B710023C73C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E91300E1B2F4B710023C73C /* Images.xcassets */; };
@@ -53,6 +57,12 @@
 		4BB35F241B33518B0025AC36 /* Facebook-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Facebook-Header.h"; sourceTree = "<group>"; };
 		4E6AF2E81B3737A800E671EA /* EsportesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EsportesTableViewController.swift; sourceTree = "<group>"; };
 		4E6AF2EA1B37390000E671EA /* EsportesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EsportesViewController.swift; sourceTree = "<group>"; };
+		4E6AF3291B3B331F00E671EA /* PopUpViewControllerSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpViewControllerSwift.swift; sourceTree = "<group>"; };
+		4E6AF32D1B3B33DC00E671EA /* PopUpViewController_iPhone6.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopUpViewController_iPhone6.xib; sourceTree = "<group>"; };
+		4E6AF32F1B3B4B4200E671EA /* GCRetractableSectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCRetractableSectionController.h; sourceTree = "<group>"; };
+		4E6AF3301B3B4B4200E671EA /* GCRetractableSectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCRetractableSectionController.m; sourceTree = "<group>"; };
+		4E6AF3341B3B4E6800E671EA /* GCSimpleSectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCSimpleSectionController.h; sourceTree = "<group>"; };
+		4E6AF3351B3B4E6800E671EA /* GCSimpleSectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCSimpleSectionController.m; sourceTree = "<group>"; };
 		4E9130001B2F4B710023C73C /* Wchair.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wchair.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E9130041B2F4B710023C73C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E9130051B2F4B710023C73C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -123,18 +133,22 @@
 		4E9130021B2F4B710023C73C /* Wchair */ = {
 			isa = PBXGroup;
 			children = (
+				4E6AF32F1B3B4B4200E671EA /* GCRetractableSectionController.h */,
+				4E6AF3301B3B4B4200E671EA /* GCRetractableSectionController.m */,
+				4E6AF3341B3B4E6800E671EA /* GCSimpleSectionController.h */,
+				4E6AF3351B3B4E6800E671EA /* GCSimpleSectionController.m */,
 				4E9130271B2F55B00023C73C /* GuiaTableViewController.swift */,
 				4E9130051B2F4B710023C73C /* AppDelegate.swift */,
 				4BB35F161B2F56EA0025AC36 /* PerfilViewController.swift */,
 				4BB35F1E1B31FDEF0025AC36 /* GraphicView.swift */,
 				4BB35F241B33518B0025AC36 /* Facebook-Header.h */,
 				4E91300B1B2F4B710023C73C /* Main.storyboard */,
-				4E9130431B3356B70023C73C /* NavViewController.swift */,
 				4E9130491B36631F0023C73C /* TipoExercicioTableViewController.swift */,
 				4E91302B1B2F56E80023C73C /* GuiaViewController.swift */,
 				4E9130411B31FA1D0023C73C /* ExercicioViewController.swift */,
 				4E6AF2E81B3737A800E671EA /* EsportesTableViewController.swift */,
 				4E6AF2EA1B37390000E671EA /* EsportesViewController.swift */,
+				4E6AF3291B3B331F00E671EA /* PopUpViewControllerSwift.swift */,
 				4E91304D1B3671560023C73C /* VIew */,
 				4E91303E1B2F6AB80023C73C /* Model */,
 				4E9130031B2F4B710023C73C /* Supporting Files */,
@@ -183,11 +197,11 @@
 		4E91304D1B3671560023C73C /* VIew */ = {
 			isa = PBXGroup;
 			children = (
+				4E6AF32D1B3B33DC00E671EA /* PopUpViewController_iPhone6.xib */,
 				4E9130101B2F4B710023C73C /* LaunchScreen.xib */,
 				4E91300E1B2F4B710023C73C /* Images.xcassets */,
 				4E9130291B2F55FB0023C73C /* GuiaTableViewCell.swift */,
 				4E91304B1B366BD20023C73C /* TipoTableViewCell.swift */,
-				4E91300B1B2F4B710023C73C /* Main.storyboard */,
 			);
 			name = VIew;
 			sourceTree = "<group>";
@@ -276,6 +290,7 @@
 				4E91300D1B2F4B710023C73C /* Main.storyboard in Resources */,
 				4E9130121B2F4B710023C73C /* LaunchScreen.xib in Resources */,
 				4E91300F1B2F4B710023C73C /* Images.xcassets in Resources */,
+				4E6AF32E1B3B33DC00E671EA /* PopUpViewController_iPhone6.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,10 +320,12 @@
 				4E91303D1B2F6AB10023C73C /* Exercicio.swift in Sources */,
 				4E9130061B2F4B710023C73C /* AppDelegate.swift in Sources */,
 				4E91302A1B2F55FB0023C73C /* GuiaTableViewCell.swift in Sources */,
+				4E6AF3311B3B4B4200E671EA /* GCRetractableSectionController.m in Sources */,
+				4E6AF3361B3B4E6800E671EA /* GCSimpleSectionController.m in Sources */,
 				4BB35F1F1B31FDEF0025AC36 /* GraphicView.swift in Sources */,
 				4E6AF2EB1B37390000E671EA /* EsportesViewController.swift in Sources */,
-				4E9130371B2F6AB00023C73C /* Equipamento.swift in Sources */,
 				4E9130281B2F55B00023C73C /* GuiaTableViewController.swift in Sources */,
+				4E6AF32C1B3B331F00E671EA /* PopUpViewControllerSwift.swift in Sources */,
 				4E9130421B31FA1D0023C73C /* ExercicioViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
