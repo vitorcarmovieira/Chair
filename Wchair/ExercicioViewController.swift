@@ -9,81 +9,75 @@
 import UIKit
 
 class ExercicioViewController: UIViewController {
-
-    @IBOutlet weak var exercicioDescription: UITextView!
-    @IBOutlet weak var imageScroll: UIScrollView!
     
-    var item: AnyObject?
-    var tag: Int?
+    var exercicio: Exercicio?
+    
+    @IBOutlet weak var iniciarButton: UIButton!
+    @IBOutlet weak var cronometroLabel: UILabel!
+    
+    var startTime = NSTimeInterval()
+    var timer = NSTimer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-//        let currentTag = NSUserDefaults.standardUserDefaults()
-//        let tag = currentTag.valueForKey("tag") as! Int
         
-        switch (self.tag!){
-            
-        case 1://Exercicio tipo1
-            
-            let exercicio = self.item as! Exercicio
-//            exercicioImage.image = UIImage(data: exercicio.imageGuia)
-            exercicioDescription.text = exercicio.detalhes
-            
-            self.title = exercicio.nome
-            
-        case 2://Exercicio tipo2
-            
-            let exercicio = self.item as! Exercicio
-//            exercicioImage.image = UIImage(data: exercicio.imageGuia)
-            exercicioDescription.text = exercicio.detalhes
-            
-            self.title = exercicio.nome
-            
-        case 3://Exercicio tipo3
-            
-            let exercicio = self.item as! Exercicio
-//            exercicioImage.image = UIImage(data: exercicio.imageGuia)
-            exercicioDescription.text = exercicio.detalhes
-            
-            self.title = exercicio.nome
-            
-        case 4://Exercicio tipo4
-            
-            let exercicio = self.item as! Exercicio
-//            exercicioImage.image = UIImage(data: exercicio.imageGuia)
-            exercicioDescription.text = exercicio.detalhes
-            
-            self.title = exercicio.nome
-            
-        case 5://ESPORTES
-            
-            let esporte = self.item as! Esporte
-            exercicioDescription.text = esporte.descricao
-            
-            var colors:[UIColor] = [UIColor.redColor(), UIColor.blueColor(), UIColor.greenColor(), UIColor.yellowColor()]
-            var frame: CGRect = CGRectMake(0, 0, 0, 0)
-            
-            for index in 0..<colors.count {
-                
-                frame.origin.x = self.imageScroll.frame.size.width * CGFloat(index)
-                frame.size = self.imageScroll.frame.size
-                self.imageScroll.pagingEnabled = true
-                
-                var subView = UIView(frame: frame)
-                subView.backgroundColor = colors[index]
-                self.imageScroll.addSubview(subView)
-            }
-            
-            self.imageScroll.contentSize = CGSizeMake(self.imageScroll.frame.size.width * CGFloat(colors.count), self.imageScroll.frame.size.height)
-            
-            self.title = esporte.modalidade
-            
-        default:
-            println("exercicios 0")
-        }
+        
     }
 
+    @IBAction func iniciar(sender: AnyObject) {
+        
+        let nome = iniciarButton.titleLabel?.text
+        
+        if nome! == "Iniciar"{
+            
+            let aSelector : Selector = "updateTime"
+            timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target:self, selector: aSelector, userInfo: nil, repeats: true)
+            startTime = NSDate.timeIntervalSinceReferenceDate()
+            
+            iniciarButton.setTitle("Parar", forState: UIControlState.Normal)
+        } else{
+            
+            timer.invalidate()
+            timer = NSTimer()
+        }
+    }
+    
+    func updateTime() {
+        
+        var currentTime = NSDate.timeIntervalSinceReferenceDate()
+        
+        //Find the difference between current time and start time.
+        
+        var elapsedTime: NSTimeInterval = currentTime - startTime
+        
+        //calculate the minutes in elapsed time.
+        
+        let minutes = UInt8(elapsedTime / 60.0)
+        
+        elapsedTime -= (NSTimeInterval(minutes) * 60)
+        
+        //calculate the seconds in elapsed time.
+        
+        let seconds = UInt8(elapsedTime)
+        
+        elapsedTime -= NSTimeInterval(seconds)
+        
+        //find out the fraction of milliseconds to be displayed.
+        
+        let fraction = UInt8(elapsedTime * 100)
+        
+        //add the leading zero for minutes, seconds and millseconds and store them as string constants
+        
+        let strMinutes = String(format: "%02d", minutes)
+        let strSeconds = String(format: "%02d", seconds)
+        let strFraction = String(format: "%02d", fraction)
+        
+        //concatenate minuets, seconds and milliseconds as assign it to the UILabel
+        
+        cronometroLabel.text = "\(strMinutes):\(strSeconds):\(strFraction)"
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
