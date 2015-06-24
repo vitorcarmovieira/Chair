@@ -225,27 +225,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Perfil" translatesAutoresizingMaskIntoConstraints="NO" id="1PH-Sa-Ynd">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Perfis - Final" translatesAutoresizingMaskIntoConstraints="NO" id="1PH-Sa-Ynd">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </imageView>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yFw-dB-cMC">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                <items>
-                                    <navigationItem title="Perfil" id="qWV-cz-jr5"/>
-                                </items>
-                            </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8gZ-jb-Net">
-                                <rect key="frame" x="0.0" y="55" width="375" height="49"/>
+                                <rect key="frame" x="0.0" y="41" width="375" height="49"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hxo-M9-hKv">
-                                <rect key="frame" x="104" y="139" width="167" height="165"/>
-                            </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="unA-kB-JoZ" userLabel="GraphicView" customClass="GraphView" customModule="Wchair" customModuleProvider="target">
-                                <rect key="frame" x="23" y="358" width="329" height="214"/>
+                                <rect key="frame" x="23" y="374" width="329" height="214"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Praticas" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XgD-rF-xgg">
                                         <rect key="frame" x="15" y="8" width="262" height="27"/>
@@ -318,19 +309,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pew-ZS-ybs" customClass="FBSDKLoginButton">
-                                <rect key="frame" x="279" y="120" width="37" height="37"/>
-                                <state key="normal">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="FBDatasBT:" destination="ep4-b1-n4r" eventType="touchUpInside" id="elE-x4-V7w"/>
-                                    <outlet property="delegate" destination="ep4-b1-n4r" id="oMP-Aq-782"/>
-                                </connections>
-                            </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="y6b-T5-5S8">
-                                <rect key="frame" x="106" y="322" width="162" height="29"/>
+                                <rect key="frame" x="106" y="338" width="162" height="29"/>
                                 <segments>
                                     <segment title="Geral"/>
                                     <segment title="Esp 1"/>
@@ -340,6 +320,20 @@
                                     <action selector="SegmentControl:" destination="ep4-b1-n4r" eventType="valueChanged" id="cxC-B5-MdC"/>
                                 </connections>
                             </segmentedControl>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hxo-M9-hKv">
+                                <rect key="frame" x="104" y="98" width="167" height="165"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pew-ZS-ybs" customClass="FBSDKLoginButton">
+                                <rect key="frame" x="250" y="286" width="37" height="37"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="FBDatasBT:" destination="ep4-b1-n4r" eventType="touchUpInside" id="elE-x4-V7w"/>
+                                    <outlet property="delegate" destination="ep4-b1-n4r" id="oMP-Aq-782"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -381,7 +375,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Perfil" width="3125" height="5558"/>
+        <image name="Perfis - Final" width="534" height="924"/>
         <image name="second" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>

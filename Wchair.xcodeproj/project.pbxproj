@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4B0DAB701B3A001F00EAFD86 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B0DAB6E1B3A001F00EAFD86 /* FBSDKCoreKit.framework */; };
-		4B0DAB711B3A001F00EAFD86 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B0DAB6F1B3A001F00EAFD86 /* FBSDKLoginKit.framework */; };
 		4B0DAB731B3A002E00EAFD86 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B0DAB721B3A002E00EAFD86 /* Bolts.framework */; };
+		4B0DAB751B3A01B400EAFD86 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B0DAB741B3A01B400EAFD86 /* FBSDKLoginKit.framework */; };
 		4BB35F171B2F56EA0025AC36 /* PerfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB35F161B2F56EA0025AC36 /* PerfilViewController.swift */; };
 		4BB35F1B1B31C9730025AC36 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BB35F1A1B31C9730025AC36 /* CoreGraphics.framework */; };
 		4BB35F1F1B31FDEF0025AC36 /* GraphicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB35F1E1B31FDEF0025AC36 /* GraphicView.swift */; };
@@ -42,8 +42,8 @@
 
 /* Begin PBXFileReference section */
 		4B0DAB6E1B3A001F00EAFD86 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = Wchair/FBSDKCoreKit.framework; sourceTree = "<group>"; };
-		4B0DAB6F1B3A001F00EAFD86 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = Wchair/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		4B0DAB721B3A002E00EAFD86 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Wchair/Bolts.framework; sourceTree = "<group>"; };
+		4B0DAB741B3A01B400EAFD86 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = Wchair/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		4BB35F161B2F56EA0025AC36 /* PerfilViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerfilViewController.swift; sourceTree = "<group>"; };
 		4BB35F1A1B31C9730025AC36 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		4BB35F1E1B31FDEF0025AC36 /* GraphicView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphicView.swift; sourceTree = "<group>"; };
@@ -75,9 +75,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B0DAB751B3A01B400EAFD86 /* FBSDKLoginKit.framework in Frameworks */,
 				4B0DAB731B3A002E00EAFD86 /* Bolts.framework in Frameworks */,
 				4B0DAB701B3A001F00EAFD86 /* FBSDKCoreKit.framework in Frameworks */,
-				4B0DAB711B3A001F00EAFD86 /* FBSDKLoginKit.framework in Frameworks */,
 				4BB35F1B1B31C9730025AC36 /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -95,9 +95,9 @@
 		4E912FF71B2F4B710023C73C = {
 			isa = PBXGroup;
 			children = (
+				4B0DAB741B3A01B400EAFD86 /* FBSDKLoginKit.framework */,
 				4B0DAB721B3A002E00EAFD86 /* Bolts.framework */,
 				4B0DAB6E1B3A001F00EAFD86 /* FBSDKCoreKit.framework */,
-				4B0DAB6F1B3A001F00EAFD86 /* FBSDKLoginKit.framework */,
 				4BB35F1A1B31C9730025AC36 /* CoreGraphics.framework */,
 				4E9130021B2F4B710023C73C /* Wchair */,
 				4E91301A1B2F4B710023C73C /* WchairTests */,

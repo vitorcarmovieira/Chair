@@ -9,6 +9,8 @@
 import UIKit
 import CoreData
 
+var cont=0
+
 class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate {
 
     var item: AnyObject?
@@ -33,7 +35,6 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate {
         switch AllGraficos.selectedSegmentIndex{
         case 0:
             LbPratica.text = "Geral"
-            
         case 1:
             LbPratica.text = "Especifico 1"
         case 2:
@@ -51,7 +52,8 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        LbName.text = "UserName"
+        IVPhoto.image = UIImage(named: "teste")
         
         LbPratica.text = "Geral"
         //let user = self.item as! Usuario
@@ -59,14 +61,15 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate {
 //        IVPhoto.image = UIImage(data: user.avatar)
         
 /**------------------------------------------------------------------------------**/
+    
         
+            let fetchRequest = NSFetchRequest(entityName: "Usuario")
+            if let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest, error: nil) as? [Usuario] {
+                LbName.text = fetchResults[0].nome
+                IVPhoto.image = UIImage(data: fetchResults[0].avatar)
+                }
         
-        let fetchRequest = NSFetchRequest(entityName: "Usuario")
-        if let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest, error: nil) as? [Usuario] {
-            LbName.text = fetchResults[0].nome
-            IVPhoto.image = UIImage(data: fetchResults[0].avatar)
-        }
-        
+
         
  /**------------------------------------------------------------------------------**/
         
@@ -138,8 +141,9 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate {
                     
                         if let moc = self.managedObjectContext{
                         Usuario.createInManagedObjectContext(moc, avatar: image, email: "N/A", nome: _name, senha: "N/A")
-                        
+    
                             self.save()
+                            //return cont = 1;
                             
                         //self.cadastrar(name: _name, facebookID: _facebookId, photo: image)
                         }
