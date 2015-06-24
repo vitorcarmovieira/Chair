@@ -46,8 +46,15 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate {
         
     }
     
-    
     let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+    
+    func reload(){
+        
+        self.LbName.reloadInputViews()
+        self.IVPhoto.reloadInputViews()
+        
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,17 +66,6 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate {
         //let user = self.item as! Usuario
         LbName.text = "UserName"
 //        IVPhoto.image = UIImage(data: user.avatar)
-        
-/**------------------------------------------------------------------------------**/
-    
-        
-            let fetchRequest = NSFetchRequest(entityName: "Usuario")
-            if let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest, error: nil) as? [Usuario] {
-                LbName.text = fetchResults[0].nome
-                IVPhoto.image = UIImage(data: fetchResults[0].avatar)
-                }
-        
-
         
  /**------------------------------------------------------------------------------**/
         
@@ -92,6 +88,12 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate {
         
         if (FBSDKAccessToken.currentAccessToken() != nil)
         {
+            let fetchRequest = NSFetchRequest(entityName: "Usuario")
+            if let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest, error: nil) as? [Usuario] {
+                LbName.text = fetchResults[0].nome
+                IVPhoto.image = UIImage(data: fetchResults[0].avatar)
+                self.view.reloadInputViews()
+            }
             // User is already logged in, do work such as go to next view controller.
         }
         else
