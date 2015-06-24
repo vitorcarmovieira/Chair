@@ -10,6 +10,7 @@
 		4B0DAB701B3A001F00EAFD86 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B0DAB6E1B3A001F00EAFD86 /* FBSDKCoreKit.framework */; };
 		4B0DAB731B3A002E00EAFD86 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B0DAB721B3A002E00EAFD86 /* Bolts.framework */; };
 		4B0DAB751B3A01B400EAFD86 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B0DAB741B3A01B400EAFD86 /* FBSDKLoginKit.framework */; };
+		4B0DAB771B3B47D100EAFD86 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B0DAB761B3B47D100EAFD86 /* FBSDKShareKit.framework */; };
 		4BB35F171B2F56EA0025AC36 /* PerfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB35F161B2F56EA0025AC36 /* PerfilViewController.swift */; };
 		4BB35F1B1B31C9730025AC36 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BB35F1A1B31C9730025AC36 /* CoreGraphics.framework */; };
 		4BB35F1F1B31FDEF0025AC36 /* GraphicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB35F1E1B31FDEF0025AC36 /* GraphicView.swift */; };
@@ -47,6 +48,7 @@
 		4B0DAB6E1B3A001F00EAFD86 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = Wchair/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		4B0DAB721B3A002E00EAFD86 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Wchair/Bolts.framework; sourceTree = "<group>"; };
 		4B0DAB741B3A01B400EAFD86 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = Wchair/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		4B0DAB761B3B47D100EAFD86 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = Wchair/FBSDKShareKit.framework; sourceTree = "<group>"; };
 		4BB35F161B2F56EA0025AC36 /* PerfilViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerfilViewController.swift; sourceTree = "<group>"; };
 		4BB35F1A1B31C9730025AC36 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		4BB35F1E1B31FDEF0025AC36 /* GraphicView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphicView.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B0DAB771B3B47D100EAFD86 /* FBSDKShareKit.framework in Frameworks */,
 				4B0DAB751B3A01B400EAFD86 /* FBSDKLoginKit.framework in Frameworks */,
 				4B0DAB731B3A002E00EAFD86 /* Bolts.framework in Frameworks */,
 				4B0DAB701B3A001F00EAFD86 /* FBSDKCoreKit.framework in Frameworks */,
@@ -101,6 +104,7 @@
 		4E912FF71B2F4B710023C73C = {
 			isa = PBXGroup;
 			children = (
+				4B0DAB761B3B47D100EAFD86 /* FBSDKShareKit.framework */,
 				4B0DAB741B3A01B400EAFD86 /* FBSDKLoginKit.framework */,
 				4B0DAB721B3A002E00EAFD86 /* Bolts.framework */,
 				4B0DAB6E1B3A001F00EAFD86 /* FBSDKCoreKit.framework */,
@@ -129,7 +133,6 @@
 				4BB35F1E1B31FDEF0025AC36 /* GraphicView.swift */,
 				4BB35F241B33518B0025AC36 /* Facebook-Header.h */,
 				4E91300B1B2F4B710023C73C /* Main.storyboard */,
-				4E9130431B3356B70023C73C /* NavViewController.swift */,
 				4E9130491B36631F0023C73C /* TipoExercicioTableViewController.swift */,
 				4E91302B1B2F56E80023C73C /* GuiaViewController.swift */,
 				4E9130411B31FA1D0023C73C /* ExercicioViewController.swift */,
@@ -187,7 +190,6 @@
 				4E91300E1B2F4B710023C73C /* Images.xcassets */,
 				4E9130291B2F55FB0023C73C /* GuiaTableViewCell.swift */,
 				4E91304B1B366BD20023C73C /* TipoTableViewCell.swift */,
-				4E91300B1B2F4B710023C73C /* Main.storyboard */,
 			);
 			name = VIew;
 			sourceTree = "<group>";
@@ -307,7 +309,6 @@
 				4E91302A1B2F55FB0023C73C /* GuiaTableViewCell.swift in Sources */,
 				4BB35F1F1B31FDEF0025AC36 /* GraphicView.swift in Sources */,
 				4E6AF2EB1B37390000E671EA /* EsportesViewController.swift in Sources */,
-				4E9130371B2F6AB00023C73C /* Equipamento.swift in Sources */,
 				4E9130281B2F55B00023C73C /* GuiaTableViewController.swift in Sources */,
 				4E9130421B31FA1D0023C73C /* ExercicioViewController.swift in Sources */,
 			);
