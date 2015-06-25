@@ -156,7 +156,7 @@
         <!--Exercicio View Controller-->
         <scene sceneID="fbW-IW-YGp">
             <objects>
-                <viewController id="lR2-08-aCK" customClass="ExercicioViewController" customModule="Wchair" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="exercicio" id="lR2-08-aCK" customClass="ExercicioViewController" customModule="Wchair" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6LZ-9I-NFn"/>
                         <viewControllerLayoutGuide type="bottom" id="mFP-nV-A1w"/>

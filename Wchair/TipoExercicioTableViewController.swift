@@ -13,12 +13,20 @@ class TipoExercicioTableViewController: UITableViewController {
 
     let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     
-    var items = [String]()
+    var items = [GCSimpleSectionController]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        items = ["Tipo1", "Tipo2", "Tipo3", "Tipo4"]
+        var ombro: GCSimpleSectionController = GCSimpleSectionController(viewController: self)
+//        ombro.setTitle("Ombro")
+        var costa: GCSimpleSectionController = GCSimpleSectionController(viewController: self)
+//        costa.setTitle("Costa")
+        var bi: GCSimpleSectionController = GCSimpleSectionController(viewController: self)
+//        bi.setTitle("Biceps")
+        var tri: GCSimpleSectionController = GCSimpleSectionController(viewController: self)
+//        tri.setTitle("Triceps")
+        items = [ombro, costa, bi, tri]
         self.tableView.reloadData()
         
         
@@ -30,19 +38,40 @@ class TipoExercicioTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
+    
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        
+        return 4
+    }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return items.count
+        var sectionController: GCRetractableSectionController = self.items[section]
+        let count = Int(sectionController.numberOfRow)
+        return count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("tipoExercicioCell", forIndexPath: indexPath) as! TipoTableViewCell
         
-        cell.nome.text = items[indexPath.row]
+        var sectionController: GCRetractableSectionController = self.items[indexPath.section]
+        let index = UInt(indexPath.row)
         
-        return cell
+        return sectionController.cellForRow(index)
+    }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        
+        return tableView.bounds.height/4-28
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        var sectionController: GCRetractableSectionController = self.items[indexPath.section]
+        
+        let index = UInt(indexPath.row)
+        
+        return sectionController.didSelectCellAtRow(index)
     }
 
     /*
@@ -93,43 +122,6 @@ class TipoExercicioTableViewController: UITableViewController {
             view.guiaItems = fetchResults
         }
         
-//        switch (segue.identifier)!{ //falta fazer um where para pegar os tipos de cada segue 😊
-//            
-//        case "tipo1":
-//            var view = segue.destinationViewController as! GuiaTableViewController
-//            let fetchRequest = NSFetchRequest(entityName: "Exercicio")
-//            if let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest, error: nil) as? [Exercicio] {
-//                
-//                view.guiaItems = fetchResults
-//                view.tag = 1
-//            }
-//        case "tipo2":
-//            var view = segue.destinationViewController as! GuiaTableViewController
-//            let fetchRequest = NSFetchRequest(entityName: "Exercicio")
-//            if let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest, error: nil) as? [Exercicio] {
-//                
-//                view.guiaItems = fetchResults
-//                view.tag = 2
-//            }
-//        case "tipo3":
-//            var view = segue.destinationViewController as! GuiaTableViewController
-//            let fetchRequest = NSFetchRequest(entityName: "Exercicio")
-//            if let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest, error: nil) as? [Exercicio] {
-//                
-//                view.guiaItems = fetchResults
-//                view.tag = 3
-//            }
-//        case "tipo4":
-//            var view = segue.destinationViewController as! GuiaTableViewController
-//            let fetchRequest = NSFetchRequest(entityName: "Exercicio")
-//            if let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest, error: nil) as? [Exercicio] {
-//                
-//                view.guiaItems = fetchResults
-//                view.tag = 4
-//            }
-//        default:
-//            println("segue não identificada")
-//        }
     }
 
 }

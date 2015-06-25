@@ -11,6 +11,7 @@
 @interface GCSimpleSectionController ()
 
 @property (nonatomic, readonly) NSArray* colors;
+@property (nonatomic) NSString* title;
 
 @end
 
@@ -22,7 +23,12 @@
 #pragma mark Subclass
 
 - (NSString *)title {
-    return NSLocalizedString(@"Simple exemple",);
+    return NSLocalizedString(@"TIpo1",);
+}
+
+- (void) setTitle:(NSString *)title{
+    
+    self.title = title;
 }
 
 - (NSString *)titleContentForRow:(NSUInteger)row {
@@ -34,12 +40,6 @@
 }
 
 - (void)didSelectContentCellAtRow:(NSUInteger)row {
-    //Reaction to the selection
-    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"WOO!",) 
-                                                    message:NSLocalizedString(@"You just tapped me... Let that not happend again. :P",) 
-                                                   delegate:nil cancelButtonTitle:NSLocalizedString(@"Sorry...",) otherButtonTitles: nil];
-    [alert show];
-//    [alert release];
     
     [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:YES];
 }
@@ -49,7 +49,7 @@
 
 - (NSArray *)colors {
     if (colors == nil) {
-        colors = [[NSArray alloc] initWithObjects:@"Blue", @"Green", @"Red", @"Yellow", nil];
+        colors = [[NSArray alloc] initWithObjects:@"Exercicio1", @"Exercicio2", @"Exercicio3", @"Exercicio4", nil];
     }
     return colors;
 }
