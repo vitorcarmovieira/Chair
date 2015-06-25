@@ -22,8 +22,6 @@ import CoreGraphics
         
    // }
     
-  
-    
     override func drawRect(rect: CGRect) {
         
         let width = rect.width

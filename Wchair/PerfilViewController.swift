@@ -8,8 +8,7 @@
 
 import UIKit
 import CoreData
-
-var cont=0
+import Social
 
 class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate {
 
@@ -26,10 +25,47 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate {
         
         }
     
+/**------------------------------------------------------------------------------**/
+    
+    @IBOutlet weak var BtShare: UIButton!
+    @IBAction func ShareFacebook(sender: AnyObject) {
+        
+        let facebookPost = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
+        facebookPost.completionHandler = {
+            result in
+            switch result {
+            case SLComposeViewControllerResult.Cancelled:
+                //Code to deal with it being cancelled
+                break
+                
+            case SLComposeViewControllerResult.Done:
+                //Code here to deal with it being completed
+                break
+            }
+        }
+        
+        facebookPost.setInitialText("Aqui ficarão os dados do usuario") //The default text in the tweet
+        facebookPost.addImage(UIImage(named: "teste")) //Add an image
+        
+        
+        self.presentViewController(facebookPost, animated: false, completion: {
+            //Optional completion statement
+        })
+        
+    }
+    
+/**------------------------------------------------------------------------------**/
+    
+    @IBOutlet weak var BtCamera: UIButton!
+    @IBAction func CameraAcess(sender: AnyObject) {
+        
+        self.screenShotMethod()
+
+        }
+    
+/**------------------------------------------------------------------------------**/
+    
     @IBOutlet weak var AllGraficos: UISegmentedControl!
-    
-    
-    
     @IBAction func SegmentControl(sender: UISegmentedControl) {
         
         switch AllGraficos.selectedSegmentIndex{
@@ -46,8 +82,21 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate {
         
     }
     
+    /**------------------------------------------------------------------------------**/
     
     let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+    
+    func screenShotMethod() {
+        //Create the UIImage
+        UIGraphicsBeginImageContextWithOptions(CGSizeMake(100,150), false, 0);
+        self.view.drawViewHierarchyInRect(view.bounds, afterScreenUpdates: true)
+        var image:UIImage = UIGraphicsGetImageFromCurrentImageContext();
+        
+        UIGraphicsEndImageContext();
+        
+        //Save it to the camera roll
+        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,7 +105,6 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate {
         IVPhoto.image = UIImage(named: "teste")
         
         LbPratica.text = "Geral"
-        //let user = self.item as! Usuario
         LbName.text = "UserName"
 //        IVPhoto.image = UIImage(data: user.avatar)
         
@@ -69,8 +117,6 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate {
         
  /**------------------------------------------------------------------------------**/
         
-        //IVPhoto.image = UIImage(named: "teste");
-        //IVPhoto = UIImageView(frame: CGRectMake(0, 0, self.view.bounds.width * 0.19 , self.view.bounds.height * 0.1))
         IVPhoto.layer.borderWidth = 7.0
         IVPhoto.layer.masksToBounds = false
         IVPhoto.layer.borderColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0).CGColor
@@ -84,10 +130,27 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate {
         FBButom.layer.cornerRadius = FBButom.frame.size.width/2
         FBButom.clipsToBounds = true
         
+        BtShare.layer.borderWidth = 0.0
+        BtShare.layer.masksToBounds = false
+        BtShare.layer.cornerRadius = BtShare.frame.size.width/2
+        BtShare.clipsToBounds = true
+        
+        BtCamera.layer.borderWidth = 0.0
+        BtCamera.layer.masksToBounds = false
+        BtCamera.layer.cornerRadius = BtCamera.frame.size.width/2
+        BtCamera.clipsToBounds = true
+        
  /**------------------------------------------------------------------------------**/
         
         if (FBSDKAccessToken.currentAccessToken() != nil)
         {
+            let fetchRequest = NSFetchRequest(entityName: "Usuario")
+            if let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest, error: nil) as? [Usuario] {
+                
+                LbName.text = fetchResults[0].nome
+                IVPhoto.image = UIImage(data: fetchResults[0].avatar)
+
+            }
             // User is already logged in, do work such as go to next view controller.
             let fetchRequest = NSFetchRequest(entityName: "Usuario")
             if let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest, error: nil) as? [Usuario] {
@@ -104,8 +167,7 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate {
     }
     
     
-    
-    /**-----------------------------FACEBOOK INFO-----------------------------**/
+/**-----------------------------FACEBOOK INFO-----------------------------**/
     
     func getFacebookDatas(){
         
@@ -124,11 +186,7 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate {
                 
                 graphReq.startWithCompletionHandler({
                     
-                    
-                    
                     (connection,result,error: NSError?) -> Void in
-                    
-                    
                     
                     if error != nil {
                         
@@ -144,9 +202,10 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate {
                         Usuario.createInManagedObjectContext(moc, avatar: image, email: "N/A", nome: _name, senha: "N/A")
     
                             self.save()
-                            //return cont = 1;
                             
-                        //self.cadastrar(name: _name, facebookID: _facebookId, photo: image)
+                            self.LbName.text = _name
+                            self.IVPhoto.image = UIImage(data: image)
+
                         }
 
                     }
@@ -168,14 +227,12 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate {
         }
     }
     
-  /**---------------------------------------------------------------------------**/
+/**---------------------------------------------------------------------------**/
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
     
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
         println("User Logged In")
