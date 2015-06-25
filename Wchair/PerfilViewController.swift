@@ -44,6 +44,8 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate {
             }
         }
         
+        self.screenShotMethod()
+        
         facebookPost.setInitialText("Aqui ficarão os dados do usuario") //The default text in the tweet
         facebookPost.addImage(UIImage(named: "teste")) //Add an image
         
@@ -87,16 +89,19 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate {
     let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     
     func screenShotMethod() {
-        //Create the UIImage
-        UIGraphicsBeginImageContextWithOptions(CGSizeMake(100,150), false, 0);
-        self.view.drawViewHierarchyInRect(view.bounds, afterScreenUpdates: true)
-        var image:UIImage = UIGraphicsGetImageFromCurrentImageContext();
         
-        UIGraphicsEndImageContext();
+        //Create the UIImage
+        UIGraphicsBeginImageContext(view.frame.size)
+        view.layer.renderInContext(UIGraphicsGetCurrentContext())
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
         
         //Save it to the camera roll
         UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+        
     }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -106,17 +111,9 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate {
         
         LbPratica.text = "Geral"
         LbName.text = "UserName"
-//        IVPhoto.image = UIImage(data: user.avatar)
         
-/**------------------------------------------------------------------------------**/
+    /**------------------------------------------------------------------------------**/
     
-        
-        
-        
-
-        
- /**------------------------------------------------------------------------------**/
-        
         IVPhoto.layer.borderWidth = 7.0
         IVPhoto.layer.masksToBounds = false
         IVPhoto.layer.borderColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0).CGColor
@@ -214,6 +211,8 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate {
         }
     }
     
+/**---------------------------------------------------------------------------**/
+    
     func save() {
         var error : NSError?
         if(managedObjectContext!.save(&error) ) {
@@ -286,3 +285,5 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate {
     */
 
 }
+
+

@@ -5,13 +5,13 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>30234EB6-121F-4014-8910-379900CCC8C0</string>
+	<string>675DCCE5-F1BD-42C2-B59E-3BF0610245E3</string>
 	<key>IDESourceControlProjectName</key>
 	<string>Wchair</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>E085C4BDF13BFE6A49D2BB0815A816E0D198E280</key>
-		<string>https://github.com/vitorcarmovieira/Chair.git</string>
+		<string>https://github.com/vitorcarmovieira/Chair</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Wchair.xcodeproj</string>
@@ -21,7 +21,7 @@
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/vitorcarmovieira/Chair.git</string>
+	<string>https://github.com/vitorcarmovieira/Chair</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
@@ -34,7 +34,7 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>E085C4BDF13BFE6A49D2BB0815A816E0D198E280</string>
 			<key>IDESourceControlWCCName</key>
-			<string>Chair</string>
+			<string>ChairSwift</string>
 		</dict>
 	</array>
 </dict>

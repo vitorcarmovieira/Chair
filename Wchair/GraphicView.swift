@@ -22,6 +22,7 @@ import CoreGraphics
         
    // }
     
+    
     override func drawRect(rect: CGRect) {
         
         let width = rect.width
@@ -167,6 +168,8 @@ import CoreGraphics
         
         linePath.lineWidth = 1.0
         linePath.stroke()
+        
+        self.pb_takeSnapshot()
         
     }
 }
