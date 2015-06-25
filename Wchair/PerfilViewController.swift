@@ -151,12 +151,6 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate {
                 IVPhoto.image = UIImage(data: fetchResults[0].avatar)
 
             }
-            // User is already logged in, do work such as go to next view controller.
-            let fetchRequest = NSFetchRequest(entityName: "Usuario")
-            if let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest, error: nil) as? [Usuario] {
-                LbName.text = fetchResults[0].nome
-                IVPhoto.image = UIImage(data: fetchResults[0].avatar)
-            }
         }
         else
         {
