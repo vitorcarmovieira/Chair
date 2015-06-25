@@ -25,6 +25,7 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate {
         
         }
     
+/**------------------------------------------------------------------------------**/
     
     @IBOutlet weak var BtShare: UIButton!
     @IBAction func ShareFacebook(sender: AnyObject) {
@@ -44,7 +45,7 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate {
         }
         
         facebookPost.setInitialText("Aqui ficarão os dados do usuario") //The default text in the tweet
-        //facebookPost.addImage(UIImage(named: "teste")) //Add an image
+        facebookPost.addImage(UIImage(named: "teste")) //Add an image
         
         
         self.presentViewController(facebookPost, animated: false, completion: {
@@ -53,11 +54,16 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate {
         
     }
     
+/**------------------------------------------------------------------------------**/
+    
     @IBOutlet weak var BtCamera: UIButton!
     @IBAction func CameraAcess(sender: AnyObject) {
-    }
+        
+        self.screenShotMethod()
+
+        }
     
-    
+/**------------------------------------------------------------------------------**/
     
     @IBOutlet weak var AllGraficos: UISegmentedControl!
     @IBAction func SegmentControl(sender: UISegmentedControl) {
@@ -76,8 +82,21 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate {
         
     }
     
+    /**------------------------------------------------------------------------------**/
+    
     let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     
+    func screenShotMethod() {
+        //Create the UIImage
+        UIGraphicsBeginImageContextWithOptions(CGSizeMake(100,150), false, 0);
+        self.view.drawViewHierarchyInRect(view.bounds, afterScreenUpdates: true)
+        var image:UIImage = UIGraphicsGetImageFromCurrentImageContext();
+        
+        UIGraphicsEndImageContext();
+        
+        //Save it to the camera roll
+        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -135,7 +154,7 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate {
     }
     
     
-    /**-----------------------------FACEBOOK INFO-----------------------------**/
+/**-----------------------------FACEBOOK INFO-----------------------------**/
     
     func getFacebookDatas(){
         
@@ -195,7 +214,7 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate {
         }
     }
     
-  /**---------------------------------------------------------------------------**/
+/**---------------------------------------------------------------------------**/
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
