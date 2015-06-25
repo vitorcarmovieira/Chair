@@ -13,7 +13,8 @@ class TipoExercicioTableViewController: UITableViewController {
 
     let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     
-    var items = [GCSimpleSectionController]()
+    var items = [AnyObject]()
+    var exercicios = [Exercicio]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,9 +27,18 @@ class TipoExercicioTableViewController: UITableViewController {
 //        bi.setTitle("Biceps")
         var tri: GCSimpleSectionController = GCSimpleSectionController(viewController: self)
 //        tri.setTitle("Triceps")
-        items = [ombro, costa, bi, tri]
-        self.tableView.reloadData()
         
+        let fetchRequest = NSFetchRequest(entityName: "Exercicio")
+        if let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest, error: nil) as? [Exercicio] {
+            self.exercicios = fetchResults
+        }
+        
+        ombro.titulo = "Ombro"
+        costa.titulo = "Costa"
+        bi.titulo = "Biceps"
+        tri.titulo = "Triceps"
+        
+        items = [ombro, costa, bi, tri]
         
     }
 
@@ -47,14 +57,14 @@ class TipoExercicioTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        var sectionController: GCRetractableSectionController = self.items[section]
+        var sectionController: GCRetractableSectionController = self.items[section] as! GCRetractableSectionController
         let count = Int(sectionController.numberOfRow)
         return count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        var sectionController: GCRetractableSectionController = self.items[indexPath.section]
+        var sectionController: GCRetractableSectionController = self.items[indexPath.section] as! GCRetractableSectionController
         let index = UInt(indexPath.row)
         
         return sectionController.cellForRow(index)
@@ -62,12 +72,17 @@ class TipoExercicioTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
-        return tableView.bounds.height/4-28
+        if (indexPath.section == 0 && indexPath.row == 0 || indexPath.section == 1 && indexPath.row == 0 ||
+            indexPath.section == 2 && indexPath.row == 0 || indexPath.section == 3 && indexPath.row == 0){
+                
+            return tableView.bounds.height/4-28
+        }
+        return 90
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        var sectionController: GCRetractableSectionController = self.items[indexPath.section]
+        var sectionController: GCRetractableSectionController = self.items[indexPath.section] as! GCRetractableSectionController
         
         let index = UInt(indexPath.row)
         
@@ -115,12 +130,12 @@ class TipoExercicioTableViewController: UITableViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        var view = segue.destinationViewController as! GuiaTableViewController
-        let fetchRequest = NSFetchRequest(entityName: "Exercicio")
-        if let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest, error: nil) as? [Exercicio] {
-            
-            view.guiaItems = fetchResults
-        }
+//        var view = segue.destinationViewController as! GuiaTableViewController
+//        let fetchRequest = NSFetchRequest(entityName: "Exercicio")
+//        if let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest, error: nil) as? [Exercicio] {
+//            
+//            view.guiaItems = fetchResults
+//        }
         
     }
 

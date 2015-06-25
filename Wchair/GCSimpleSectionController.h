@@ -13,6 +13,6 @@
 
 @interface GCSimpleSectionController : GCRetractableSectionController
 
-- (void) setTitle: (NSString*) title;
+@property (nonatomic) NSString* titulo;
 
 @end

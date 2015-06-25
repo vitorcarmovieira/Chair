@@ -7,6 +7,7 @@
 //
 
 #import "GCRetractableSectionController.h"
+#import "Wchair-Swift.h"
 
 @interface GCRetractableSectionController ()
 
@@ -77,14 +78,14 @@
 }
 
 - (UITableViewCell *) titleCell {
-	NSString* titleCellIdentifier = [NSStringFromClass([self class]) stringByAppendingString:@"title"];
 	
-	UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:titleCellIdentifier];
+	TitleTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"titleCell"];
 	if (cell == nil) {
-		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:titleCellIdentifier];
+		cell = [[TitleTableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"titleCell"];
 	}
-	
-	cell.textLabel.text = self.title;
+    
+    cell.titulo.text = self.title;
+    
 	if (self.contentNumberOfRow != 0) {
         
 		cell.selectionStyle = UITableViewCellSelectionStyleBlue;
@@ -97,21 +98,35 @@
         cell.textLabel.textColor = [UIColor blackColor];
 	}
     
-    cell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Cadeirantes-20"]];
+    if ([self.title  isEqual: @"Ombro"]){
+        
+        cell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Cadeirantes-20"]];
+    } else if ([self.title isEqual:@"Costa"]){
+        
+            cell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Cadeirantes-21"]];
+    } else if ([self.title isEqual:@"Biceps"]){
+        
+        cell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Cadeirantes-22"]];
+    } else{
+        
+        cell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Cadeirantes-23"]];
+    }
+    
+    
 	
 	return cell;
 }
 
 - (UITableViewCell *) contentCellForRow:(NSUInteger)row {
-	NSString* contentCellIdentifier = [NSStringFromClass([self class]) stringByAppendingString:@"content"];
 	
-	UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:contentCellIdentifier];
+	TipoTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"tipoExercicioCell"];
 	if (cell == nil) {
-		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:contentCellIdentifier];
+		cell = [[TipoTableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"tipoExercicioCell"];
 		cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 	}
 	
-	cell.textLabel.text = [self titleContentForRow:row];
+    cell.nome.text = [self titleContentForRow:row];
+    cell.imagem.image = [UIImage imageNamed:@"Rugby"];
 	
 	return cell;
 }

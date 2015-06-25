@@ -11,7 +11,6 @@
 @interface GCSimpleSectionController ()
 
 @property (nonatomic, readonly) NSArray* colors;
-@property (nonatomic) NSString* title;
 
 @end
 
@@ -23,12 +22,7 @@
 #pragma mark Subclass
 
 - (NSString *)title {
-    return NSLocalizedString(@"TIpo1",);
-}
-
-- (void) setTitle:(NSString *)title{
-    
-    self.title = title;
+    return NSLocalizedString(self.titulo,);
 }
 
 - (NSString *)titleContentForRow:(NSUInteger)row {

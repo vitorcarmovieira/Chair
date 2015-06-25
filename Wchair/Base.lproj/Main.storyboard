@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Exercicios-->
@@ -50,7 +51,30 @@
                                 <connections>
                                     <outlet property="imagem" destination="CLj-la-TlL" id="tq4-LF-5gV"/>
                                     <outlet property="nome" destination="Tpx-yU-5Uh" id="bKD-bO-df8"/>
-                                    <segue destination="tXf-t0-v6E" kind="show" id="O0N-yZ-AV7"/>
+                                    <segue destination="lR2-08-aCK" kind="show" id="3UM-MC-1Ry"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="titleCell" rowHeight="80" id="oVG-71-jDM" customClass="TitleTableViewCell" customModule="Wchair" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oVG-71-jDM" id="cWu-3d-Dw2">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qke-9w-Lga">
+                                            <rect key="frame" x="60" y="13" width="255" height="54"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Qke-9w-Lga" firstAttribute="leading" secondItem="cWu-3d-Dw2" secondAttribute="leadingMargin" constant="52" id="PpJ-cd-j0C"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Qke-9w-Lga" secondAttribute="bottom" constant="4.5" id="Pvg-Yf-zC1"/>
+                                        <constraint firstItem="Qke-9w-Lga" firstAttribute="top" secondItem="cWu-3d-Dw2" secondAttribute="topMargin" constant="5" id="Qha-Mv-vIo"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Qke-9w-Lga" secondAttribute="trailing" constant="52" id="iXB-Qu-P06"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="titulo" destination="Qke-9w-Lga" id="r7L-hS-O5T"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -115,7 +139,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="tableView" id="tXf-t0-v6E" customClass="GuiaTableViewController" customModule="Wchair" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="89" sectionHeaderHeight="22" sectionFooterHeight="22" id="DOS-QT-lxE">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -138,7 +162,6 @@
                                 <connections>
                                     <outlet property="imagem" destination="AYh-nx-ZQ3" id="0Qe-RG-EtF"/>
                                     <outlet property="name" destination="3qp-nN-mZI" id="qkt-yh-TuY"/>
-                                    <segue destination="lR2-08-aCK" kind="show" id="vmA-xY-3Uf"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -151,7 +174,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gs9-Uw-kIq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1327.5" y="-1076.5"/>
+            <point key="canvasLocation" x="1171" y="-1889"/>
         </scene>
         <!--Exercicio View Controller-->
         <scene sceneID="fbW-IW-YGp">
@@ -194,7 +217,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F8Z-fJ-3Fw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1976.5" y="-1076.5"/>
+            <point key="canvasLocation" x="1283.5" y="-1076.5"/>
         </scene>
         <!--Esportes-->
         <scene sceneID="tHi-dh-ex2">

@@ -19,6 +19,7 @@
 		4E6AF32E1B3B33DC00E671EA /* PopUpViewController_iPhone6.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E6AF32D1B3B33DC00E671EA /* PopUpViewController_iPhone6.xib */; };
 		4E6AF3311B3B4B4200E671EA /* GCRetractableSectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E6AF3301B3B4B4200E671EA /* GCRetractableSectionController.m */; };
 		4E6AF3361B3B4E6800E671EA /* GCSimpleSectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E6AF3351B3B4E6800E671EA /* GCSimpleSectionController.m */; };
+		4E6AF33E1B3C9EC000E671EA /* TitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6AF33D1B3C9EC000E671EA /* TitleTableViewCell.swift */; };
 		4E9130061B2F4B710023C73C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9130051B2F4B710023C73C /* AppDelegate.swift */; };
 		4E91300D1B2F4B710023C73C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E91300B1B2F4B710023C73C /* Main.storyboard */; };
 		4E91300F1B2F4B710023C73C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E91300E1B2F4B710023C73C /* Images.xcassets */; };
@@ -63,6 +64,7 @@
 		4E6AF3301B3B4B4200E671EA /* GCRetractableSectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCRetractableSectionController.m; sourceTree = "<group>"; };
 		4E6AF3341B3B4E6800E671EA /* GCSimpleSectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCSimpleSectionController.h; sourceTree = "<group>"; };
 		4E6AF3351B3B4E6800E671EA /* GCSimpleSectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCSimpleSectionController.m; sourceTree = "<group>"; };
+		4E6AF33D1B3C9EC000E671EA /* TitleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleTableViewCell.swift; sourceTree = "<group>"; };
 		4E9130001B2F4B710023C73C /* Wchair.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wchair.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E9130041B2F4B710023C73C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E9130051B2F4B710023C73C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 				4E9130101B2F4B710023C73C /* LaunchScreen.xib */,
 				4E91300E1B2F4B710023C73C /* Images.xcassets */,
 				4E9130291B2F55FB0023C73C /* GuiaTableViewCell.swift */,
+				4E6AF33D1B3C9EC000E671EA /* TitleTableViewCell.swift */,
 				4E91304B1B366BD20023C73C /* TipoTableViewCell.swift */,
 			);
 			name = VIew;
@@ -308,6 +311,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E6AF33E1B3C9EC000E671EA /* TitleTableViewCell.swift in Sources */,
 				4BB35F171B2F56EA0025AC36 /* PerfilViewController.swift in Sources */,
 				4E91303B1B2F6AB10023C73C /* Usuario.swift in Sources */,
 				4E9130351B2F686A0023C73C /* Model.xcdatamodeld in Sources */,
