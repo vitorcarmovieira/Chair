@@ -84,7 +84,7 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate {
         
     }
     
-    /**------------------------------------------------------------------------------**/
+ /**------------------------------------------------------------------------------**/
     
     let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     
@@ -99,6 +99,7 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate {
         //Save it to the camera roll
         UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
         
+        
     }
     
     
@@ -112,7 +113,7 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate {
         LbPratica.text = "Geral"
         LbName.text = "UserName"
         
-    /**------------------------------------------------------------------------------**/
+ /**------------------------------------------------------------------------------**/
     
         IVPhoto.layer.borderWidth = 7.0
         IVPhoto.layer.masksToBounds = false
@@ -158,7 +159,7 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate {
     }
     
     
-/**-----------------------------FACEBOOK INFO-----------------------------**/
+ /**-----------------------------FACEBOOK INFO-----------------------------**/
     
     func getFacebookDatas(){
         
@@ -211,7 +212,7 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate {
         }
     }
     
-/**---------------------------------------------------------------------------**/
+ /**---------------------------------------------------------------------------**/
     
     func save() {
         var error : NSError?
@@ -220,7 +221,7 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate {
         }
     }
     
-/**---------------------------------------------------------------------------**/
+ /**---------------------------------------------------------------------------**/
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

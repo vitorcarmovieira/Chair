@@ -169,7 +169,5 @@ import CoreGraphics
         linePath.lineWidth = 1.0
         linePath.stroke()
         
-        self.pb_takeSnapshot()
-        
     }
 }
