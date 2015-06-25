@@ -86,7 +86,7 @@
 	
 	cell.textLabel.text = self.title;
 	if (self.contentNumberOfRow != 0) {
-		cell.detailTextLabel.text = [NSString stringWithFormat:NSLocalizedString(@"%i items",), self.contentNumberOfRow];
+        
 		cell.selectionStyle = UITableViewCellSelectionStyleBlue;
         [self setAccessoryViewOnCell:cell];
 	}
@@ -96,6 +96,8 @@
         cell.accessoryView = nil;
         cell.textLabel.textColor = [UIColor blackColor];
 	}
+    
+    cell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Cadeirantes-20"]];
 	
 	return cell;
 }
