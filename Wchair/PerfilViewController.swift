@@ -64,6 +64,7 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate, UIImageP
         UIGraphicsEndImageContext()
         
         //Save it to the camera roll
+        println("Salvou print na galeria")
         UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
         
         
@@ -81,6 +82,7 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate, UIImageP
             openGallary()
         }
     }
+    
     func openGallary()
     {
         picker!.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
@@ -94,7 +96,16 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate, UIImageP
             popover!.presentPopoverFromRect(BtCamera.frame, inView: self.view, permittedArrowDirections: UIPopoverArrowDirection.Any, animated: true)
         }
     }
-  
+
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject])
+    {
+        picker.dismissViewControllerAnimated(true, completion: nil)
+        //ImageUtil.cropToSquare(image: info[UIImagePickerControllerOriginalImage] as! UIImage)
+        IVPhoto.image=(info[UIImagePickerControllerOriginalImage] as! UIImage)
+        
+        //sets the selected image to image view
+    }
+    
 /**------------------------------------------------------------------------------**/
     
     @IBOutlet weak var BtCamera: UIButton!
@@ -119,6 +130,7 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate, UIImageP
                 
         }
         
+        picker!.delegate = self
         alert.addAction(cameraAction)
         alert.addAction(gallaryAction)
         alert.addAction(cancelAction)
