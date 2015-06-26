@@ -11,5 +11,7 @@
 
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import "GCRetractableSectionController.h"
+#import "GCSimpleSectionController.h"
 
 #endif

@@ -19,6 +19,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        var navigationBarAppearace = UINavigationBar.appearance()
+        
+        navigationBarAppearace.tintColor = UIColor.whiteColor()
+        navigationBarAppearace.barTintColor = UIColor(patternImage: UIImage(named: "Cima")!)
+        navigationBarAppearace.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        
+        var tabBarAppearace = UITabBar.appearance()
+        
+        tabBarAppearace.tintColor = UIColor.whiteColor()
+        tabBarAppearace.barTintColor = UIColor(patternImage: UIImage(named: "Baixo")!)
+        
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
     

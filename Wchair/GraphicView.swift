@@ -7,13 +7,22 @@
 //
 
 import UIKit
+import CoreGraphics
 
 @IBDesignable class GraphView: UIView {
-    
     //1 - PROPRIEDADES DO GRADIENTES
     @IBInspectable var startColor: UIColor = UIColor.redColor()
     @IBInspectable var endColor: UIColor = UIColor.greenColor()
-    var graphPoints:[Int] = [0, 2, 4, 3, 6, 5, 8]
+    
+    
+    
+  //  func graphPoints(dom: Int, seg:Int, ter: Int, qua: Int, qui: Int, sex: Int, sab: Int){
+        
+        var graphPoints:[Int] = [4,7,2,7,4,9,2]
+        
+   // }
+    
+  
     
     override func drawRect(rect: CGRect) {
         

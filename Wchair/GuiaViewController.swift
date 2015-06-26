@@ -93,7 +93,7 @@ class GuiaViewController: UIViewController {
            
         }
         
-        self.save();
+        //self.save();
         
     }
     
