@@ -10,9 +10,12 @@ import UIKit
 import CoreData
 import Social
 
-class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate {
+class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate, UIImagePickerControllerDelegate,UINavigationControllerDelegate {
 
     var item: AnyObject?
+    var picker:UIImagePickerController?=UIImagePickerController()
+    var popover:UIPopoverController?=nil
+    
      @IBOutlet weak var LbName: UILabel!
      @IBOutlet weak var IVPhoto: UIImageView!
      @IBOutlet weak var LbPratica: UILabel!
@@ -30,40 +33,107 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate {
     @IBOutlet weak var BtShare: UIButton!
     @IBAction func ShareFacebook(sender: AnyObject) {
         
-        let facebookPost = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
-        facebookPost.completionHandler = {
-            result in
-            switch result {
-            case SLComposeViewControllerResult.Cancelled:
-                //Code to deal with it being cancelled
-                break
-                
-            case SLComposeViewControllerResult.Done:
-                //Code here to deal with it being completed
-                break
-            }
-        }
-        
         self.screenShotMethod()
-        
-        facebookPost.setInitialText("Aqui ficarão os dados do usuario") //The default text in the tweet
-        facebookPost.addImage(UIImage(named: "teste")) //Add an image
-        
-        
-        self.presentViewController(facebookPost, animated: false, completion: {
-            //Optional completion statement
-        })
+        self.socialShare(sharingText: "Uma coisa qualquer", sharingImage: UIImage(named: "teste"))
         
     }
     
 /**------------------------------------------------------------------------------**/
     
+    func socialShare(#sharingText: String?, sharingImage: UIImage?) {
+        var sharingItems = [AnyObject]()
+        
+        if let text = sharingText {
+            sharingItems.append(text)
+        }
+        if let image = sharingImage {
+            sharingItems.append(image)
+        }
+        
+        let activityViewController = UIActivityViewController(activityItems: sharingItems, applicationActivities: nil)
+        activityViewController.excludedActivityTypes = [UIActivityTypeCopyToPasteboard,UIActivityTypeAirDrop,UIActivityTypeAddToReadingList,UIActivityTypeAssignToContact,UIActivityTypePostToTencentWeibo,UIActivityTypePostToVimeo,UIActivityTypePrint,UIActivityTypeSaveToCameraRoll,UIActivityTypePostToWeibo]
+        self.presentViewController(activityViewController, animated: true, completion: nil)
+    }
+    
+    func screenShotMethod() {
+        
+        //Create the UIImage
+        UIGraphicsBeginImageContext(view.frame.size)
+        view.layer.renderInContext(UIGraphicsGetCurrentContext())
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        //Save it to the camera roll
+        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+        
+        
+    }
+    
+    func openCamera()
+    {
+        if(UIImagePickerController .isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera))
+        {
+            picker!.sourceType = UIImagePickerControllerSourceType.Camera
+            self .presentViewController(picker!, animated: true, completion: nil)
+        }
+        else
+        {
+            openGallary()
+        }
+    }
+    func openGallary()
+    {
+        picker!.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+        if UIDevice.currentDevice().userInterfaceIdiom == .Phone
+        {
+            self.presentViewController(picker!, animated: true, completion: nil)
+        }
+        else
+        {
+            popover=UIPopoverController(contentViewController: picker!)
+            popover!.presentPopoverFromRect(BtCamera.frame, inView: self.view, permittedArrowDirections: UIPopoverArrowDirection.Any, animated: true)
+        }
+    }
+  
+/**------------------------------------------------------------------------------**/
+    
     @IBOutlet weak var BtCamera: UIButton!
     @IBAction func CameraAcess(sender: AnyObject) {
         
-        self.screenShotMethod()
-
+        var alert:UIAlertController=UIAlertController(title: "Alterar imagem de perfil", message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
+        
+        var cameraAction = UIAlertAction(title: "Camera", style: UIAlertActionStyle.Default)
+            {
+                UIAlertAction in
+                self.openCamera()
+                
         }
+        var gallaryAction = UIAlertAction(title: "Galeria", style: UIAlertActionStyle.Default)
+            {
+                UIAlertAction in
+                self.openGallary()
+        }
+        var cancelAction = UIAlertAction(title: "Cancelar", style: UIAlertActionStyle.Cancel)
+            {
+                UIAlertAction in
+                
+        }
+        
+        alert.addAction(cameraAction)
+        alert.addAction(gallaryAction)
+        alert.addAction(cancelAction)
+        
+        if UIDevice.currentDevice().userInterfaceIdiom == .Phone
+        {
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+        else
+        {
+            popover=UIPopoverController(contentViewController: alert)
+            popover!.presentPopoverFromRect(BtCamera.frame, inView: self.view, permittedArrowDirections: UIPopoverArrowDirection.Any, animated: true)
+        }
+
+    }
     
 /**------------------------------------------------------------------------------**/
     
@@ -87,22 +157,7 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate {
  /**------------------------------------------------------------------------------**/
     
     let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
-    
-    func screenShotMethod() {
-        
-        //Create the UIImage
-        UIGraphicsBeginImageContext(view.frame.size)
-        view.layer.renderInContext(UIGraphicsGetCurrentContext())
-        let image = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        
-        //Save it to the camera roll
-        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
-        
-        
-    }
-    
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -120,8 +175,6 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate {
         IVPhoto.layer.borderColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0).CGColor
         IVPhoto.layer.cornerRadius = IVPhoto.frame.size.width/2
         IVPhoto.clipsToBounds = true
-        
- /**------------------------------------------------------------------------------**/
         
         FBButom.layer.borderWidth = 0.0
         FBButom.layer.masksToBounds = false
