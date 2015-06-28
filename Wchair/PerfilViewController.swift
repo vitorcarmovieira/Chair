@@ -11,7 +11,8 @@ import CoreData
 import Social
 
 class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate, UIImagePickerControllerDelegate,UINavigationControllerDelegate {
-
+    
+    var shareSS: UIImage?
     var item: AnyObject?
     var picker:UIImagePickerController?=UIImagePickerController()
     var popover:UIPopoverController?=nil
@@ -34,7 +35,7 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate, UIImageP
     @IBAction func ShareFacebook(sender: AnyObject) {
         
         self.screenShotMethod()
-        self.socialShare(sharingText: "Uma coisa qualquer", sharingImage: UIImage(named: "teste"))
+        self.socialShare(sharingText: "Uma coisa qualquer", sharingImage: (self.shareSS))
         
     }
     
@@ -62,7 +63,7 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate, UIImageP
         view.layer.renderInContext(UIGraphicsGetCurrentContext())
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        
+        self.shareSS = image
         //Save it to the camera roll
         println("Salvou print na galeria")
         UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
@@ -101,6 +102,7 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate, UIImageP
     {
         picker.dismissViewControllerAnimated(true, completion: nil)
         //ImageUtil.cropToSquare(image: info[UIImagePickerControllerOriginalImage] as! UIImage)
+        
         IVPhoto.image=(info[UIImagePickerControllerOriginalImage] as! UIImage)
         
         //sets the selected image to image view
