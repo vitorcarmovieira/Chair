@@ -8,12 +8,16 @@
 
 import UIKit
 import CoreData
+import Social
 
-var cont=0
-
-class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate {
-
+class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate, UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+    
+    var NewAvatar: UIImage?
+    var shareSS: UIImage?
     var item: AnyObject?
+    var picker:UIImagePickerController?=UIImagePickerController()
+    var popover:UIPopoverController?=nil
+    
      @IBOutlet weak var LbName: UILabel!
      @IBOutlet weak var IVPhoto: UIImageView!
      @IBOutlet weak var LbPratica: UILabel!
@@ -26,10 +30,129 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate {
         
         }
     
+/**------------------------------------------------------------------------------**/
+    
+    @IBOutlet weak var BtShare: UIButton!
+    @IBAction func ShareFacebook(sender: AnyObject) {
+        
+        self.screenShotMethod()
+        self.socialShare(sharingText: "Meu desempenho em atividades fisicas!", sharingImage: (self.shareSS))
+        
+    }
+    
+/**------------------------------------------------------------------------------**/
+    
+    func socialShare(#sharingText: String?, sharingImage: UIImage?) {
+        var sharingItems = [AnyObject]()
+        
+        if let text = sharingText {
+            sharingItems.append(text)
+        }
+        if let image = sharingImage {
+            sharingItems.append(image)
+        }
+        
+        let activityViewController = UIActivityViewController(activityItems: sharingItems, applicationActivities: nil)
+        activityViewController.excludedActivityTypes = [UIActivityTypeCopyToPasteboard,UIActivityTypeAirDrop,UIActivityTypeAddToReadingList,UIActivityTypeAssignToContact,UIActivityTypePostToTencentWeibo,UIActivityTypePostToVimeo,UIActivityTypePrint,UIActivityTypeSaveToCameraRoll,UIActivityTypePostToWeibo]
+        self.presentViewController(activityViewController, animated: true, completion: nil)
+    }
+    
+    func screenShotMethod() {
+        
+        //Create the UIImage
+        UIGraphicsBeginImageContext(view.frame.size)
+        view.layer.renderInContext(UIGraphicsGetCurrentContext())
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        self.shareSS = UIImage(named: "Graphic");
+        //Save it to the camera roll
+        //println("Salvou print na galeria")
+        //UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+        
+        
+    }
+    
+    func openCamera()
+    {
+        if(UIImagePickerController .isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera))
+        {
+            picker!.sourceType = UIImagePickerControllerSourceType.Camera
+            self .presentViewController(picker!, animated: true, completion: nil)
+        }
+        else
+        {
+            openGallary()
+        }
+    }
+    
+    func openGallary()
+    {
+        picker!.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+        if UIDevice.currentDevice().userInterfaceIdiom == .Phone
+        {
+            self.presentViewController(picker!, animated: true, completion: nil)
+        }
+        else
+        {
+            popover=UIPopoverController(contentViewController: picker!)
+            popover!.presentPopoverFromRect(BtCamera.frame, inView: self.view, permittedArrowDirections: UIPopoverArrowDirection.Any, animated: true)
+        }
+    }
+
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject])
+    {
+        picker.dismissViewControllerAnimated(true, completion: nil)
+        //ImageUtil.cropToSquare(image: info[UIImagePickerControllerOriginalImage] as! UIImage)
+        
+        IVPhoto.image=(info[UIImagePickerControllerOriginalImage] as! UIImage)
+        self.NewAvatar = (info[UIImagePickerControllerOriginalImage] as! UIImage)
+        //sets the selected image to image view
+    }
+    
+/**------------------------------------------------------------------------------**/
+    
+    @IBOutlet weak var BtCamera: UIButton!
+    @IBAction func CameraAcess(sender: AnyObject) {
+        
+        var alert:UIAlertController=UIAlertController(title: "Alterar imagem de perfil", message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
+        
+        var cameraAction = UIAlertAction(title: "Camera", style: UIAlertActionStyle.Default)
+            {
+                UIAlertAction in
+                self.openCamera()
+                
+        }
+        var gallaryAction = UIAlertAction(title: "Galeria", style: UIAlertActionStyle.Default)
+            {
+                UIAlertAction in
+                self.openGallary()
+        }
+        var cancelAction = UIAlertAction(title: "Cancelar", style: UIAlertActionStyle.Cancel)
+            {
+                UIAlertAction in
+                
+        }
+        
+        picker!.delegate = self
+        alert.addAction(cameraAction)
+        alert.addAction(gallaryAction)
+        alert.addAction(cancelAction)
+        
+        if UIDevice.currentDevice().userInterfaceIdiom == .Phone
+        {
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+        else
+        {
+            popover=UIPopoverController(contentViewController: alert)
+            popover!.presentPopoverFromRect(BtCamera.frame, inView: self.view, permittedArrowDirections: UIPopoverArrowDirection.Any, animated: true)
+        }
+
+    }
+    
+/**------------------------------------------------------------------------------**/
+    
     @IBOutlet weak var AllGraficos: UISegmentedControl!
-    
-    
-    
     @IBAction func SegmentControl(sender: UISegmentedControl) {
         
         switch AllGraficos.selectedSegmentIndex{
@@ -46,8 +169,10 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate {
         
     }
     
+ /**------------------------------------------------------------------------------**/
     
     let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,43 +181,41 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate {
         IVPhoto.image = UIImage(named: "teste")
         
         LbPratica.text = "Geral"
-        //let user = self.item as! Usuario
         LbName.text = "UserName"
-//        IVPhoto.image = UIImage(data: user.avatar)
-        
-/**------------------------------------------------------------------------------**/
-    
-        
-        
-        
-
         
  /**------------------------------------------------------------------------------**/
-        
-        //IVPhoto.image = UIImage(named: "teste");
-        //IVPhoto = UIImageView(frame: CGRectMake(0, 0, self.view.bounds.width * 0.19 , self.view.bounds.height * 0.1))
+    
         IVPhoto.layer.borderWidth = 7.0
         IVPhoto.layer.masksToBounds = false
         IVPhoto.layer.borderColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0).CGColor
         IVPhoto.layer.cornerRadius = IVPhoto.frame.size.width/2
         IVPhoto.clipsToBounds = true
         
- /**------------------------------------------------------------------------------**/
-        
         FBButom.layer.borderWidth = 0.0
         FBButom.layer.masksToBounds = false
         FBButom.layer.cornerRadius = FBButom.frame.size.width/2
         FBButom.clipsToBounds = true
         
+        BtShare.layer.borderWidth = 0.0
+        BtShare.layer.masksToBounds = false
+        BtShare.layer.cornerRadius = BtShare.frame.size.width/2
+        BtShare.clipsToBounds = true
+        
+        BtCamera.layer.borderWidth = 0.0
+        BtCamera.layer.masksToBounds = false
+        BtCamera.layer.cornerRadius = BtCamera.frame.size.width/2
+        BtCamera.clipsToBounds = true
+        
  /**------------------------------------------------------------------------------**/
         
         if (FBSDKAccessToken.currentAccessToken() != nil)
         {
-            // User is already logged in, do work such as go to next view controller.
             let fetchRequest = NSFetchRequest(entityName: "Usuario")
             if let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest, error: nil) as? [Usuario] {
+                
                 LbName.text = fetchResults[0].nome
                 IVPhoto.image = UIImage(data: fetchResults[0].avatar)
+
             }
         }
         else
@@ -104,8 +227,7 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate {
     }
     
     
-    
-    /**-----------------------------FACEBOOK INFO-----------------------------**/
+ /**-----------------------------FACEBOOK INFO-----------------------------**/
     
     func getFacebookDatas(){
         
@@ -124,11 +246,7 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate {
                 
                 graphReq.startWithCompletionHandler({
                     
-                    
-                    
                     (connection,result,error: NSError?) -> Void in
-                    
-                    
                     
                     if error != nil {
                         
@@ -144,9 +262,10 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate {
                         Usuario.createInManagedObjectContext(moc, avatar: image, email: "N/A", nome: _name, senha: "N/A")
     
                             self.save()
-                            //return cont = 1;
                             
-                        //self.cadastrar(name: _name, facebookID: _facebookId, photo: image)
+                            self.LbName.text = _name
+                            self.IVPhoto.image = UIImage(data: image)
+
                         }
 
                     }
@@ -161,6 +280,8 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate {
         }
     }
     
+ /**---------------------------------------------------------------------------**/
+    
     func save() {
         var error : NSError?
         if(managedObjectContext!.save(&error) ) {
@@ -168,14 +289,24 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate {
         }
     }
     
-  /**---------------------------------------------------------------------------**/
+   func updateUserAvatar(){
+//    
+//        let fetchRequest = NSFetchRequest(entityName: "Usuario")
+//        fetchRequest.predicate = NSPredicate(format: "avatar == %@", NewAvatar!)
+//        if let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest, error: nil) as?
+//            [Usuario]{
+//                NewAvatar = fetchResults
+//                println("Mudou")
+//        }
+    
+    }
+    
+ /**---------------------------------------------------------------------------**/
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
     
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
         println("User Logged In")
@@ -235,3 +366,5 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate {
     */
 
 }
+
+

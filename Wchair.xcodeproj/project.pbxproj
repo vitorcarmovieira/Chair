@@ -10,6 +10,8 @@
 		4B0DAB701B3A001F00EAFD86 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B0DAB6E1B3A001F00EAFD86 /* FBSDKCoreKit.framework */; };
 		4B0DAB731B3A002E00EAFD86 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B0DAB721B3A002E00EAFD86 /* Bolts.framework */; };
 		4B0DAB751B3A01B400EAFD86 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B0DAB741B3A01B400EAFD86 /* FBSDKLoginKit.framework */; };
+		4B0DAB771B3B47D100EAFD86 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B0DAB761B3B47D100EAFD86 /* FBSDKShareKit.framework */; };
+		4B0DAB791B3DEC8200EAFD86 /* ImageUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0DAB781B3DEC8200EAFD86 /* ImageUtil.swift */; };
 		4BB35F171B2F56EA0025AC36 /* PerfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB35F161B2F56EA0025AC36 /* PerfilViewController.swift */; };
 		4BB35F1B1B31C9730025AC36 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BB35F1A1B31C9730025AC36 /* CoreGraphics.framework */; };
 		4BB35F1F1B31FDEF0025AC36 /* GraphicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB35F1E1B31FDEF0025AC36 /* GraphicView.swift */; };
@@ -52,6 +54,8 @@
 		4B0DAB6E1B3A001F00EAFD86 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = Wchair/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		4B0DAB721B3A002E00EAFD86 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Wchair/Bolts.framework; sourceTree = "<group>"; };
 		4B0DAB741B3A01B400EAFD86 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = Wchair/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		4B0DAB761B3B47D100EAFD86 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = Wchair/FBSDKShareKit.framework; sourceTree = "<group>"; };
+		4B0DAB781B3DEC8200EAFD86 /* ImageUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageUtil.swift; sourceTree = "<group>"; };
 		4BB35F161B2F56EA0025AC36 /* PerfilViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerfilViewController.swift; sourceTree = "<group>"; };
 		4BB35F1A1B31C9730025AC36 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		4BB35F1E1B31FDEF0025AC36 /* GraphicView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphicView.swift; sourceTree = "<group>"; };
@@ -93,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B0DAB771B3B47D100EAFD86 /* FBSDKShareKit.framework in Frameworks */,
 				4B0DAB751B3A01B400EAFD86 /* FBSDKLoginKit.framework in Frameworks */,
 				4B0DAB731B3A002E00EAFD86 /* Bolts.framework in Frameworks */,
 				4B0DAB701B3A001F00EAFD86 /* FBSDKCoreKit.framework in Frameworks */,
@@ -113,6 +118,7 @@
 		4E912FF71B2F4B710023C73C = {
 			isa = PBXGroup;
 			children = (
+				4B0DAB761B3B47D100EAFD86 /* FBSDKShareKit.framework */,
 				4B0DAB741B3A01B400EAFD86 /* FBSDKLoginKit.framework */,
 				4B0DAB721B3A002E00EAFD86 /* Bolts.framework */,
 				4B0DAB6E1B3A001F00EAFD86 /* FBSDKCoreKit.framework */,
@@ -135,6 +141,7 @@
 		4E9130021B2F4B710023C73C /* Wchair */ = {
 			isa = PBXGroup;
 			children = (
+				4B0DAB781B3DEC8200EAFD86 /* ImageUtil.swift */,
 				4E6AF32F1B3B4B4200E671EA /* GCRetractableSectionController.h */,
 				4E6AF3301B3B4B4200E671EA /* GCRetractableSectionController.m */,
 				4E6AF3341B3B4E6800E671EA /* GCSimpleSectionController.h */,
@@ -259,6 +266,7 @@
 				TargetAttributes = {
 					4E912FFF1B2F4B710023C73C = {
 						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = 683FZRRUQW;
 					};
 					4E9130161B2F4B710023C73C = {
 						CreatedOnToolsVersion = 6.3.2;
@@ -331,6 +339,7 @@
 				4E9130281B2F55B00023C73C /* GuiaTableViewController.swift in Sources */,
 				4E6AF32C1B3B331F00E671EA /* PopUpViewControllerSwift.swift in Sources */,
 				4E9130421B31FA1D0023C73C /* ExercicioViewController.swift in Sources */,
+				4B0DAB791B3DEC8200EAFD86 /* ImageUtil.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,6 +468,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/RodrigoC/Documents/FacebookSDK,
@@ -471,6 +482,7 @@
 					/Users/RodrigoC/Documents/FacebookSDK/FBSDKLoginKit.framework,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Wchair/Facebook-Header.h";
 			};
 			name = Debug;
@@ -479,6 +491,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/RodrigoC/Documents/FacebookSDK,
@@ -491,6 +505,7 @@
 					/Users/RodrigoC/Documents/FacebookSDK/FBSDKLoginKit.framework,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Wchair/Facebook-Header.h";
 			};
 			name = Release;
