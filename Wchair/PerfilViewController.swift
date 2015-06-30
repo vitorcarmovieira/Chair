@@ -12,6 +12,7 @@ import Social
 
 class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate, UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     
+    var NewAvatar: UIImage?
     var shareSS: UIImage?
     var item: AnyObject?
     var picker:UIImagePickerController?=UIImagePickerController()
@@ -35,7 +36,7 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate, UIImageP
     @IBAction func ShareFacebook(sender: AnyObject) {
         
         self.screenShotMethod()
-        self.socialShare(sharingText: "Uma coisa qualquer", sharingImage: (self.shareSS))
+        self.socialShare(sharingText: "Meu desempenho em atividades fisicas!", sharingImage: (self.shareSS))
         
     }
     
@@ -63,10 +64,10 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate, UIImageP
         view.layer.renderInContext(UIGraphicsGetCurrentContext())
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        self.shareSS = image
+        self.shareSS = UIImage(named: "Graphic");
         //Save it to the camera roll
-        println("Salvou print na galeria")
-        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+        //println("Salvou print na galeria")
+        //UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
         
         
     }
@@ -104,7 +105,7 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate, UIImageP
         //ImageUtil.cropToSquare(image: info[UIImagePickerControllerOriginalImage] as! UIImage)
         
         IVPhoto.image=(info[UIImagePickerControllerOriginalImage] as! UIImage)
-        
+        self.NewAvatar = (info[UIImagePickerControllerOriginalImage] as! UIImage)
         //sets the selected image to image view
     }
     
@@ -286,6 +287,18 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate, UIImageP
         if(managedObjectContext!.save(&error) ) {
             println(error?.localizedDescription)
         }
+    }
+    
+   func updateUserAvatar(){
+//    
+//        let fetchRequest = NSFetchRequest(entityName: "Usuario")
+//        fetchRequest.predicate = NSPredicate(format: "avatar == %@", NewAvatar!)
+//        if let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest, error: nil) as?
+//            [Usuario]{
+//                NewAvatar = fetchResults
+//                println("Mudou")
+//        }
+    
     }
     
  /**---------------------------------------------------------------------------**/
