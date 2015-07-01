@@ -16,23 +16,43 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
+    
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
         var navigationBarAppearace = UINavigationBar.appearance()
         
         navigationBarAppearace.tintColor = UIColor.whiteColor()
-        navigationBarAppearace.barTintColor = UIColor(patternImage: UIImage(named: "Cima")!)
+        navigationBarAppearace.barTintColor = self.UIColorFromRGB(0x025772)
         navigationBarAppearace.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         
         var tabBarAppearace = UITabBar.appearance()
         
         tabBarAppearace.tintColor = UIColor.whiteColor()
-        tabBarAppearace.barTintColor = UIColor(patternImage: UIImage(named: "Baixo")!)
+        tabBarAppearace.barTintColor = self.UIColorFromRGB(0x025772)
         
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
+    
+    func UIColorFromRGB(rgbValue: UInt) -> UIColor {
+        return UIColor(
+            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
+            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
+            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
+            alpha: CGFloat(1.0)
+        )
+    }
+    
+//    func UiColorFromHex(rgbValue:UInt32)->UIColor{
+//    
+//            let red = CGFloat((rgbValue & 0xFF0000) >> 16)/256.0
+//            let green = CGFloat((rgbValue & 0xFF00) >> 8)/256.0
+//            let blue = CGFloat((rgbValue & 0xFF)/256.0
+//            
+//            return UIColor(red:red, green:green, blue,blue, alpha:1.0)
+//            
+//    }
     
     func application(application: UIApplication,
         openURL url: NSURL,
