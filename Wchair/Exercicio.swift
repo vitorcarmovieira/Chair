@@ -17,10 +17,11 @@ class Exercicio: NSManagedObject {
     @NSManaged var imageGuia: NSData
     @NSManaged var nome: String
     @NSManaged var tempo: String
+    @NSManaged var tipo: String
     @NSManaged var vezesPraticadas: NSDecimalNumber
     
     class func createInManagedObjectContext(moc: NSManagedObjectContext, animacao: NSData, detalhes: String, idEquipamento: String,
-        imageGuia: NSData, nome: String, tempo: String, vezesPraticadas: NSDecimalNumber) ->Exercicio{
+        imageGuia: NSData, nome: String, tempo: String, vezesPraticadas: NSDecimalNumber, tipo: String) ->Exercicio{
             
             let exercicio = NSEntityDescription.insertNewObjectForEntityForName("Exercicio", inManagedObjectContext: moc) as! Exercicio
             
@@ -29,6 +30,7 @@ class Exercicio: NSManagedObject {
             exercicio.idEquipamento = idEquipamento
             exercicio.imageGuia = imageGuia
             exercicio.nome = nome
+            exercicio.tipo = tipo
             exercicio.tempo = tempo
             exercicio.vezesPraticadas = vezesPraticadas
             

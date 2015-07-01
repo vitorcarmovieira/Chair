@@ -14,5 +14,6 @@
 @interface GCSimpleSectionController : GCRetractableSectionController
 
 @property (nonatomic) NSString* titulo;
+- (id)initWithArray:(NSArray*) array viewController:(UIViewController *)givenViewController;
 
 @end

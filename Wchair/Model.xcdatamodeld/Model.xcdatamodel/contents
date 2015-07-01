@@ -20,6 +20,7 @@
         <attribute name="imageGuia" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="tempo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tipo" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="vezesPraticadas" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
     </entity>
     <entity name="Local" representedClassName="Local" syncable="YES">
@@ -38,7 +39,7 @@
     <elements>
         <element name="Equipamento" positionX="27" positionY="144" width="128" height="105"/>
         <element name="Esporte" positionX="0" positionY="108" width="128" height="120"/>
-        <element name="Exercicio" positionX="-18" positionY="54" width="128" height="150"/>
+        <element name="Exercicio" positionX="-18" positionY="54" width="128" height="165"/>
         <element name="Local" positionX="9" positionY="117" width="128" height="120"/>
         <element name="Usuario" positionX="-45" positionY="0" width="128" height="105"/>
     </elements>

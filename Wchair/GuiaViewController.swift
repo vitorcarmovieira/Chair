@@ -18,39 +18,39 @@ class GuiaViewController: UIViewController {
         //imagens dos exercicios
         var imageAbracoBola = UIImagePNGRepresentation(UIImage (named: "AbracoBola"));
         var imageApoioBola = UIImagePNGRepresentation(UIImage (named: "ApoioBola"));
-        var imageCrucifixoPolia = UIImagePNGRepresentation(UIImage (named: "CrucifixoPolia"));
-        var imageDesenvolvimentoHalteres = UIImagePNGRepresentation(UIImage (named: "DesenvolvimentoHalteres"));
-        var imageElasticoTensao = UIImagePNGRepresentation(UIImage (named: "ElasticoTensao"));
-        var imageElevacaoHalteres = UIImagePNGRepresentation(UIImage (named: "ElevacaoHalteres"));
-        var imageElevacaoLateral = UIImagePNGRepresentation(UIImage (named: "ElevacaoLateral"));
-        var imageExtensaoQuadril = UIImagePNGRepresentation(UIImage (named: "ExtensaoQuadril"));
-        var imagePulleyCorda = UIImagePNGRepresentation(UIImage (named: "PulleyCorda"));
-        var imagePulleyTriceps = UIImagePNGRepresentation(UIImage (named: "PulleyTriceps"));
-        var imagePuxadorAltoAtrasNuca = UIImagePNGRepresentation(UIImage (named: "PuxadorAltoAtrasNuca"));
-        var imagePuxadorFechado = UIImagePNGRepresentation(UIImage (named: "PuxadorFechado"));
-        var imagePuxadorHorizontal = UIImagePNGRepresentation(UIImage (named: "PuxadorHorizontal"));
-        var imagePuxadorVertical = UIImagePNGRepresentation(UIImage (named: "PuxadorVertical"));
-        var imageRoscaIndividual = UIImagePNGRepresentation(UIImage (named: "RoscaIndividual"));
-        var imageRoscaMartelo = UIImagePNGRepresentation(UIImage (named: "RoscaMartelo"));
-        var imageRoscaSimultanea = UIImagePNGRepresentation(UIImage (named: "RoscaSimultanea"));
-
-        //imagens dos esportes
-        var imageBasquete = UIImagePNGRepresentation(UIImage (named: "Basquete3"));
-        var imageTenisMesa = UIImagePNGRepresentation(UIImage (named: "Tenis_de_mesa"));
-        var imageBocha = UIImagePNGRepresentation(UIImage (named: "Bocha"));
-        var imageRugby = UIImagePNGRepresentation(UIImage (named: "Rugby"));
-        var imageTenis = UIImagePNGRepresentation(UIImage (named: "Tenis"));
-        var imageTiroArco = UIImagePNGRepresentation(UIImage (named: "Tiro-Com-Arco"));
-        var imageTiroEsportivo = UIImagePNGRepresentation(UIImage (named: "Tiro-Esportivo"));
-        var imageHalterofilismo = UIImagePNGRepresentation(UIImage (named: "Halterofilismo"));
-        var imageAtletismo = UIImagePNGRepresentation(UIImage (named: "Atletismo"));
-        var imageEsgrima = UIImagePNGRepresentation(UIImage (named: "Esgrima"));
-        var imageNatacao = UIImagePNGRepresentation(UIImage (named: "Natacao"));
+//        var imageCrucifixoPolia = UIImagePNGRepresentation(UIImage (named: "CrucifixoPolia"));
+//        var imageDesenvolvimentoHalteres = UIImagePNGRepresentation(UIImage (named: "DesenvolvimentoHalteres"));
+//        var imageElasticoTensao = UIImagePNGRepresentation(UIImage (named: "ElasticoTensao"));
+//        var imageElevacaoHalteres = UIImagePNGRepresentation(UIImage (named: "ElevacaoHalteres"));
+//        var imageElevacaoLateral = UIImagePNGRepresentation(UIImage (named: "ElevacaoLateral"));
+//        var imageExtensaoQuadril = UIImagePNGRepresentation(UIImage (named: "ExtensaoQuadril"));
+//        var imagePulleyCorda = UIImagePNGRepresentation(UIImage (named: "PulleyCorda"));
+//        var imagePulleyTriceps = UIImagePNGRepresentation(UIImage (named: "PulleyTriceps"));
+//        var imagePuxadorAltoAtrasNuca = UIImagePNGRepresentation(UIImage (named: "PuxadorAltoAtrasNuca"));
+//        var imagePuxadorFechado = UIImagePNGRepresentation(UIImage (named: "PuxadorFechado"));
+//        var imagePuxadorHorizontal = UIImagePNGRepresentation(UIImage (named: "PuxadorHorizontal"));
+//        var imagePuxadorVertical = UIImagePNGRepresentation(UIImage (named: "PuxadorVertical"));
+//        var imageRoscaIndividual = UIImagePNGRepresentation(UIImage (named: "RoscaIndividual"));
+//        var imageRoscaMartelo = UIImagePNGRepresentation(UIImage (named: "RoscaMartelo"));
+//        var imageRoscaSimultanea = UIImagePNGRepresentation(UIImage (named: "RoscaSimultanea"));
+//
+//        //imagens dos esportes
+//        var imageBasquete = UIImagePNGRepresentation(UIImage (named: "Basquete3"));
+//        var imageTenisMesa = UIImagePNGRepresentation(UIImage (named: "Tenis_de_mesa"));
+//        var imageBocha = UIImagePNGRepresentation(UIImage (named: "Bocha"));
+//        var imageRugby = UIImagePNGRepresentation(UIImage (named: "Rugby"));
+//        var imageTenis = UIImagePNGRepresentation(UIImage (named: "Tenis"));
+//        var imageTiroArco = UIImagePNGRepresentation(UIImage (named: "Tiro-Com-Arco"));
+//        var imageTiroEsportivo = UIImagePNGRepresentation(UIImage (named: "Tiro-Esportivo"));
+//        var imageHalterofilismo = UIImagePNGRepresentation(UIImage (named: "Halterofilismo"));
+//        var imageAtletismo = UIImagePNGRepresentation(UIImage (named: "Atletismo"));
+//        var imageEsgrima = UIImagePNGRepresentation(UIImage (named: "Esgrima"));
+//        var imageNatacao = UIImagePNGRepresentation(UIImage (named: "Natacao"));
         
         if let moc = self.managedObjectContext{
-                        Exercicio.createInManagedObjectContext(moc, animacao: NSData(), detalhes: "Exercício para os Braços", idEquipamento: "Bola", imageGuia: imageAbracoBola, nome: "Abraço com Bola", tempo: "5min", vezesPraticadas: 3);
+            Exercicio.createInManagedObjectContext(moc, animacao: NSData(), detalhes: "Exercício para os Braços", idEquipamento: "Bola", imageGuia: imageAbracoBola, nome: "Abraço com Bola", tempo: "5min", vezesPraticadas: 3, tipo: "ombro");
             
-                        Exercicio.createInManagedObjectContext(moc, animacao: NSData(), detalhes: "Exercício para as Costas", idEquipamento: "Bola", imageGuia: imageApoioBola, nome: "Apoio com Bola", tempo: "5min", vezesPraticadas: 45);
+            Exercicio.createInManagedObjectContext(moc, animacao: NSData(), detalhes: "Exercício para as Costas", idEquipamento: "Bola", imageGuia: imageApoioBola, nome: "Apoio com Bola", tempo: "5min", vezesPraticadas: 45, tipo: "costas");
             //
             //            Exercicio.createInManagedObjectContext(moc, animacao: NSData(), detalhes: "Exercício para as Costas", idEquipamento: "1", imageGuia: NSData(), nome: "Puxador Fechado", tempo: "30min", vezesPraticadas: 45);
             //
@@ -93,7 +93,7 @@ class GuiaViewController: UIViewController {
            
         }
         
-        //self.save();
+        self.save();
         
     }
     
