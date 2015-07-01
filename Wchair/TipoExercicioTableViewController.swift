@@ -19,7 +19,7 @@ class TipoExercicioTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        self.populate()
+        //self.populate()
         
         let fetchRequest1 = NSFetchRequest(entityName: "Exercicio")
         fetchRequest1.predicate = NSPredicate(format: "tipo == %@", "ombro")
