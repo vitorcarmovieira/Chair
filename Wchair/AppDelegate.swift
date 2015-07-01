@@ -32,6 +32,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         tabBarAppearace.tintColor = UIColor.whiteColor()
         tabBarAppearace.barTintColor = self.UIColorFromRGB(0x025772)
         
+        let tabBarController = self.window?.rootViewController as! UITabBarController
+        let tabBar = tabBarController.tabBar as UITabBar
+        
+        var tabBarItemTreino = tabBar.items![0] as! UITabBarItem
+        var tabBarItemExerci = tabBar.items![1] as! UITabBarItem
+        var tabBarItemPerfil = tabBar.items![2] as! UITabBarItem
+        var tabBarItemSports = tabBar.items![3] as! UITabBarItem
+        
+        tabBarItemTreino.image = UIImage(named: "tabbar-treino")!.imageWithRenderingMode(.AlwaysOriginal)
+        tabBarItemExerci.image = UIImage(named: "tabbar-exercicio")!.imageWithRenderingMode(.AlwaysOriginal)
+        tabBarItemPerfil.image = UIImage(named: "tabbar-perfil")!.imageWithRenderingMode(.AlwaysOriginal)
+        tabBarItemSports.image = UIImage(named: "tabbar-esportes")!.imageWithRenderingMode(.AlwaysOriginal)
+        
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
     

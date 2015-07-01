@@ -11,6 +11,7 @@ import UIKit
 class ExercicioViewController: UIViewController {
     
     var exercicio: Exercicio?
+    var buttonSelected: Bool?
     
     @IBOutlet weak var iniciarButton: UIButton!
     @IBOutlet weak var cronometroLabel: UILabel!
@@ -21,28 +22,27 @@ class ExercicioViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        self.buttonSelected = true
     }
 
     @IBAction func iniciar(sender: AnyObject) {
         
-        let nome = iniciarButton.titleLabel?.text
-        
-        if nome! == "Iniciar"{
+        if buttonSelected!{
             
             let aSelector : Selector = "updateTime"
             timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target:self, selector: aSelector, userInfo: nil, repeats: true)
             startTime = NSDate.timeIntervalSinceReferenceDate()
             
-            iniciarButton.setTitle("Parar", forState: UIControlState.Normal)
+            iniciarButton.setImage(UIImage(named: "Botão-stop"), forState: UIControlState.Normal)
+            self.buttonSelected = false
         } else{
             
             timer.invalidate()
             timer = NSTimer()
             
             var popViewController : PopUpViewControllerSwift = PopUpViewControllerSwift(nibName: "PopUpViewController_iPhone6", bundle: nil)
-            popViewController.title = "This is a popup view"
-            popViewController.showInView(self.view, withImage: UIImage(named: "Hugby"), withMessage: "You just triggered a great popup window", animated: true)
+            popViewController.title = "Seu tempo"
+            popViewController.showInView(self.view, withImage: UIImage(named: "Rugby"), withMessage: cronometroLabel.text!, animated: true)
         }
     }
     
