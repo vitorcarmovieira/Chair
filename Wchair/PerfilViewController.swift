@@ -178,16 +178,16 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate, UIImageP
         super.viewDidLoad()
         
         LbName.text = "UserName"
-        IVPhoto.image = UIImage(named: "teste")
+        IVPhoto.image = UIImage(named: "Assets Perfil-70")
         
         LbPratica.text = "Geral"
         LbName.text = "UserName"
         
  /**------------------------------------------------------------------------------**/
     
-        IVPhoto.layer.borderWidth = 7.0
+        IVPhoto.layer.borderWidth = 6.0
         IVPhoto.layer.masksToBounds = false
-        IVPhoto.layer.borderColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0).CGColor
+        IVPhoto.layer.borderColor = UIColor(red: 0.69, green: 0.84, blue: 0.18, alpha: 1.0).CGColor
         IVPhoto.layer.cornerRadius = IVPhoto.frame.size.width/2
         IVPhoto.clipsToBounds = true
         
