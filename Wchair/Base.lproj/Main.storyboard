@@ -2,6 +2,8 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -333,36 +335,78 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ZW-FM-duC">
-                                <rect key="frame" x="0.0" y="20" width="187" height="300"/>
-                                <color key="backgroundColor" red="0.61176470589999998" green="0.71372549019999998" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Button">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ZW-FM-duC">
+                                <rect key="frame" x="0.0" y="64" width="188" height="277"/>
+                                <color key="backgroundColor" red="1" green="0.59607843137254901" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="277" id="DbW-CG-8QD"/>
+                                    <constraint firstAttribute="width" constant="188" id="SOZ-uq-9Wz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="25"/>
+                                <state key="normal" title="Força">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ojb-2p-ZLX">
-                                <rect key="frame" x="188" y="20" width="187" height="300"/>
-                                <color key="backgroundColor" red="0.050980392159999999" green="0.36078431370000003" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Button">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ojb-2p-ZLX">
+                                <rect key="frame" x="188" y="64" width="188" height="277"/>
+                                <color key="backgroundColor" red="0.95686274509803926" green="0.2627450980392157" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="25"/>
+                                <state key="normal" title="Cardio">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oYv-zR-awz">
-                                <rect key="frame" x="0.0" y="318" width="187" height="300"/>
-                                <color key="backgroundColor" red="0.050980392159999999" green="0.36078431370000003" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Button">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LdB-n0-8Gs">
+                                <rect key="frame" x="188" y="341" width="188" height="277"/>
+                                <color key="backgroundColor" red="0.24705882352941178" green="0.31764705882352939" blue="0.70980392156862748" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="25"/>
+                                <state key="normal" title="Alongamento">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LdB-n0-8Gs">
-                                <rect key="frame" x="188" y="318" width="187" height="300"/>
-                                <color key="backgroundColor" red="0.61176470589999998" green="0.71372549019999998" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Button">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8e3-JA-I5p">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="YSV-A4-ht8"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Treinos" id="Osz-b1-HmS"/>
+                                </items>
+                            </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oYv-zR-awz">
+                                <rect key="frame" x="0.0" y="341" width="188" height="277"/>
+                                <color key="backgroundColor" red="0.0" green="0.58823529411764708" blue="0.53333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="25"/>
+                                <state key="normal" title="Pilates">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="8e3-JA-I5p" secondAttribute="trailing" constant="-16" id="1uX-es-eSj"/>
+                            <constraint firstItem="oYv-zR-awz" firstAttribute="trailing" secondItem="6ZW-FM-duC" secondAttribute="trailing" id="314-8q-5c5"/>
+                            <constraint firstItem="LdB-n0-8Gs" firstAttribute="top" secondItem="oYv-zR-awz" secondAttribute="top" id="5oa-aK-w2K"/>
+                            <constraint firstItem="8e3-JA-I5p" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="-16" id="83r-pa-h7m"/>
+                            <constraint firstItem="6ZW-FM-duC" firstAttribute="top" secondItem="8e3-JA-I5p" secondAttribute="bottom" id="88M-To-gu2"/>
+                            <constraint firstItem="6ZW-FM-duC" firstAttribute="leading" secondItem="8e3-JA-I5p" secondAttribute="leading" id="8mP-nI-DNW"/>
+                            <constraint firstItem="Ojb-2p-ZLX" firstAttribute="baseline" secondItem="6ZW-FM-duC" secondAttribute="firstBaseline" id="BBF-TS-dDB"/>
+                            <constraint firstItem="Ojb-2p-ZLX" firstAttribute="top" secondItem="6ZW-FM-duC" secondAttribute="top" id="CgR-pV-WrV"/>
+                            <constraint firstItem="LdB-n0-8Gs" firstAttribute="baseline" secondItem="oYv-zR-awz" secondAttribute="firstBaseline" id="Fs6-jB-WUe"/>
+                            <constraint firstItem="oYv-zR-awz" firstAttribute="baseline" secondItem="LdB-n0-8Gs" secondAttribute="firstBaseline" id="Gxw-xg-Aib"/>
+                            <constraint firstItem="Ojb-2p-ZLX" firstAttribute="leading" secondItem="6ZW-FM-duC" secondAttribute="trailing" id="O3X-q5-kFc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ojb-2p-ZLX" secondAttribute="trailing" constant="-17" id="TVt-HH-VX4"/>
+                            <constraint firstItem="6ZW-FM-duC" firstAttribute="leading" secondItem="oYv-zR-awz" secondAttribute="leading" id="TYa-Yx-msh"/>
+                            <constraint firstItem="Ojb-2p-ZLX" firstAttribute="trailing" secondItem="LdB-n0-8Gs" secondAttribute="trailing" id="Z4b-w9-ZyJ"/>
+                            <constraint firstItem="oYv-zR-awz" firstAttribute="bottom" secondItem="Djb-ko-YwX" secondAttribute="top" id="aV9-ma-lfB"/>
+                            <constraint firstItem="8e3-JA-I5p" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" id="cSb-6c-puO"/>
+                            <constraint firstItem="LdB-n0-8Gs" firstAttribute="leading" secondItem="Ojb-2p-ZLX" secondAttribute="leading" id="gfK-bb-myb"/>
+                            <constraint firstItem="oYv-zR-awz" firstAttribute="top" secondItem="6ZW-FM-duC" secondAttribute="bottom" id="lgh-YC-Bky"/>
+                            <constraint firstItem="6ZW-FM-duC" firstAttribute="baseline" secondItem="Ojb-2p-ZLX" secondAttribute="firstBaseline" id="n47-fu-pqw"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" id="cPa-gy-q4n">
                         <inset key="imageInsets" minX="0.0" minY="7" maxX="0.0" maxY="-7"/>
@@ -538,8 +582,8 @@
                                 </constraints>
                                 <segments>
                                     <segment title="Geral"/>
-                                    <segment title="Esp 1"/>
-                                    <segment title="Esp 2"/>
+                                    <segment title="Basquete"/>
+                                    <segment title="Esgrima"/>
                                 </segments>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>

@@ -159,9 +159,9 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate, UIImageP
         case 0:
             LbPratica.text = "Geral"
         case 1:
-            LbPratica.text = "Especifico 1"
+            LbPratica.text = "Basquete"
         case 2:
-            LbPratica.text = "Especifico 2"
+            LbPratica.text = "Esgrima"
             
         default: NSLog("Invalid Input")
         }
