@@ -28,7 +28,6 @@
 //Must be subclassed to work properly
 @property (nonatomic, copy, readonly) NSString* title;
 @property (nonatomic, readonly) NSUInteger contentNumberOfRow;
-- (NSString*) titleContentForRow:(NSUInteger) row;
 
 //Can be subclassed for more control
 - (UITableViewCell*) titleCell;

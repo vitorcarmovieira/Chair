@@ -61,8 +61,10 @@
 	return NSLocalizedString(@"No title",);
 }
 
-- (NSString*) titleContentForRow:(NSUInteger) row {
-	return NSLocalizedString(@"No title",);
+- (Exercicio*) titleContentForRow:(NSUInteger) row {
+//	return NSLocalizedString(@"No title",);
+    Exercicio *exercicio = [Exercicio new];
+    return exercicio;
 }
 
 #pragma mark -
@@ -125,8 +127,9 @@
 		cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 	}
 	
-    cell.nome.text = [self titleContentForRow:row];
-    cell.imagem.image = [UIImage imageNamed:@"Rugby"];
+    Exercicio *exercicio = [self titleContentForRow:row];
+    cell.nome.text = exercicio.nome;
+    cell.imagem.image = [UIImage imageWithData:exercicio.imageGuia];
 	
 	return cell;
 }

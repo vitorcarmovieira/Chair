@@ -33,8 +33,8 @@
     return NSLocalizedString(self.titulo,);
 }
 
-- (NSString *)titleContentForRow:(NSUInteger)row {
-    return [[self.colors objectAtIndex:row] nome];
+- (Exercicio *)titleContentForRow:(NSUInteger)row {
+    return [self.colors objectAtIndex:row];
 }
 
 - (NSUInteger)contentNumberOfRow {
