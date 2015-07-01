@@ -25,14 +25,14 @@
             </objects>
             <point key="canvasLocation" x="-0.5" y="-852.5"/>
         </scene>
-        <!--Tipo Exercicio Table View Controller-->
+        <!--Exercicios-->
         <scene sceneID="weU-1W-zwJ">
             <objects>
                 <tableViewController id="fXz-mS-6FI" customClass="TipoExercicioTableViewController" customModule="Wchair" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" id="TK9-lg-cgD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.61176470589999998" green="0.71372549019999998" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="tipoExercicioCell" rowHeight="80" id="YCb-fM-P9L" customClass="TipoTableViewCell" customModule="Wchair" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -45,11 +45,12 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nome do exercicio" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tpx-yU-5Uh">
                                             <rect key="frame" x="86" y="29" width="145" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.61176470589999998" green="0.71372549019999998" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="imagem" destination="CLj-la-TlL" id="tq4-LF-5gV"/>
                                     <outlet property="nome" destination="Tpx-yU-5Uh" id="bKD-bO-df8"/>
@@ -85,7 +86,7 @@
                             <outlet property="delegate" destination="fXz-mS-6FI" id="09M-Qq-3bA"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="YIg-Kn-cBv"/>
+                    <navigationItem key="navigationItem" title="Exercicios" id="YIg-Kn-cBv"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kT9-0L-aEQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -178,7 +179,7 @@
             </objects>
             <point key="canvasLocation" x="1171" y="-1889"/>
         </scene>
-        <!--Exercicio View Controller-->
+        <!--Title-->
         <scene sceneID="fbW-IW-YGp">
             <objects>
                 <viewController storyboardIdentifier="exercicio" id="lR2-08-aCK" customClass="ExercicioViewController" customModule="Wchair" customModuleProvider="target" sceneMemberID="viewController">
@@ -212,8 +213,10 @@
                         </subviews>
                         <color key="backgroundColor" red="0.61176470589999998" green="0.71372549019999998" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="jr6-ht-WJ1"/>
                     <connections>
                         <outlet property="cronometroLabel" destination="jEp-Db-3pi" id="j6V-TJ-Cfn"/>
+                        <outlet property="imagem" destination="GDE-a8-eG5" id="R0m-ER-OD5"/>
                         <outlet property="iniciarButton" destination="nj9-5q-SsM" id="Uu3-sJ-ON0"/>
                     </connections>
                 </viewController>
@@ -240,16 +243,16 @@
             </objects>
             <point key="canvasLocation" x="673.5" y="-0.5"/>
         </scene>
-        <!--Esportes Table View Controller-->
+        <!--Esportes-->
         <scene sceneID="Wkm-7b-gd5">
             <objects>
                 <tableViewController id="G2r-Lc-oV5" customClass="EsportesTableViewController" customModule="Wchair" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" id="tRD-BW-41E">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.61176470589999998" green="0.71372549019999998" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="esporteCell" rowHeight="80" id="9XX-ej-k4a" customClass="GuiaTableViewCell" customModule="Wchair" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="esporteCell" rowHeight="80" id="9XX-ej-k4a" customClass="GuiaTableViewCell" customModule="Wchair" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9XX-ej-k4a" id="sWc-fo-hIq">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -260,11 +263,12 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nome do exercicio" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mhZ-fB-kX7">
                                             <rect key="frame" x="86" y="29" width="145" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.61176470589999998" green="0.71372549019999998" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="imagem" destination="5j2-Nt-EgI" id="3zV-B9-IYK"/>
                                     <outlet property="name" destination="mhZ-fB-kX7" id="zYo-W9-heI"/>
@@ -277,7 +281,7 @@
                             <outlet property="delegate" destination="G2r-Lc-oV5" id="LYc-R3-yrE"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="YKE-bf-jyC"/>
+                    <navigationItem key="navigationItem" title="Esportes" id="YKE-bf-jyC"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wb1-7s-0A3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

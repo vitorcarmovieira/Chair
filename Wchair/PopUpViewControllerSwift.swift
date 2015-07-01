@@ -34,7 +34,6 @@ import QuartzCore
     func showInView(aView: UIView!, withImage image : UIImage!, withMessage message: String!, animated: Bool)
     {
         aView.addSubview(self.view)
-        logoImg!.image = image
         messageLabel!.text = message
         if animated
         {
