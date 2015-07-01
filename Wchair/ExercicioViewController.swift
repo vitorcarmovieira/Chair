@@ -13,6 +13,7 @@ class ExercicioViewController: UIViewController {
     var exercicio: Exercicio?
     var buttonSelected: Bool?
     
+    @IBOutlet weak var imagem: UIImageView!
     @IBOutlet weak var iniciarButton: UIButton!
     @IBOutlet weak var cronometroLabel: UILabel!
     
@@ -23,6 +24,10 @@ class ExercicioViewController: UIViewController {
         super.viewDidLoad()
         
         self.buttonSelected = true
+        
+        self.title = self.exercicio?.nome
+        let data = self.exercicio?.imageGuia
+        self.imagem.image = UIImage(data: data!)
     }
 
     @IBAction func iniciar(sender: AnyObject) {
