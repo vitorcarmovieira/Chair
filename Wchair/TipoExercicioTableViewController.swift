@@ -22,7 +22,7 @@ class TipoExercicioTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //self.populate()
+        self.populate()
         
         let fetchRequest1 = NSFetchRequest(entityName: "Exercicio")
         fetchRequest1.predicate = NSPredicate(format: "tipo == %@", "ombro")
@@ -195,22 +195,22 @@ class TipoExercicioTableViewController: UITableViewController {
         
         var imageAbracoBola = UIImagePNGRepresentation(UIImage (named: "AbracoBola"));
         var imageApoioBola = UIImagePNGRepresentation(UIImage (named: "ApoioBola"));
-        //        var imageCrucifixoPolia = UIImagePNGRepresentation(UIImage (named: "CrucifixoPolia"));
-        //        var imageDesenvolvimentoHalteres = UIImagePNGRepresentation(UIImage (named: "DesenvolvimentoHalteres"));
-        //        var imageElasticoTensao = UIImagePNGRepresentation(UIImage (named: "ElasticoTensao"));
-        //        var imageElevacaoHalteres = UIImagePNGRepresentation(UIImage (named: "ElevacaoHalteres"));
-        //        var imageElevacaoLateral = UIImagePNGRepresentation(UIImage (named: "ElevacaoLateral"));
-        //        var imageExtensaoQuadril = UIImagePNGRepresentation(UIImage (named: "ExtensaoQuadril"));
-        //        var imagePulleyCorda = UIImagePNGRepresentation(UIImage (named: "PulleyCorda"));
-        //        var imagePulleyTriceps = UIImagePNGRepresentation(UIImage (named: "PulleyTriceps"));
-        //        var imagePuxadorAltoAtrasNuca = UIImagePNGRepresentation(UIImage (named: "PuxadorAltoAtrasNuca"));
-        //        var imagePuxadorFechado = UIImagePNGRepresentation(UIImage (named: "PuxadorFechado"));
-        //        var imagePuxadorHorizontal = UIImagePNGRepresentation(UIImage (named: "PuxadorHorizontal"));
-        //        var imagePuxadorVertical = UIImagePNGRepresentation(UIImage (named: "PuxadorVertical"));
-        //        var imageRoscaIndividual = UIImagePNGRepresentation(UIImage (named: "RoscaIndividual"));
-        //        var imageRoscaMartelo = UIImagePNGRepresentation(UIImage (named: "RoscaMartelo"));
-        //        var imageRoscaSimultanea = UIImagePNGRepresentation(UIImage (named: "RoscaSimultanea"));
-        //
+                var imageCrucifixoPolia = UIImagePNGRepresentation(UIImage (named: "CrucifixoPolia"));
+                var imageDesenvolvimentoHalteres = UIImagePNGRepresentation(UIImage (named: "DesenvolvimentoHalteres"));
+                var imageElasticoTensao = UIImagePNGRepresentation(UIImage (named: "ElasticoTensao"));
+                var imageElevacaoHalteres = UIImagePNGRepresentation(UIImage (named: "ElevacaoHalteres"));
+                var imageElevacaoLateral = UIImagePNGRepresentation(UIImage (named: "ElevacaoLateral"));
+                var imageExtensaoQuadril = UIImagePNGRepresentation(UIImage (named: "ExtensaoQuadril"));
+                var imagePulleyCorda = UIImagePNGRepresentation(UIImage (named: "PulleyCorda"));
+                var imagePulleyTriceps = UIImagePNGRepresentation(UIImage (named: "PulleyTriceps"));
+                var imagePuxadorAltoAtrasNuca = UIImagePNGRepresentation(UIImage (named: "PuxadorAltoAtrasNuca"));
+                var imagePuxadorFechado = UIImagePNGRepresentation(UIImage (named: "PuxadorFechado"));
+                var imagePuxadorHorizontal = UIImagePNGRepresentation(UIImage (named: "PuxadorHorizontal"));
+                var imagePuxadorVertical = UIImagePNGRepresentation(UIImage (named: "PuxadorVertical"));
+                var imageRoscaIndividual = UIImagePNGRepresentation(UIImage (named: "RoscaIndividual"));
+                var imageRoscaMartelo = UIImagePNGRepresentation(UIImage (named: "RoscaMartelo"));
+                var imageRoscaSimultanea = UIImagePNGRepresentation(UIImage (named: "RoscaSimultanea"));
+        
         //        //imagens dos esportes
                 var imageBasquete = UIImagePNGRepresentation(UIImage (named: "Esportes-basquete"));
                 var imageTenisMesa = UIImagePNGRepresentation(UIImage (named: "Esportes-tenisMesa"));
@@ -228,23 +228,23 @@ class TipoExercicioTableViewController: UITableViewController {
             Exercicio.createInManagedObjectContext(moc, animacao: NSData(), detalhes: "Exercício para os Braços", idEquipamento: "Bola", imageGuia: imageAbracoBola, nome: "Abraço com Bola", tempo: "5min", vezesPraticadas: 3, tipo: "ombro");
             
             Exercicio.createInManagedObjectContext(moc, animacao: NSData(), detalhes: "Exercício para as Costas", idEquipamento: "Bola", imageGuia: imageApoioBola, nome: "Apoio com Bola", tempo: "5min", vezesPraticadas: 45, tipo: "costas");
-            //
-            //            Exercicio.createInManagedObjectContext(moc, animacao: NSData(), detalhes: "Exercício para as Costas", idEquipamento: "1", imageGuia: NSData(), nome: "Puxador Fechado", tempo: "30min", vezesPraticadas: 45);
-            //
-            //            Exercicio.createInManagedObjectContext(moc, animacao: NSData(), detalhes: "Exercício para os Ombros", idEquipamento: "1", imageGuia: NSData(), nome: "Elevação Lateral", tempo: "30min", vezesPraticadas: 45);
-            //
-            //            Exercicio.createInManagedObjectContext(moc, animacao: NSData(), detalhes: "Exercício para os Ombros", idEquipamento: "1", imageGuia: NSData(), nome: "Elástico de Tensão", tempo: "30min", vezesPraticadas: 45);
-            //
-            //            Exercicio.createInManagedObjectContext(moc, animacao: NSData(), detalhes: "Exercício para os Ombros", idEquipamento: "1", imageGuia: NSData(), nome: "Desenvolvimento com Hálteres", tempo: "30min", vezesPraticadas: 45);
-            //
-            //
-            //            Exercicio.createInManagedObjectContext(moc, animacao: NSData(), detalhes: "Exercício para os Bíceps", idEquipamento: "1", imageGuia: NSData(), nome: "Rosca Simultânea.", tempo: "30min", vezesPraticadas: 45);
-            //
-            //            Exercicio.createInManagedObjectContext(moc, animacao: NSData(), detalhes: "Exercício para os Bíceps", idEquipamento: "1", imageGuia: NSData(), nome: "Rosca Individual Polia Alta", tempo: "30min", vezesPraticadas: 45);
-            //
-            //            Exercicio.createInManagedObjectContext(moc, animacao: NSData(), detalhes: "Exercício para os Tríceps", idEquipamento: "1", imageGuia: NSData(), nome: "Pulley Tríceps", tempo: "30min", vezesPraticadas: 45);
-            //
-            //            Exercicio.createInManagedObjectContext(moc, animacao: NSData(), detalhes: "Exercício para os Tríceps", idEquipamento: "1", imageGuia: NSData(), nome: "Pulley Corda", tempo: "30min", vezesPraticadas: 45);
+            
+            Exercicio.createInManagedObjectContext(moc, animacao: NSData(), detalhes: "Exercício para as Costas", idEquipamento: "1", imageGuia: NSData(), nome: "Puxador Fechado", tempo: "30min", vezesPraticadas: 45, tipo: "costas");
+            
+            Exercicio.createInManagedObjectContext(moc, animacao: NSData(), detalhes: "Exercício para os Ombros", idEquipamento: "1", imageGuia: NSData(), nome: "Elevação Lateral", tempo: "30min", vezesPraticadas: 45, tipo: "ombro");
+            
+            Exercicio.createInManagedObjectContext(moc, animacao: NSData(), detalhes: "Exercício para os Ombros", idEquipamento: "1", imageGuia: NSData(), nome: "Elástico de Tensão", tempo: "30min", vezesPraticadas: 45, tipo: "ombro");
+            
+            Exercicio.createInManagedObjectContext(moc, animacao: NSData(), detalhes: "Exercício para os Ombros", idEquipamento: "1", imageGuia: NSData(), nome: "Desenvolvimento com Hálteres", tempo: "30min", vezesPraticadas: 45, tipo: "ombro");
+            
+            
+            Exercicio.createInManagedObjectContext(moc, animacao: NSData(), detalhes: "Exercício para os Bíceps", idEquipamento: "1", imageGuia: NSData(), nome: "Rosca Simultânea.", tempo: "30min", vezesPraticadas: 45, tipo: "bi");
+            
+            Exercicio.createInManagedObjectContext(moc, animacao: NSData(), detalhes: "Exercício para os Bíceps", idEquipamento: "1", imageGuia: NSData(), nome: "Rosca Individual Polia Alta", tempo: "30min", vezesPraticadas: 45, tipo: "bi");
+            
+            Exercicio.createInManagedObjectContext(moc, animacao: NSData(), detalhes: "Exercício para os Tríceps", idEquipamento: "1", imageGuia: NSData(), nome: "Pulley Tríceps", tempo: "30min", vezesPraticadas: 45, tipo:"tri");
+            
+            Exercicio.createInManagedObjectContext(moc, animacao: NSData(), detalhes: "Exercício para os Tríceps", idEquipamento: "1", imageGuia: NSData(), nome: "Pulley Corda", tempo: "30min", vezesPraticadas: 45, tipo: "tri");
             
             
                         Esporte.createInManagedObjectContext(moc, modalidade: "BASQUETE", descricao: "A modalidade é praticada por atletas de ambos os sexos que tenham alguma deficiência físico-motora, sob as regras adaptadas da Federação Internacional de Basquete em Cadeira de Rodas (IWBF). As cadeiras são adaptadas e padronizadas, conforme previsto na regra. No Brasil, a modalidade é administrada pela Confederação Brasileira de Basquetebol em Cadeira de Rodas (CBBC).", classificacao: "Na classificação funcional, os atletas são avaliados conforme o comprometimento físico-motor em uma escala de 1 a 4,5. Quanto maior a deficiência, menor a classe. A soma desses números na equipe de cinco pessoas não pode ultrapassar 14.", modoDisputa: "O jogador deve quicar, arremessar ou passar a bola a cada dois toques dados na cadeira. As dimensões da quadra e a altura da cesta seguem o padrão do basquete olímpico. São disputados quatro quartos de 10 minutos cada.", foto:imageBasquete );

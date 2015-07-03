@@ -302,7 +302,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="ec1-71-FnG">
-                                <rect key="frame" x="16" y="355" width="343" height="263"/>
+                                <rect key="frame" x="16" y="397" width="343" height="263"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -311,17 +311,29 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wnA-J0-B4W">
                                 <rect key="frame" x="0.0" y="64" width="375" height="353"/>
                             </scrollView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Q8A-hP-hJm">
+                                <rect key="frame" x="16" y="425" width="343" height="29"/>
+                                <segments>
+                                    <segment title="Descrição"/>
+                                    <segment title="Classificação"/>
+                                    <segment title="Modo de disputa"/>
+                                </segments>
+                                <connections>
+                                    <action selector="SegAction:" destination="xhO-B5-KCG" eventType="valueChanged" id="pqj-GH-doU"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="SegControl" destination="Q8A-hP-hJm" id="yIz-L5-9Qo"/>
                         <outlet property="esporteDescription" destination="ec1-71-FnG" id="hCt-XT-DRA"/>
                         <outlet property="imagemScroll" destination="wnA-J0-B4W" id="fyQ-Ul-uZf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ghw-56-vqo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1895" y="0.0"/>
+            <point key="canvasLocation" x="1894.5" y="-0.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="wg7-f3-ORb">

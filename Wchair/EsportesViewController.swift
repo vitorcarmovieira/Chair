@@ -13,8 +13,24 @@ class EsportesViewController: UIViewController {
     @IBOutlet weak var imagemScroll: UIScrollView!
     @IBOutlet weak var esporteDescription: UITextView!
     
+    @IBOutlet weak var SegControl: UISegmentedControl!
     var esporte: Esporte?
     
+    @IBAction func SegAction(sender: UISegmentedControl) {
+        
+        switch SegControl.selectedSegmentIndex{
+        case 0:
+            esporteDescription.text = esporte?.descricao
+        case 1:
+            esporteDescription.text = esporte?.classificacao
+        case 2:
+            esporteDescription.text = esporte?.modoDisputa
+            
+        default:
+            break
+        }
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
