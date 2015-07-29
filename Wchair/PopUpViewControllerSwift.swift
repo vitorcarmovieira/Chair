@@ -37,7 +37,7 @@ import QuartzCore
         self.popUpView.layer.shadowOffset = CGSizeMake(0.0, 0.0)
     }
     
-    func socialShare(#sharingText: String?, sharingImage: UIImage?) {
+    func socialShare(sharingText sharingText: String?, sharingImage: UIImage?) {
         var sharingItems = [AnyObject]()
         
         if let text = sharingText {

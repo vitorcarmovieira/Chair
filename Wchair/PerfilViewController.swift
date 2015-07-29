@@ -17,6 +17,8 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate, UIImageP
     var item: AnyObject?
     var picker:UIImagePickerController?=UIImagePickerController()
     var popover:UIPopoverController?=nil
+    var mainMoc: NSManagedObjectContext?
+    var dados: [Int] = [0,0,0,0,0,0,0]
     
      @IBOutlet weak var LbName: UILabel!
      @IBOutlet weak var IVPhoto: UIImageView!
@@ -42,7 +44,7 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate, UIImageP
     
 /**------------------------------------------------------------------------------**/
     
-    func socialShare(#sharingText: String?, sharingImage: UIImage?) {
+    func socialShare(sharingText sharingText: String?, sharingImage: UIImage?) {
         var sharingItems = [AnyObject]()
         
         if let text = sharingText {
@@ -104,6 +106,12 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate, UIImageP
         picker.dismissViewControllerAnimated(true, completion: nil)
         //ImageUtil.cropToSquare(image: info[UIImagePickerControllerOriginalImage] as! UIImage)
         
+        let fetchRequest = NSFetchRequest(entityName: "Usuario")
+        if let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest, error: nil) as? [Usuario] {
+            
+            fetchResults[0].avatar = UIImagePNGRepresentation(info[UIImagePickerControllerOriginalImage] as! UIImage)
+            self.save()
+        }
         IVPhoto.image=(info[UIImagePickerControllerOriginalImage] as! UIImage)
         self.NewAvatar = (info[UIImagePickerControllerOriginalImage] as! UIImage)
         //sets the selected image to image view
@@ -158,14 +166,19 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate, UIImageP
         switch AllGraficos.selectedSegmentIndex{
         case 0:
             LbPratica.text = "Geral"
+            self.dados = [1,2,3,4,5,6,7]
         case 1:
             LbPratica.text = "Basquete"
+            self.dados = [7,6,5,4,3,2,1]
         case 2:
             LbPratica.text = "Esgrima"
+            self.dados = [3,5,8,6,4,9,1]
             
         default: NSLog("Invalid Input")
         }
         
+//        let instanciaDoGrafico: GraphView = GraphView()
+//        instanciaDoGrafico.out = self.dados
         
     }
     
@@ -285,19 +298,35 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate, UIImageP
     func save() {
         var error : NSError?
         if(managedObjectContext!.save(&error) ) {
-            println(error?.localizedDescription)
+            print(error?.localizedDescription)
         }
     }
     
    func updateUserAvatar(){
+    
+//    var fetchRequest = NSFetchRequest() // 1
+//    var entityName = NSEntityDescription.entityForName("Usuario", inManagedObjectContext: self.mainMoc!) // 2
+//    fetchRequest.entity = entityName // 3
 //    
-//        let fetchRequest = NSFetchRequest(entityName: "Usuario")
-//        fetchRequest.predicate = NSPredicate(format: "avatar == %@", NewAvatar!)
-//        if let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest, error: nil) as?
-//            [Usuario]{
-//                NewAvatar = fetchResults
-//                println("Mudou")
+//    // Execute the fetch request
+//    var error : NSError?
+//    var fetchedObjects = self.mainMoc!.executeFetchRequest(fetchRequest, error: &error) // 4
+//    
+//    // Change the attributer name of
+//    // each managed object to the self.name
+//    if let newAvatar = fetchedObjects {
+//        if error == nil {
+//         
+//                (newAvatar as Usuario).avatar = self.avatar // 6
+//            // 7
+//            
+//            // Save the updated managed objects into the store
+//            if !self.mainMoc!.save(&error) { // 8
+//                NSLog("Unresolved error (error), (error!.userInfo)")
+//                abort()
+//            }
 //        }
+//    }
     
     }
     
@@ -309,7 +338,7 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate, UIImageP
     }
     
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
-        println("User Logged In")
+        print("User Logged In")
         self.getFacebookDatas()
         if ((error) != nil)
         {
@@ -329,7 +358,7 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate, UIImageP
     }
     
     func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
-        println("User Logged Out")
+        print("User Logged Out")
     }
     
     func returnUserData()
@@ -340,15 +369,15 @@ class PerfilViewController: UIViewController, FBSDKLoginButtonDelegate, UIImageP
             if ((error) != nil)
             {
                 // Process error
-                println("Error: \(error)")
+                print("Error: \(error)")
             }
             else
             {
-                println("fetched user: \(result)")
+                print("fetched user: \(result)")
                 let userName : NSString = result.valueForKey("name") as! NSString
-                println("User Name is: \(userName)")
+                print("User Name is: \(userName)")
                 let userEmail : NSString = result.valueForKey("email") as! NSString
-                println("User Email is: \(userEmail)")
+                print("User Email is: \(userEmail)")
             }
         })
     }

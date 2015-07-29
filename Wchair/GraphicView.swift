@@ -14,16 +14,20 @@ import CoreGraphics
     @IBInspectable var startColor: UIColor = UIColor.redColor()
     @IBInspectable var endColor: UIColor = UIColor.greenColor()
     
+//    var out: [Int]?
     
     
   //  func graphPoints(dom: Int, seg:Int, ter: Int, qua: Int, qui: Int, sex: Int, sab: Int){
-        
-        var graphPoints:[Int] = [4,7,2,7,4,9,2]
-        
+    
+//    var graphPoints:[Int]
+    
    // }
     
     
     override func drawRect(rect: CGRect) {
+        
+//        var graphPoints = self.out
+        var graphPoints = [1,2,3,4,5,6,7]
         
         let width = rect.width
         let height = rect.height
@@ -62,7 +66,7 @@ import CoreGraphics
         var columnXPoint = { (column:Int) -> CGFloat in
             //Calculate gap between points
             let spacer = (width - margin*2 - 4) /
-                CGFloat((self.graphPoints.count - 1))
+                CGFloat((graphPoints.count - 1))
             var x:CGFloat = CGFloat(column) * spacer
             x += margin + 2
             return x

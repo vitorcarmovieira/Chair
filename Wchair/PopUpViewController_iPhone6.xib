@@ -28,9 +28,6 @@
                             <state key="normal" title="Close">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
-                            <connections>
-                                <action selector="closePopup:" destination="-1" eventType="touchUpInside" id="h7o-1k-CN6"/>
-                            </connections>
                         </button>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="243" translatesAutoresizingMaskIntoConstraints="NO" id="d9y-sm-xub">
                             <rect key="frame" x="20" y="0.0" width="280" height="110"/>
@@ -57,9 +54,6 @@
                     <state key="normal" title="Share">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
-                    <connections>
-                        <action selector="ShareBt:" destination="-1" eventType="touchUpInside" id="kjG-VF-Mbp"/>
-                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

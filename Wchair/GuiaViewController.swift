@@ -16,23 +16,23 @@ class GuiaViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //imagens dos exercicios
-        var imageAbracoBola = UIImagePNGRepresentation(UIImage (named: "AbracoBola"));
-        var imageApoioBola = UIImagePNGRepresentation(UIImage (named: "ApoioBola"));
-        var imageCrucifixoPolia = UIImagePNGRepresentation(UIImage (named: "CrucifixoPolia"));
-        var imageDesenvolvimentoHalteres = UIImagePNGRepresentation(UIImage (named: "DesenvolvimentoHalteres"));
-        var imageElasticoTensao = UIImagePNGRepresentation(UIImage (named: "ElasticoTensao"));
-        var imageElevacaoHalteres = UIImagePNGRepresentation(UIImage (named: "ElevacaoHalteres"));
-        var imageElevacaoLateral = UIImagePNGRepresentation(UIImage (named: "ElevacaoLateral"));
-        var imageExtensaoQuadril = UIImagePNGRepresentation(UIImage (named: "ExtensaoQuadril"));
-        var imagePulleyCorda = UIImagePNGRepresentation(UIImage (named: "PulleyCorda"));
-        var imagePulleyTriceps = UIImagePNGRepresentation(UIImage (named: "PulleyTriceps"));
-        var imagePuxadorAltoAtrasNuca = UIImagePNGRepresentation(UIImage (named: "PuxadorAltoAtrasNuca"));
-        var imagePuxadorFechado = UIImagePNGRepresentation(UIImage (named: "PuxadorFechado"));
-        var imagePuxadorHorizontal = UIImagePNGRepresentation(UIImage (named: "PuxadorHorizontal"));
-        var imagePuxadorVertical = UIImagePNGRepresentation(UIImage (named: "PuxadorVertical"));
-        var imageRoscaIndividual = UIImagePNGRepresentation(UIImage (named: "RoscaIndividual"));
-        var imageRoscaMartelo = UIImagePNGRepresentation(UIImage (named: "RoscaMartelo"));
-        var imageRoscaSimultanea = UIImagePNGRepresentation(UIImage (named: "RoscaSimultanea"));
+        let imageAbracoBola = UIImagePNGRepresentation(UIImage (named: "AbracoBola")!);
+        let imageApoioBola = UIImagePNGRepresentation(UIImage (named: "ApoioBola")!);
+        let imageCrucifixoPolia = UIImagePNGRepresentation(UIImage (named: "CrucifixoPolia")!);
+        let imageDesenvolvimentoHalteres = UIImagePNGRepresentation(UIImage (named: "DesenvolvimentoHalteres")!);
+        let imageElasticoTensao = UIImagePNGRepresentation(UIImage (named: "ElasticoTensao")!);
+        let imageElevacaoHalteres = UIImagePNGRepresentation(UIImage (named: "ElevacaoHalteres")!);
+        let imageElevacaoLateral = UIImagePNGRepresentation(UIImage (named: "ElevacaoLateral")!);
+        let imageExtensaoQuadril = UIImagePNGRepresentation(UIImage (named: "ExtensaoQuadril")!);
+        let imagePulleyCorda = UIImagePNGRepresentation(UIImage (named: "PulleyCorda")!);
+        let imagePulleyTriceps = UIImagePNGRepresentation(UIImage (named: "PulleyTriceps")!);
+        let imagePuxadorAltoAtrasNuca = UIImagePNGRepresentation(UIImage (named: "PuxadorAltoAtrasNuca")!);
+        let imagePuxadorFechado = UIImagePNGRepresentation(UIImage (named: "PuxadorFechado")!);
+        let imagePuxadorHorizontal = UIImagePNGRepresentation(UIImage (named: "PuxadorHorizontal")!);
+        let imagePuxadorVertical = UIImagePNGRepresentation(UIImage (named: "PuxadorVertical")!);
+        let imageRoscaIndividual = UIImagePNGRepresentation(UIImage (named: "RoscaIndividual")!);
+        let imageRoscaMartelo = UIImagePNGRepresentation(UIImage (named: "RoscaMartelo")!);
+        let imageRoscaSimultanea = UIImagePNGRepresentation(UIImage (named: "RoscaSimultanea")!);
 //
 //        //imagens dos esportes
 //        var imageBasquete = UIImagePNGRepresentation(UIImage (named: "Basquete3"));
@@ -48,9 +48,9 @@ class GuiaViewController: UIViewController {
 //        var imageNatacao = UIImagePNGRepresentation(UIImage (named: "Natacao"));
         
         if let moc = self.managedObjectContext{
-            Exercicio.createInManagedObjectContext(moc, animacao: NSData(), detalhes: "Exercício para os Braços", idEquipamento: "Bola", imageGuia: imageAbracoBola, nome: "Abraço com Bola", tempo: "5min", vezesPraticadas: 3, tipo: "ombro");
+            Exercicio.createInManagedObjectContext(moc, animacao: NSData(), detalhes: "Exercício para os Braços", idEquipamento: "Bola", imageGuia: imageAbracoBola!, nome: "Abraço com Bola", tempo: "5min", vezesPraticadas: 3, tipo: "ombro");
             
-            Exercicio.createInManagedObjectContext(moc, animacao: NSData(), detalhes: "Exercício para as Costas", idEquipamento: "Bola", imageGuia: imageApoioBola, nome: "Apoio com Bola", tempo: "5min", vezesPraticadas: 45, tipo: "costas");
+            Exercicio.createInManagedObjectContext(moc, animacao: NSData(), detalhes: "Exercício para as Costas", idEquipamento: "Bola", imageGuia: imageApoioBola!, nome: "Apoio com Bola", tempo: "5min", vezesPraticadas: 45, tipo: "costas");
             
             Exercicio.createInManagedObjectContext(moc, animacao: NSData(), detalhes: "Exercício para as Costas", idEquipamento: "1", imageGuia: NSData(), nome: "Puxador Fechado", tempo: "30min", vezesPraticadas: 45, tipo: "costas");
             

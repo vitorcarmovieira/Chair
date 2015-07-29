@@ -22,7 +22,7 @@ class TipoExercicioTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.populate()
+        //self.populate()
         
         let fetchRequest1 = NSFetchRequest(entityName: "Exercicio")
         fetchRequest1.predicate = NSPredicate(format: "tipo == %@", "ombro")
@@ -229,22 +229,22 @@ class TipoExercicioTableViewController: UITableViewController {
             
             Exercicio.createInManagedObjectContext(moc, animacao: NSData(), detalhes: "Exercício para as Costas", idEquipamento: "Bola", imageGuia: imageApoioBola, nome: "Apoio com Bola", tempo: "5min", vezesPraticadas: 45, tipo: "costas");
             
-            Exercicio.createInManagedObjectContext(moc, animacao: NSData(), detalhes: "Exercício para as Costas", idEquipamento: "1", imageGuia: NSData(), nome: "Puxador Fechado", tempo: "30min", vezesPraticadas: 45, tipo: "costas");
+            Exercicio.createInManagedObjectContext(moc, animacao: NSData(), detalhes: "Exercício para as Costas", idEquipamento: "1", imageGuia: imagePuxadorFechado, nome: "Puxador Fechado", tempo: "30min", vezesPraticadas: 45, tipo: "costas");
             
-            Exercicio.createInManagedObjectContext(moc, animacao: NSData(), detalhes: "Exercício para os Ombros", idEquipamento: "1", imageGuia: NSData(), nome: "Elevação Lateral", tempo: "30min", vezesPraticadas: 45, tipo: "ombro");
+            Exercicio.createInManagedObjectContext(moc, animacao: NSData(), detalhes: "Exercício para os Ombros", idEquipamento: "1", imageGuia: imageElevacaoLateral, nome: "Elevação Lateral", tempo: "30min", vezesPraticadas: 45, tipo: "ombro");
             
-            Exercicio.createInManagedObjectContext(moc, animacao: NSData(), detalhes: "Exercício para os Ombros", idEquipamento: "1", imageGuia: NSData(), nome: "Elástico de Tensão", tempo: "30min", vezesPraticadas: 45, tipo: "ombro");
+            Exercicio.createInManagedObjectContext(moc, animacao: NSData(), detalhes: "Exercício para os Ombros", idEquipamento: "1", imageGuia: imageElasticoTensao, nome: "Elástico de Tensão", tempo: "30min", vezesPraticadas: 45, tipo: "ombro");
             
-            Exercicio.createInManagedObjectContext(moc, animacao: NSData(), detalhes: "Exercício para os Ombros", idEquipamento: "1", imageGuia: NSData(), nome: "Desenvolvimento com Hálteres", tempo: "30min", vezesPraticadas: 45, tipo: "ombro");
+            Exercicio.createInManagedObjectContext(moc, animacao: NSData(), detalhes: "Exercício para os Ombros", idEquipamento: "1", imageGuia: imageDesenvolvimentoHalteres, nome: "Desenvolvimento com Hálteres", tempo: "30min", vezesPraticadas: 45, tipo: "ombro");
             
             
-            Exercicio.createInManagedObjectContext(moc, animacao: NSData(), detalhes: "Exercício para os Bíceps", idEquipamento: "1", imageGuia: NSData(), nome: "Rosca Simultânea.", tempo: "30min", vezesPraticadas: 45, tipo: "bi");
+            Exercicio.createInManagedObjectContext(moc, animacao: NSData(), detalhes: "Exercício para os Bíceps", idEquipamento: "1", imageGuia: imageRoscaSimultanea, nome: "Rosca Simultânea.", tempo: "30min", vezesPraticadas: 45, tipo: "bi");
             
-            Exercicio.createInManagedObjectContext(moc, animacao: NSData(), detalhes: "Exercício para os Bíceps", idEquipamento: "1", imageGuia: NSData(), nome: "Rosca Individual Polia Alta", tempo: "30min", vezesPraticadas: 45, tipo: "bi");
+            Exercicio.createInManagedObjectContext(moc, animacao: NSData(), detalhes: "Exercício para os Bíceps", idEquipamento: "1", imageGuia: imageRoscaIndividual, nome: "Rosca Individual Polia Alta", tempo: "30min", vezesPraticadas: 45, tipo: "bi");
             
-            Exercicio.createInManagedObjectContext(moc, animacao: NSData(), detalhes: "Exercício para os Tríceps", idEquipamento: "1", imageGuia: NSData(), nome: "Pulley Tríceps", tempo: "30min", vezesPraticadas: 45, tipo:"tri");
+            Exercicio.createInManagedObjectContext(moc, animacao: NSData(), detalhes: "Exercício para os Tríceps", idEquipamento: "1", imageGuia: imagePulleyTriceps, nome: "Pulley Tríceps", tempo: "30min", vezesPraticadas: 45, tipo:"tri");
             
-            Exercicio.createInManagedObjectContext(moc, animacao: NSData(), detalhes: "Exercício para os Tríceps", idEquipamento: "1", imageGuia: NSData(), nome: "Pulley Corda", tempo: "30min", vezesPraticadas: 45, tipo: "tri");
+            Exercicio.createInManagedObjectContext(moc, animacao: NSData(), detalhes: "Exercício para os Tríceps", idEquipamento: "1", imageGuia: imagePulleyCorda, nome: "Pulley Corda", tempo: "30min", vezesPraticadas: 45, tipo: "tri");
             
             
                         Esporte.createInManagedObjectContext(moc, modalidade: "BASQUETE", descricao: "A modalidade é praticada por atletas de ambos os sexos que tenham alguma deficiência físico-motora, sob as regras adaptadas da Federação Internacional de Basquete em Cadeira de Rodas (IWBF). As cadeiras são adaptadas e padronizadas, conforme previsto na regra. No Brasil, a modalidade é administrada pela Confederação Brasileira de Basquetebol em Cadeira de Rodas (CBBC).", classificacao: "Na classificação funcional, os atletas são avaliados conforme o comprometimento físico-motor em uma escala de 1 a 4,5. Quanto maior a deficiência, menor a classe. A soma desses números na equipe de cinco pessoas não pode ultrapassar 14.", modoDisputa: "O jogador deve quicar, arremessar ou passar a bola a cada dois toques dados na cadeira. As dimensões da quadra e a altura da cesta seguem o padrão do basquete olímpico. São disputados quatro quartos de 10 minutos cada.", foto:imageBasquete );
